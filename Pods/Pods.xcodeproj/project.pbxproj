@@ -1,0 +1,1287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01BF9B71C3088E0970BFB71B /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5862C45ACCEC36916B145304 /* AFNetworking.framework */; };
+		01C4AF535F5FE739EA0AFF16 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C46E91A83CB2D6D22E5190E9 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02629572D95FF52DAA0778C1 /* Pods-VideoDating-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F18B85637CCB7257C9C65758 /* Pods-VideoDating-dummy.m */; };
+		05EC2AE11EA8125D912B07B6 /* AFAmazonS3Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53411B2C580C043395BA2CF4 /* AFAmazonS3Manager.m */; };
+		131A57742446BDA2281C125A /* Pods-VideoDating-AFAmazonS3Manager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C889174C9B836A1ED4600DA7 /* Pods-VideoDating-AFAmazonS3Manager-dummy.m */; };
+		19EEC3056CE05EAAE994E975 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFD2529AC6BC144FBF85AC0 /* SystemConfiguration.framework */; };
+		1D6DE446E387E163273CD05E /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B7BB122CB408125014735 /* AFHTTPRequestOperationManager.m */; };
+		1E565A81A6DCB71046761280 /* Pods-VideoDating-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F651ADD4C4F0111CD144F97 /* Pods-VideoDating-AFNetworking-dummy.m */; };
+		2422528285B6412BEE37F3E6 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7489F191549CB8FDE051F49 /* AFNetworkReachabilityManager.m */; };
+		28CD946EBE7E90D48F7AC35C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6913065FE7FB4E554B4381A5 /* Security.framework */; };
+		28E886CD1F0398395A760B94 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F677156DBC23F9BC8E5FE0A3 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BE516D56642FC9F983E7B39 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 34428F23EBB790223623C7C3 /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F230AE3F73A7B9A9901768D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C36B9284240817894A7A355 /* CoreGraphics.framework */; };
+		3218B382EA87DEF66F1FE83E /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DCE84712948CB66F9EA34C /* UIButton+AFNetworking.m */; };
+		37A641776AEC82DA55A29D95 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 135817CD94BEC3D7CFE3CAF8 /* UIProgressView+AFNetworking.m */; };
+		39786D5FCB385131E33F3D72 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EEE58D8CBD81F0A40C6913 /* Validation.swift */; };
+		398ED5D65BD89104D93CCECB /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F5A45C2B5ABD03CA0B5E5B78 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		415C0A231ABC4039B18375AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3E43A5D94B4C712DE19AC /* Foundation.framework */; };
+		42B8FF400DB2CB1CB9FD3236 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 824F7143D513C84C6275DAD6 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42F1FD6C8E9F786449CA16BC /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D546FE1F6952A30DB7FDB4DA /* AFURLConnectionOperation.m */; };
+		44ABDF8AE911FB74A55D7F07 /* AFAmazonS3ResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F93F07BAB83DB879DA41D0C /* AFAmazonS3ResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F0332FA84E32E7D1B238613 /* AmazonS3RequestManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D61A4A903087BE3FEC2A2E3F /* AmazonS3RequestManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51ABC48C2A674353533B6708 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3E43A5D94B4C712DE19AC /* Foundation.framework */; };
+		545AB2CE532F52A799B7C759 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7A882235294A70951200E /* AFURLResponseSerialization.m */; };
+		55434576851BD61C0CA67981 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CCDCC89DC38B667D7A48EE /* UIRefreshControl+AFNetworking.m */; };
+		574C61BD0D42E7A80E2A7A51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3E43A5D94B4C712DE19AC /* Foundation.framework */; };
+		5776A4689A576C599B7289A0 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E99C45BEA0B0FFCD10A6357F /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FE363B871508FB17E663D48 /* Pods-VideoDating-AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E9EA99DB7CC393AE1CC0306 /* Pods-VideoDating-AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		602957561126786D8C891B1B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705541E04AF5F5258FE4D518 /* ParameterEncoding.swift */; };
+		62E960630AA446CC7A89F6F2 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4983B997EE229AFD4FB717 /* UIAlertView+AFNetworking.m */; };
+		6397FB61CA411F127C937077 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FD958200F5663A873A558DB /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68E46C25510F222E1C711A5B /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDC45B5760EFA5595A9D58C /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D1C4AA3E8C7F77449BB6E0F /* Pods-VideoDating-AmazonS3RequestManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 285A0FB40BCC85AE4E61E5F0 /* Pods-VideoDating-AmazonS3RequestManager-dummy.m */; };
+		7716FCBE60A06911C0E6E709 /* AmazonS3SignatureHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FA2CD55373E9137ABC917B5 /* AmazonS3SignatureHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		845AE9FFC0F0884E562838AC /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 484314E8F5EE42F18BC17BC1 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD78DDD749C2DCCDDFC353B /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27031B237BDDD6C89D5A3641 /* Download.swift */; };
+		8DD7F103C374567E9B16B348 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A443ABEA1C2A8AC35132237 /* Upload.swift */; };
+		90C03C97AC69ADF8EAA115ED /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C22A51F7ABE5337CD2E76 /* UIWebView+AFNetworking.m */; };
+		9AFD294075A97E92CC755E0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3E43A5D94B4C712DE19AC /* Foundation.framework */; };
+		A035195FEEE85FB07480C0E1 /* Pods-VideoDating-AmazonS3RequestManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F68667CB121463F644B091D /* Pods-VideoDating-AmazonS3RequestManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A127F5ED243BFE13FB8D2F06 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A41BD7C3D799CB33E61BD1B /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A13931F21DAA56A8BACB7BB7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B121C4D8F4EE4A9FD8E1D /* Request.swift */; };
+		A3E40A1FBD5AFD1025947BC4 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C6A6A485ACB88088E0519 /* UIImageView+AFNetworking.m */; };
+		A808CDCD4AE9EE8D561B84D5 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D04731812D7E1827A094477 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B132A53843E2B464019266F0 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66F36DD3A7857E1C7991562 /* Alamofire.swift */; };
+		B3A9035253A24D8831D4E644 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46F111336A16716F48EFEC /* AFHTTPRequestOperation.m */; };
+		B89F59BD6F27B798063D4E67 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D22C03CC080B7283596F065E /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B97D5135D4245C8C3606ADDF /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B539356845C6B68691BB47 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA316932BA1B0F30356CF7EF /* Pods-VideoDating-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D6BF225B55B1A170C1606 /* Pods-VideoDating-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAB989E74ABB0A55A8D3222B /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D65409094170EEC214C2C928 /* AFNetworkActivityIndicatorManager.m */; };
+		BCC73AEC136218EA4BA86804 /* Pods-VideoDating-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EE17209FA3A2074BE8B183E /* Pods-VideoDating-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCD50C0EF9C07702EC78EDD2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BEA2461512C4F34285E37F /* Alamofire.framework */; };
+		BCEA84C6B5B1C2902F5156B7 /* AFAmazonS3ResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 865E1EB054C5B6569CF03E3B /* AFAmazonS3ResponseSerializer.m */; };
+		BE7B288FC9E9DACCC5896067 /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E5CCFFA6B76859E0CB91AE76 /* UIAlertView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFAB60257FD50CB55B77BB36 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD140665CD7BA7716348232A /* UIActivityIndicatorView+AFNetworking.m */; };
+		C39201E3F6D25DBB2A223275 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A845D9C1609C01E942F51D54 /* AFHTTPSessionManager.m */; };
+		C4070D3C94FFB05F389CF7A8 /* AFAmazonS3RequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = C3C1C2A4AE298F0AE169C6FC /* AFAmazonS3RequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6F12C6FCEA6AFC64B65C3BB /* AmazonS3SignatureHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B4C4B296F7846D2AE4780 /* AmazonS3SignatureHelpers.m */; };
+		C965C497BF84410326526DF9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE664ED91AEFFB3E938DDD3 /* MobileCoreServices.framework */; };
+		CA166457A7C0E8AC4B5F827E /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA17073F1B6941B6FFC51A3 /* AFSecurityPolicy.m */; };
+		CCABBC7F8E13A085E16F70EB /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5499137DF03F10807A447640 /* AFURLSessionManager.m */; };
+		CE475C362C2ABDC92AB99807 /* AmazonS3ACL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0590A0A8ED2187920D3FAA /* AmazonS3ACL.swift */; };
+		CFCC6DDAFE891D7778E37FA0 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 607A39CE811738B8997BC5BC /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D01097160D9D0BA3CF149022 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31383C5915D9FFCB4BFEB35 /* ResponseSerialization.swift */; };
+		D296C475C59F5283C51FBB53 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE664ED91AEFFB3E938DDD3 /* MobileCoreServices.framework */; };
+		D4D8AAABCCBA7B939BE74B7C /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 57F78F282FC7878E36B98406 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D91E314B7556117CAFC153B6 /* Pods-VideoDating-AFAmazonS3Manager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DDDACB4AC9714BDCEC2FE9D /* Pods-VideoDating-AFAmazonS3Manager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA65390D35A68001F083455F /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1964506EC61678DEE73C48C8 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3131E93228DAAF162AB8CA1 /* AFAmazonS3RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C45706426126DF2CBB821899 /* AFAmazonS3RequestSerializer.m */; };
+		E549A36C0AC599CE29F7494A /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 800B7ECECCE46AACD0FCEFF1 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA01CEAAC6225700F46BB0CB /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F2935C03AFA58D4F27079313 /* AFURLRequestSerialization.m */; };
+		EBB35503E342AB11E3EB012D /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677AB100A1F349E2A3FABE6D /* Manager.swift */; };
+		ED774772287ECB08AB26BB08 /* Pods-VideoDating-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E856E44C5ED175859134D /* Pods-VideoDating-Alamofire-dummy.m */; };
+		F0654FFB99B0764E700764C8 /* AFAmazonS3Manager.h in Headers */ = {isa = PBXBuildFile; fileRef = A9D7202204D02B94DD72BA9B /* AFAmazonS3Manager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F600BD394BAD66A3FB5D83B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3E43A5D94B4C712DE19AC /* Foundation.framework */; };
+		F8389D96A206FEFDB64CEC5A /* AmazonS3RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF906F6B755F39CEF531C3A /* AmazonS3RequestManager.swift */; };
+		F90C2CC88D7E13C7E5973822 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 504F51AA3657207DD1CE28ED /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41109FFCD01D411DC0A77BBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4295C384A4E2C5698DC964F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C80BB4070113629F48345CC;
+			remoteInfo = "Pods-VideoDating-AFNetworking";
+		};
+		896173CC25BB4508567E1965 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4295C384A4E2C5698DC964F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 179F469AC66C854D864D2852;
+			remoteInfo = "Pods-VideoDating-Alamofire";
+		};
+		8E8E3958F57D9836508C4315 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4295C384A4E2C5698DC964F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C80BB4070113629F48345CC;
+			remoteInfo = "Pods-VideoDating-AFNetworking";
+		};
+		B24EA317F3F6BEB6AC0F761F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4295C384A4E2C5698DC964F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 098763BD196B8CD055334F0D;
+			remoteInfo = "Pods-VideoDating-AFAmazonS3Manager";
+		};
+		CE92473557CFDED41414366E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4295C384A4E2C5698DC964F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 689DD66322B3CE1814F1B178;
+			remoteInfo = "Pods-VideoDating-AmazonS3RequestManager";
+		};
+		D5C71FA4F671C28256DCDFE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4295C384A4E2C5698DC964F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 179F469AC66C854D864D2852;
+			remoteInfo = "Pods-VideoDating-Alamofire";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03A288A949E27FE83F549CB9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BD4D839571C35A3A09A8F26 /* Pods_VideoDating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoDating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C36B9284240817894A7A355 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		0FD958200F5663A873A558DB /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		135817CD94BEC3D7CFE3CAF8 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		1370C76E46752E6CE3B86E26 /* Pods-VideoDating-AmazonS3RequestManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-AmazonS3RequestManager.xcconfig"; sourceTree = "<group>"; };
+		1964506EC61678DEE73C48C8 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		1CD1D90918D4086ECA4B786D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F93F07BAB83DB879DA41D0C /* AFAmazonS3ResponseSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAmazonS3ResponseSerializer.h; path = AFAmazonS3Manager/AFAmazonS3ResponseSerializer.h; sourceTree = "<group>"; };
+		2415EDC8BE5BF0D5878B48C9 /* Pods-VideoDating-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VideoDating-frameworks.sh"; sourceTree = "<group>"; };
+		27031B237BDDD6C89D5A3641 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		285A0FB40BCC85AE4E61E5F0 /* Pods-VideoDating-AmazonS3RequestManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VideoDating-AmazonS3RequestManager-dummy.m"; sourceTree = "<group>"; };
+		2A443ABEA1C2A8AC35132237 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		2BA1351FEA88EC9EB94FD828 /* Pods-VideoDating-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		2C4B4C4B296F7846D2AE4780 /* AmazonS3SignatureHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AmazonS3SignatureHelpers.m; path = AmazonS3RequestManager/AmazonS3SignatureHelpers.m; sourceTree = "<group>"; };
+		2C7B121C4D8F4EE4A9FD8E1D /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		34428F23EBB790223623C7C3 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		3935A2B1A38E74A983C1D1B6 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A41BD7C3D799CB33E61BD1B /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		484314E8F5EE42F18BC17BC1 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		48EEE58D8CBD81F0A40C6913 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		4AB3E43A5D94B4C712DE19AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4B5C6A6A485ACB88088E0519 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		4C33B7A62E7CF142BEB987F4 /* Pods-VideoDating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating.debug.xcconfig"; sourceTree = "<group>"; };
+		4DDC45B5760EFA5595A9D58C /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		504F51AA3657207DD1CE28ED /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		53411B2C580C043395BA2CF4 /* AFAmazonS3Manager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAmazonS3Manager.m; path = AFAmazonS3Manager/AFAmazonS3Manager.m; sourceTree = "<group>"; };
+		5499137DF03F10807A447640 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		55A741EC1C780CF70390F498 /* Pods-VideoDating-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VideoDating-acknowledgements.plist"; sourceTree = "<group>"; };
+		57F78F282FC7878E36B98406 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		5862C45ACCEC36916B145304 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA17073F1B6941B6FFC51A3 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		5BFD2529AC6BC144FBF85AC0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		5D8B7BB122CB408125014735 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		607A39CE811738B8997BC5BC /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		677AB100A1F349E2A3FABE6D /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		6913065FE7FB4E554B4381A5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		6C4983B997EE229AFD4FB717 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		6EE17209FA3A2074BE8B183E /* Pods-VideoDating-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		705541E04AF5F5258FE4D518 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		70C778F57C28E602AD5B7332 /* Pods-VideoDating-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		72B4B1B7655C2D8197003406 /* Pods-VideoDating-AmazonS3RequestManager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-AmazonS3RequestManager-Private.xcconfig"; sourceTree = "<group>"; };
+		7D04731812D7E1827A094477 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		7DA7A882235294A70951200E /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		7DDDACB4AC9714BDCEC2FE9D /* Pods-VideoDating-AFAmazonS3Manager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-AFAmazonS3Manager-umbrella.h"; sourceTree = "<group>"; };
+		7F651ADD4C4F0111CD144F97 /* Pods-VideoDating-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VideoDating-AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		7F957FAFC54CCF4F6A1486FA /* Pods-VideoDating-AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VideoDating-AFNetworking.modulemap"; sourceTree = "<group>"; };
+		7FA2CD55373E9137ABC917B5 /* AmazonS3SignatureHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AmazonS3SignatureHelpers.h; path = AmazonS3RequestManager/AmazonS3SignatureHelpers.h; sourceTree = "<group>"; };
+		800B7ECECCE46AACD0FCEFF1 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		80578A07B72976114114F6EE /* Pods-VideoDating-AFAmazonS3Manager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-AFAmazonS3Manager-Private.xcconfig"; sourceTree = "<group>"; };
+		8192CB59CCAD8D399A69EE23 /* Pods-VideoDating-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		824F7143D513C84C6275DAD6 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		84B539356845C6B68691BB47 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		865E1EB054C5B6569CF03E3B /* AFAmazonS3ResponseSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAmazonS3ResponseSerializer.m; path = AFAmazonS3Manager/AFAmazonS3ResponseSerializer.m; sourceTree = "<group>"; };
+		8E9EA99DB7CC393AE1CC0306 /* Pods-VideoDating-AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-AFNetworking-umbrella.h"; sourceTree = "<group>"; };
+		8F68667CB121463F644B091D /* Pods-VideoDating-AmazonS3RequestManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-AmazonS3RequestManager-umbrella.h"; sourceTree = "<group>"; };
+		8F73AB348ADC0D7EFE1A558A /* Pods-VideoDating-AFAmazonS3Manager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-AFAmazonS3Manager-prefix.pch"; sourceTree = "<group>"; };
+		9783EC3104F5FE11EDA07023 /* Pods-VideoDating-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VideoDating-Alamofire.modulemap"; sourceTree = "<group>"; };
+		97E9B342E3257733E0521524 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9806E812437C8FA2810116DB /* Pods-VideoDating-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VideoDating-acknowledgements.markdown"; sourceTree = "<group>"; };
+		98A466E2C3E17112AACD8991 /* Pods-VideoDating-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-environment.h"; sourceTree = "<group>"; };
+		A31383C5915D9FFCB4BFEB35 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		A64C035D40FE56303442C27F /* Pods-VideoDating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating.release.xcconfig"; sourceTree = "<group>"; };
+		A845D9C1609C01E942F51D54 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		A9D7202204D02B94DD72BA9B /* AFAmazonS3Manager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAmazonS3Manager.h; path = AFAmazonS3Manager/AFAmazonS3Manager.h; sourceTree = "<group>"; };
+		AC77D8428E07DFF86B3A1839 /* Pods-VideoDating-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		AEFC60CF441694E029421565 /* AFAmazonS3Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFAmazonS3Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF46F111336A16716F48EFEC /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		AF56ACAC7300C915576B65E2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18D6BF225B55B1A170C1606 /* Pods-VideoDating-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-umbrella.h"; sourceTree = "<group>"; };
+		BCC15D7E15FB6512670FC51C /* Pods-VideoDating-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
+		BD140665CD7BA7716348232A /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		C3C1C2A4AE298F0AE169C6FC /* AFAmazonS3RequestSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAmazonS3RequestSerializer.h; path = AFAmazonS3Manager/AFAmazonS3RequestSerializer.h; sourceTree = "<group>"; };
+		C45706426126DF2CBB821899 /* AFAmazonS3RequestSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAmazonS3RequestSerializer.m; path = AFAmazonS3Manager/AFAmazonS3RequestSerializer.m; sourceTree = "<group>"; };
+		C46E91A83CB2D6D22E5190E9 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		C4CEF37F79AF5829E0F3BE65 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C869DE48D736870B5361FFB7 /* Pods-VideoDating-AFAmazonS3Manager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-AFAmazonS3Manager.xcconfig"; sourceTree = "<group>"; };
+		C889174C9B836A1ED4600DA7 /* Pods-VideoDating-AFAmazonS3Manager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VideoDating-AFAmazonS3Manager-dummy.m"; sourceTree = "<group>"; };
+		CBF29EA8D89E2802E6041413 /* Pods-VideoDating-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VideoDating-resources.sh"; sourceTree = "<group>"; };
+		CBF906F6B755F39CEF531C3A /* AmazonS3RequestManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AmazonS3RequestManager.swift; path = AmazonS3RequestManager/AmazonS3RequestManager.swift; sourceTree = "<group>"; };
+		CF6608B6F17F077B26DEB1AC /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CFE664ED91AEFFB3E938DDD3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		D0DE29E283F2FF41659F77F4 /* AmazonS3RequestManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AmazonS3RequestManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22C03CC080B7283596F065E /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		D546FE1F6952A30DB7FDB4DA /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		D5BEA2461512C4F34285E37F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D61A4A903087BE3FEC2A2E3F /* AmazonS3RequestManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AmazonS3RequestManager.h; path = AmazonS3RequestManager/AmazonS3RequestManager.h; sourceTree = "<group>"; };
+		D65409094170EEC214C2C928 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		D7489F191549CB8FDE051F49 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		DEF9169F3DD4FC210EBDA52D /* Pods-VideoDating-AmazonS3RequestManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoDating-AmazonS3RequestManager-prefix.pch"; sourceTree = "<group>"; };
+		E5CCFFA6B76859E0CB91AE76 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		E66F36DD3A7857E1C7991562 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		E74C22A51F7ABE5337CD2E76 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		E8CCDCC89DC38B667D7A48EE /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		E99C45BEA0B0FFCD10A6357F /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		E9FF8923410C7D84F229E83F /* Pods-VideoDating-AFAmazonS3Manager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VideoDating-AFAmazonS3Manager.modulemap"; sourceTree = "<group>"; };
+		ED0590A0A8ED2187920D3FAA /* AmazonS3ACL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AmazonS3ACL.swift; path = AmazonS3RequestManager/AmazonS3ACL.swift; sourceTree = "<group>"; };
+		ED9C7CEA2126F57EA89B9E19 /* Pods-VideoDating-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoDating-AFNetworking.xcconfig"; sourceTree = "<group>"; };
+		F027569F82F2642FB44537A5 /* Pods-VideoDating.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VideoDating.modulemap"; sourceTree = "<group>"; };
+		F18B85637CCB7257C9C65758 /* Pods-VideoDating-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VideoDating-dummy.m"; sourceTree = "<group>"; };
+		F2935C03AFA58D4F27079313 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		F54E856E44C5ED175859134D /* Pods-VideoDating-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VideoDating-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		F5A45C2B5ABD03CA0B5E5B78 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		F5DCE84712948CB66F9EA34C /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		F677156DBC23F9BC8E5FE0A3 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		FCFF73294548CA00BBA56A63 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE1491A12EB8EEC67FFE9E21 /* Pods-VideoDating-AmazonS3RequestManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VideoDating-AmazonS3RequestManager.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		040A8111BCB5DFDF41F77A72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				415C0A231ABC4039B18375AE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AA304E34AFE1C0824807FC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F230AE3F73A7B9A9901768D /* CoreGraphics.framework in Frameworks */,
+				574C61BD0D42E7A80E2A7A51 /* Foundation.framework in Frameworks */,
+				C965C497BF84410326526DF9 /* MobileCoreServices.framework in Frameworks */,
+				28CD946EBE7E90D48F7AC35C /* Security.framework in Frameworks */,
+				19EEC3056CE05EAAE994E975 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E1B837FD8F7B340AC9F3D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F600BD394BAD66A3FB5D83B3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E4F47768E2486F329B683C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCD50C0EF9C07702EC78EDD2 /* Alamofire.framework in Frameworks */,
+				9AFD294075A97E92CC755E0B /* Foundation.framework in Frameworks */,
+				D296C475C59F5283C51FBB53 /* MobileCoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51927B533CDDC30F0E3A8A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01BF9B71C3088E0970BFB71B /* AFNetworking.framework in Frameworks */,
+				51ABC48C2A674353533B6708 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F429455D81411225359D33A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5862C45ACCEC36916B145304 /* AFNetworking.framework */,
+				D5BEA2461512C4F34285E37F /* Alamofire.framework */,
+				C827831DA5F6C1ED0028DA59 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42DD479A7D546E23BF72FE57 /* Pods-VideoDating */ = {
+			isa = PBXGroup;
+			children = (
+				97E9B342E3257733E0521524 /* Info.plist */,
+				F027569F82F2642FB44537A5 /* Pods-VideoDating.modulemap */,
+				9806E812437C8FA2810116DB /* Pods-VideoDating-acknowledgements.markdown */,
+				55A741EC1C780CF70390F498 /* Pods-VideoDating-acknowledgements.plist */,
+				F18B85637CCB7257C9C65758 /* Pods-VideoDating-dummy.m */,
+				98A466E2C3E17112AACD8991 /* Pods-VideoDating-environment.h */,
+				2415EDC8BE5BF0D5878B48C9 /* Pods-VideoDating-frameworks.sh */,
+				CBF29EA8D89E2802E6041413 /* Pods-VideoDating-resources.sh */,
+				B18D6BF225B55B1A170C1606 /* Pods-VideoDating-umbrella.h */,
+				4C33B7A62E7CF142BEB987F4 /* Pods-VideoDating.debug.xcconfig */,
+				A64C035D40FE56303442C27F /* Pods-VideoDating.release.xcconfig */,
+			);
+			name = "Pods-VideoDating";
+			path = "Target Support Files/Pods-VideoDating";
+			sourceTree = "<group>";
+		};
+		4403905CD680C6052AC23411 /* AFAmazonS3Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A9D7202204D02B94DD72BA9B /* AFAmazonS3Manager.h */,
+				53411B2C580C043395BA2CF4 /* AFAmazonS3Manager.m */,
+				C3C1C2A4AE298F0AE169C6FC /* AFAmazonS3RequestSerializer.h */,
+				C45706426126DF2CBB821899 /* AFAmazonS3RequestSerializer.m */,
+				1F93F07BAB83DB879DA41D0C /* AFAmazonS3ResponseSerializer.h */,
+				865E1EB054C5B6569CF03E3B /* AFAmazonS3ResponseSerializer.m */,
+				7B987478B82DD771B40BD939 /* Support Files */,
+			);
+			path = AFAmazonS3Manager;
+			sourceTree = "<group>";
+		};
+		47B6A3F343B1924EA16E0C89 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D22C03CC080B7283596F065E /* AFNetworkActivityIndicatorManager.h */,
+				D65409094170EEC214C2C928 /* AFNetworkActivityIndicatorManager.m */,
+				F677156DBC23F9BC8E5FE0A3 /* UIActivityIndicatorView+AFNetworking.h */,
+				BD140665CD7BA7716348232A /* UIActivityIndicatorView+AFNetworking.m */,
+				E5CCFFA6B76859E0CB91AE76 /* UIAlertView+AFNetworking.h */,
+				6C4983B997EE229AFD4FB717 /* UIAlertView+AFNetworking.m */,
+				4DDC45B5760EFA5595A9D58C /* UIButton+AFNetworking.h */,
+				F5DCE84712948CB66F9EA34C /* UIButton+AFNetworking.m */,
+				800B7ECECCE46AACD0FCEFF1 /* UIImageView+AFNetworking.h */,
+				4B5C6A6A485ACB88088E0519 /* UIImageView+AFNetworking.m */,
+				0FD958200F5663A873A558DB /* UIKit+AFNetworking.h */,
+				F5A45C2B5ABD03CA0B5E5B78 /* UIProgressView+AFNetworking.h */,
+				135817CD94BEC3D7CFE3CAF8 /* UIProgressView+AFNetworking.m */,
+				824F7143D513C84C6275DAD6 /* UIRefreshControl+AFNetworking.h */,
+				E8CCDCC89DC38B667D7A48EE /* UIRefreshControl+AFNetworking.m */,
+				E99C45BEA0B0FFCD10A6357F /* UIWebView+AFNetworking.h */,
+				E74C22A51F7ABE5337CD2E76 /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		4C53BA955FADA1C44AC4EBBB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CD1D90918D4086ECA4B786D /* Info.plist */,
+				FE1491A12EB8EEC67FFE9E21 /* Pods-VideoDating-AmazonS3RequestManager.modulemap */,
+				1370C76E46752E6CE3B86E26 /* Pods-VideoDating-AmazonS3RequestManager.xcconfig */,
+				72B4B1B7655C2D8197003406 /* Pods-VideoDating-AmazonS3RequestManager-Private.xcconfig */,
+				285A0FB40BCC85AE4E61E5F0 /* Pods-VideoDating-AmazonS3RequestManager-dummy.m */,
+				DEF9169F3DD4FC210EBDA52D /* Pods-VideoDating-AmazonS3RequestManager-prefix.pch */,
+				8F68667CB121463F644B091D /* Pods-VideoDating-AmazonS3RequestManager-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VideoDating-AmazonS3RequestManager";
+			sourceTree = "<group>";
+		};
+		559800A0C260A797798FE140 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				3A41BD7C3D799CB33E61BD1B /* AFNetworkReachabilityManager.h */,
+				D7489F191549CB8FDE051F49 /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		64619079913CAF122EEF6840 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				607A39CE811738B8997BC5BC /* AFSecurityPolicy.h */,
+				5BA17073F1B6941B6FFC51A3 /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		679227923C86773A21369FD4 = {
+			isa = PBXGroup;
+			children = (
+				CF6608B6F17F077B26DEB1AC /* Podfile */,
+				1F429455D81411225359D33A /* Frameworks */,
+				B66372225EB997F96E25A206 /* Pods */,
+				94A32901B0D13606677950B2 /* Products */,
+				BAF55EF64B2BA22D7E355AB0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		6F16364112D55F008D402310 /* NSURLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				84B539356845C6B68691BB47 /* AFHTTPRequestOperation.h */,
+				AF46F111336A16716F48EFEC /* AFHTTPRequestOperation.m */,
+				34428F23EBB790223623C7C3 /* AFHTTPRequestOperationManager.h */,
+				5D8B7BB122CB408125014735 /* AFHTTPRequestOperationManager.m */,
+				504F51AA3657207DD1CE28ED /* AFURLConnectionOperation.h */,
+				D546FE1F6952A30DB7FDB4DA /* AFURLConnectionOperation.m */,
+			);
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		7B987478B82DD771B40BD939 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				03A288A949E27FE83F549CB9 /* Info.plist */,
+				E9FF8923410C7D84F229E83F /* Pods-VideoDating-AFAmazonS3Manager.modulemap */,
+				C869DE48D736870B5361FFB7 /* Pods-VideoDating-AFAmazonS3Manager.xcconfig */,
+				80578A07B72976114114F6EE /* Pods-VideoDating-AFAmazonS3Manager-Private.xcconfig */,
+				C889174C9B836A1ED4600DA7 /* Pods-VideoDating-AFAmazonS3Manager-dummy.m */,
+				8F73AB348ADC0D7EFE1A558A /* Pods-VideoDating-AFAmazonS3Manager-prefix.pch */,
+				7DDDACB4AC9714BDCEC2FE9D /* Pods-VideoDating-AFAmazonS3Manager-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VideoDating-AFAmazonS3Manager";
+			sourceTree = "<group>";
+		};
+		8F16138F681DBC2FBE00A9B7 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C46E91A83CB2D6D22E5190E9 /* AFNetworking.h */,
+				6F16364112D55F008D402310 /* NSURLConnection */,
+				BC3BF89A90A1261E15BED8C5 /* NSURLSession */,
+				559800A0C260A797798FE140 /* Reachability */,
+				64619079913CAF122EEF6840 /* Security */,
+				93BA79C82FB01496676CD448 /* Serialization */,
+				91A8645D625D349A3195D94C /* Support Files */,
+				47B6A3F343B1924EA16E0C89 /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		91A8645D625D349A3195D94C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4CEF37F79AF5829E0F3BE65 /* Info.plist */,
+				7F957FAFC54CCF4F6A1486FA /* Pods-VideoDating-AFNetworking.modulemap */,
+				ED9C7CEA2126F57EA89B9E19 /* Pods-VideoDating-AFNetworking.xcconfig */,
+				BCC15D7E15FB6512670FC51C /* Pods-VideoDating-AFNetworking-Private.xcconfig */,
+				7F651ADD4C4F0111CD144F97 /* Pods-VideoDating-AFNetworking-dummy.m */,
+				70C778F57C28E602AD5B7332 /* Pods-VideoDating-AFNetworking-prefix.pch */,
+				8E9EA99DB7CC393AE1CC0306 /* Pods-VideoDating-AFNetworking-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VideoDating-AFNetworking";
+			sourceTree = "<group>";
+		};
+		93BA79C82FB01496676CD448 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				7D04731812D7E1827A094477 /* AFURLRequestSerialization.h */,
+				F2935C03AFA58D4F27079313 /* AFURLRequestSerialization.m */,
+				57F78F282FC7878E36B98406 /* AFURLResponseSerialization.h */,
+				7DA7A882235294A70951200E /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		94A32901B0D13606677950B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEFC60CF441694E029421565 /* AFAmazonS3Manager.framework */,
+				3935A2B1A38E74A983C1D1B6 /* AFNetworking.framework */,
+				AF56ACAC7300C915576B65E2 /* Alamofire.framework */,
+				D0DE29E283F2FF41659F77F4 /* AmazonS3RequestManager.framework */,
+				0BD4D839571C35A3A09A8F26 /* Pods_VideoDating.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC7EA2B6179B3A75995774B0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCFF73294548CA00BBA56A63 /* Info.plist */,
+				9783EC3104F5FE11EDA07023 /* Pods-VideoDating-Alamofire.modulemap */,
+				2BA1351FEA88EC9EB94FD828 /* Pods-VideoDating-Alamofire.xcconfig */,
+				AC77D8428E07DFF86B3A1839 /* Pods-VideoDating-Alamofire-Private.xcconfig */,
+				F54E856E44C5ED175859134D /* Pods-VideoDating-Alamofire-dummy.m */,
+				8192CB59CCAD8D399A69EE23 /* Pods-VideoDating-Alamofire-prefix.pch */,
+				6EE17209FA3A2074BE8B183E /* Pods-VideoDating-Alamofire-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VideoDating-Alamofire";
+			sourceTree = "<group>";
+		};
+		B66372225EB997F96E25A206 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4403905CD680C6052AC23411 /* AFAmazonS3Manager */,
+				8F16138F681DBC2FBE00A9B7 /* AFNetworking */,
+				EBE11553D131326ACC6B12A6 /* Alamofire */,
+				E92CB28A9D2B5A00B39A1972 /* AmazonS3RequestManager */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BAF55EF64B2BA22D7E355AB0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				42DD479A7D546E23BF72FE57 /* Pods-VideoDating */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3BF89A90A1261E15BED8C5 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				1964506EC61678DEE73C48C8 /* AFHTTPSessionManager.h */,
+				A845D9C1609C01E942F51D54 /* AFHTTPSessionManager.m */,
+				484314E8F5EE42F18BC17BC1 /* AFURLSessionManager.h */,
+				5499137DF03F10807A447640 /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		C827831DA5F6C1ED0028DA59 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0C36B9284240817894A7A355 /* CoreGraphics.framework */,
+				4AB3E43A5D94B4C712DE19AC /* Foundation.framework */,
+				CFE664ED91AEFFB3E938DDD3 /* MobileCoreServices.framework */,
+				6913065FE7FB4E554B4381A5 /* Security.framework */,
+				5BFD2529AC6BC144FBF85AC0 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E92CB28A9D2B5A00B39A1972 /* AmazonS3RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				ED0590A0A8ED2187920D3FAA /* AmazonS3ACL.swift */,
+				D61A4A903087BE3FEC2A2E3F /* AmazonS3RequestManager.h */,
+				CBF906F6B755F39CEF531C3A /* AmazonS3RequestManager.swift */,
+				7FA2CD55373E9137ABC917B5 /* AmazonS3SignatureHelpers.h */,
+				2C4B4C4B296F7846D2AE4780 /* AmazonS3SignatureHelpers.m */,
+				4C53BA955FADA1C44AC4EBBB /* Support Files */,
+			);
+			path = AmazonS3RequestManager;
+			sourceTree = "<group>";
+		};
+		EBE11553D131326ACC6B12A6 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				E66F36DD3A7857E1C7991562 /* Alamofire.swift */,
+				27031B237BDDD6C89D5A3641 /* Download.swift */,
+				677AB100A1F349E2A3FABE6D /* Manager.swift */,
+				705541E04AF5F5258FE4D518 /* ParameterEncoding.swift */,
+				2C7B121C4D8F4EE4A9FD8E1D /* Request.swift */,
+				A31383C5915D9FFCB4BFEB35 /* ResponseSerialization.swift */,
+				2A443ABEA1C2A8AC35132237 /* Upload.swift */,
+				48EEE58D8CBD81F0A40C6913 /* Validation.swift */,
+				AC7EA2B6179B3A75995774B0 /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		03E22AF8C193024F2B29814D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0654FFB99B0764E700764C8 /* AFAmazonS3Manager.h in Headers */,
+				C4070D3C94FFB05F389CF7A8 /* AFAmazonS3RequestSerializer.h in Headers */,
+				44ABDF8AE911FB74A55D7F07 /* AFAmazonS3ResponseSerializer.h in Headers */,
+				D91E314B7556117CAFC153B6 /* Pods-VideoDating-AFAmazonS3Manager-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EB79190AE31CC9EB01053A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA316932BA1B0F30356CF7EF /* Pods-VideoDating-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54C0F5FAC7636BEA23D58A91 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC73AEC136218EA4BA86804 /* Pods-VideoDating-Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFCFB75853A3026657DA13B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0332FA84E32E7D1B238613 /* AmazonS3RequestManager.h in Headers */,
+				7716FCBE60A06911C0E6E709 /* AmazonS3SignatureHelpers.h in Headers */,
+				A035195FEEE85FB07480C0E1 /* Pods-VideoDating-AmazonS3RequestManager-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC00AC84DAE634976849081 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97D5135D4245C8C3606ADDF /* AFHTTPRequestOperation.h in Headers */,
+				2BE516D56642FC9F983E7B39 /* AFHTTPRequestOperationManager.h in Headers */,
+				DA65390D35A68001F083455F /* AFHTTPSessionManager.h in Headers */,
+				B89F59BD6F27B798063D4E67 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				A127F5ED243BFE13FB8D2F06 /* AFNetworkReachabilityManager.h in Headers */,
+				01C4AF535F5FE739EA0AFF16 /* AFNetworking.h in Headers */,
+				CFCC6DDAFE891D7778E37FA0 /* AFSecurityPolicy.h in Headers */,
+				F90C2CC88D7E13C7E5973822 /* AFURLConnectionOperation.h in Headers */,
+				A808CDCD4AE9EE8D561B84D5 /* AFURLRequestSerialization.h in Headers */,
+				D4D8AAABCCBA7B939BE74B7C /* AFURLResponseSerialization.h in Headers */,
+				845AE9FFC0F0884E562838AC /* AFURLSessionManager.h in Headers */,
+				5FE363B871508FB17E663D48 /* Pods-VideoDating-AFNetworking-umbrella.h in Headers */,
+				28E886CD1F0398395A760B94 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				BE7B288FC9E9DACCC5896067 /* UIAlertView+AFNetworking.h in Headers */,
+				68E46C25510F222E1C711A5B /* UIButton+AFNetworking.h in Headers */,
+				E549A36C0AC599CE29F7494A /* UIImageView+AFNetworking.h in Headers */,
+				6397FB61CA411F127C937077 /* UIKit+AFNetworking.h in Headers */,
+				398ED5D65BD89104D93CCECB /* UIProgressView+AFNetworking.h in Headers */,
+				42B8FF400DB2CB1CB9FD3236 /* UIRefreshControl+AFNetworking.h in Headers */,
+				5776A4689A576C599B7289A0 /* UIWebView+AFNetworking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		098763BD196B8CD055334F0D /* Pods-VideoDating-AFAmazonS3Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A03EFBFE243D129476209D70 /* Build configuration list for PBXNativeTarget "Pods-VideoDating-AFAmazonS3Manager" */;
+			buildPhases = (
+				550FC4C54F67BF152730D5F4 /* Sources */,
+				51927B533CDDC30F0E3A8A28 /* Frameworks */,
+				03E22AF8C193024F2B29814D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2C318D4791228E3AA6944D8 /* PBXTargetDependency */,
+			);
+			name = "Pods-VideoDating-AFAmazonS3Manager";
+			productName = "Pods-VideoDating-AFAmazonS3Manager";
+			productReference = AEFC60CF441694E029421565 /* AFAmazonS3Manager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		179F469AC66C854D864D2852 /* Pods-VideoDating-Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC45AB38E7C9EAC366EC5AA4 /* Build configuration list for PBXNativeTarget "Pods-VideoDating-Alamofire" */;
+			buildPhases = (
+				886037D5B1676ED95081B628 /* Sources */,
+				26E1B837FD8F7B340AC9F3D1 /* Frameworks */,
+				54C0F5FAC7636BEA23D58A91 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VideoDating-Alamofire";
+			productName = "Pods-VideoDating-Alamofire";
+			productReference = AF56ACAC7300C915576B65E2 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2C80BB4070113629F48345CC /* Pods-VideoDating-AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E59F43899186F6CF05DBF9 /* Build configuration list for PBXNativeTarget "Pods-VideoDating-AFNetworking" */;
+			buildPhases = (
+				913889F1D3F4714B0B0BE94A /* Sources */,
+				1AA304E34AFE1C0824807FC2 /* Frameworks */,
+				FEC00AC84DAE634976849081 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VideoDating-AFNetworking";
+			productName = "Pods-VideoDating-AFNetworking";
+			productReference = 3935A2B1A38E74A983C1D1B6 /* AFNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		689DD66322B3CE1814F1B178 /* Pods-VideoDating-AmazonS3RequestManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2382228E07301448DBFCFDC /* Build configuration list for PBXNativeTarget "Pods-VideoDating-AmazonS3RequestManager" */;
+			buildPhases = (
+				EEE8C4BD0106A805BBF4187D /* Sources */,
+				4E4F47768E2486F329B683C2 /* Frameworks */,
+				AFCFB75853A3026657DA13B3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				344F30839F7DFC626449D11D /* PBXTargetDependency */,
+			);
+			name = "Pods-VideoDating-AmazonS3RequestManager";
+			productName = "Pods-VideoDating-AmazonS3RequestManager";
+			productReference = D0DE29E283F2FF41659F77F4 /* AmazonS3RequestManager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FAAF1134EDECC7880D77A5CC /* Pods-VideoDating */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88410D0AF4255C58459B3DB /* Build configuration list for PBXNativeTarget "Pods-VideoDating" */;
+			buildPhases = (
+				AEED976D578D48D10D828975 /* Sources */,
+				040A8111BCB5DFDF41F77A72 /* Frameworks */,
+				0EB79190AE31CC9EB01053A3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71C16BC30DEAC64078B7416F /* PBXTargetDependency */,
+				9C25BE2738B74BAEE8A35E40 /* PBXTargetDependency */,
+				CBCB6005EB2911CF22D14317 /* PBXTargetDependency */,
+				0110BAF06C1C39A7B0801C61 /* PBXTargetDependency */,
+			);
+			name = "Pods-VideoDating";
+			productName = "Pods-VideoDating";
+			productReference = 0BD4D839571C35A3A09A8F26 /* Pods_VideoDating.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4295C384A4E2C5698DC964F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = D9FB0A8CA7247F38A9657BBB /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 679227923C86773A21369FD4;
+			productRefGroup = 94A32901B0D13606677950B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAAF1134EDECC7880D77A5CC /* Pods-VideoDating */,
+				098763BD196B8CD055334F0D /* Pods-VideoDating-AFAmazonS3Manager */,
+				2C80BB4070113629F48345CC /* Pods-VideoDating-AFNetworking */,
+				179F469AC66C854D864D2852 /* Pods-VideoDating-Alamofire */,
+				689DD66322B3CE1814F1B178 /* Pods-VideoDating-AmazonS3RequestManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		550FC4C54F67BF152730D5F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05EC2AE11EA8125D912B07B6 /* AFAmazonS3Manager.m in Sources */,
+				E3131E93228DAAF162AB8CA1 /* AFAmazonS3RequestSerializer.m in Sources */,
+				BCEA84C6B5B1C2902F5156B7 /* AFAmazonS3ResponseSerializer.m in Sources */,
+				131A57742446BDA2281C125A /* Pods-VideoDating-AFAmazonS3Manager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886037D5B1676ED95081B628 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B132A53843E2B464019266F0 /* Alamofire.swift in Sources */,
+				8CD78DDD749C2DCCDDFC353B /* Download.swift in Sources */,
+				EBB35503E342AB11E3EB012D /* Manager.swift in Sources */,
+				602957561126786D8C891B1B /* ParameterEncoding.swift in Sources */,
+				ED774772287ECB08AB26BB08 /* Pods-VideoDating-Alamofire-dummy.m in Sources */,
+				A13931F21DAA56A8BACB7BB7 /* Request.swift in Sources */,
+				D01097160D9D0BA3CF149022 /* ResponseSerialization.swift in Sources */,
+				8DD7F103C374567E9B16B348 /* Upload.swift in Sources */,
+				39786D5FCB385131E33F3D72 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		913889F1D3F4714B0B0BE94A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A9035253A24D8831D4E644 /* AFHTTPRequestOperation.m in Sources */,
+				1D6DE446E387E163273CD05E /* AFHTTPRequestOperationManager.m in Sources */,
+				C39201E3F6D25DBB2A223275 /* AFHTTPSessionManager.m in Sources */,
+				BAB989E74ABB0A55A8D3222B /* AFNetworkActivityIndicatorManager.m in Sources */,
+				2422528285B6412BEE37F3E6 /* AFNetworkReachabilityManager.m in Sources */,
+				CA166457A7C0E8AC4B5F827E /* AFSecurityPolicy.m in Sources */,
+				42F1FD6C8E9F786449CA16BC /* AFURLConnectionOperation.m in Sources */,
+				EA01CEAAC6225700F46BB0CB /* AFURLRequestSerialization.m in Sources */,
+				545AB2CE532F52A799B7C759 /* AFURLResponseSerialization.m in Sources */,
+				CCABBC7F8E13A085E16F70EB /* AFURLSessionManager.m in Sources */,
+				1E565A81A6DCB71046761280 /* Pods-VideoDating-AFNetworking-dummy.m in Sources */,
+				BFAB60257FD50CB55B77BB36 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				62E960630AA446CC7A89F6F2 /* UIAlertView+AFNetworking.m in Sources */,
+				3218B382EA87DEF66F1FE83E /* UIButton+AFNetworking.m in Sources */,
+				A3E40A1FBD5AFD1025947BC4 /* UIImageView+AFNetworking.m in Sources */,
+				37A641776AEC82DA55A29D95 /* UIProgressView+AFNetworking.m in Sources */,
+				55434576851BD61C0CA67981 /* UIRefreshControl+AFNetworking.m in Sources */,
+				90C03C97AC69ADF8EAA115ED /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEED976D578D48D10D828975 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02629572D95FF52DAA0778C1 /* Pods-VideoDating-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE8C4BD0106A805BBF4187D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE475C362C2ABDC92AB99807 /* AmazonS3ACL.swift in Sources */,
+				F8389D96A206FEFDB64CEC5A /* AmazonS3RequestManager.swift in Sources */,
+				C6F12C6FCEA6AFC64B65C3BB /* AmazonS3SignatureHelpers.m in Sources */,
+				6D1C4AA3E8C7F77449BB6E0F /* Pods-VideoDating-AmazonS3RequestManager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0110BAF06C1C39A7B0801C61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VideoDating-AmazonS3RequestManager";
+			target = 689DD66322B3CE1814F1B178 /* Pods-VideoDating-AmazonS3RequestManager */;
+			targetProxy = CE92473557CFDED41414366E /* PBXContainerItemProxy */;
+		};
+		344F30839F7DFC626449D11D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VideoDating-Alamofire";
+			target = 179F469AC66C854D864D2852 /* Pods-VideoDating-Alamofire */;
+			targetProxy = D5C71FA4F671C28256DCDFE7 /* PBXContainerItemProxy */;
+		};
+		71C16BC30DEAC64078B7416F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VideoDating-AFAmazonS3Manager";
+			target = 098763BD196B8CD055334F0D /* Pods-VideoDating-AFAmazonS3Manager */;
+			targetProxy = B24EA317F3F6BEB6AC0F761F /* PBXContainerItemProxy */;
+		};
+		9C25BE2738B74BAEE8A35E40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VideoDating-AFNetworking";
+			target = 2C80BB4070113629F48345CC /* Pods-VideoDating-AFNetworking */;
+			targetProxy = 41109FFCD01D411DC0A77BBD /* PBXContainerItemProxy */;
+		};
+		CBCB6005EB2911CF22D14317 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VideoDating-Alamofire";
+			target = 179F469AC66C854D864D2852 /* Pods-VideoDating-Alamofire */;
+			targetProxy = 896173CC25BB4508567E1965 /* PBXContainerItemProxy */;
+		};
+		D2C318D4791228E3AA6944D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VideoDating-AFNetworking";
+			target = 2C80BB4070113629F48345CC /* Pods-VideoDating-AFNetworking */;
+			targetProxy = 8E8E3958F57D9836508C4315 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		045DBB069E70E57D56526377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCC15D7E15FB6512670FC51C /* Pods-VideoDating-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-AFNetworking/Pods-VideoDating-AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-AFNetworking/Pods-VideoDating-AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		13AD0461AFC1E29E799928D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80578A07B72976114114F6EE /* Pods-VideoDating-AFAmazonS3Manager-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-AFAmazonS3Manager/Pods-VideoDating-AFAmazonS3Manager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-AFAmazonS3Manager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-AFAmazonS3Manager/Pods-VideoDating-AFAmazonS3Manager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFAmazonS3Manager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		143698F59A538D515AEC0AF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80578A07B72976114114F6EE /* Pods-VideoDating-AFAmazonS3Manager-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-AFAmazonS3Manager/Pods-VideoDating-AFAmazonS3Manager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-AFAmazonS3Manager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-AFAmazonS3Manager/Pods-VideoDating-AFAmazonS3Manager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFAmazonS3Manager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		358DDC24A5FE8F6A69639FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72B4B1B7655C2D8197003406 /* Pods-VideoDating-AmazonS3RequestManager-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-AmazonS3RequestManager/Pods-VideoDating-AmazonS3RequestManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-AmazonS3RequestManager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-AmazonS3RequestManager/Pods-VideoDating-AmazonS3RequestManager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AmazonS3RequestManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5C6432229938837FF84827C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCC15D7E15FB6512670FC51C /* Pods-VideoDating-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-AFNetworking/Pods-VideoDating-AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-AFNetworking/Pods-VideoDating-AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6F04768404C21B446BDCC803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C33B7A62E7CF142BEB987F4 /* Pods-VideoDating.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating/Pods-VideoDating.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_VideoDating;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		81680612BDF5662296699DCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC77D8428E07DFF86B3A1839 /* Pods-VideoDating-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-Alamofire/Pods-VideoDating-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-Alamofire/Pods-VideoDating-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		92937717DF266A0F59B782C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC77D8428E07DFF86B3A1839 /* Pods-VideoDating-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-Alamofire/Pods-VideoDating-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-Alamofire/Pods-VideoDating-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1845C4E9C95AE3A15FDFEBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72B4B1B7655C2D8197003406 /* Pods-VideoDating-AmazonS3RequestManager-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VideoDating-AmazonS3RequestManager/Pods-VideoDating-AmazonS3RequestManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating-AmazonS3RequestManager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating-AmazonS3RequestManager/Pods-VideoDating-AmazonS3RequestManager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AmazonS3RequestManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C77BDB0055618603E32DF514 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A64C035D40FE56303442C27F /* Pods-VideoDating.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoDating/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoDating/Pods-VideoDating.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_VideoDating;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D1DCD3C2296010B68C70B4B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D77A18ADD28A4963C4C1DBF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E59F43899186F6CF05DBF9 /* Build configuration list for PBXNativeTarget "Pods-VideoDating-AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C6432229938837FF84827C8 /* Debug */,
+				045DBB069E70E57D56526377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A03EFBFE243D129476209D70 /* Build configuration list for PBXNativeTarget "Pods-VideoDating-AFAmazonS3Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				143698F59A538D515AEC0AF3 /* Debug */,
+				13AD0461AFC1E29E799928D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88410D0AF4255C58459B3DB /* Build configuration list for PBXNativeTarget "Pods-VideoDating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F04768404C21B446BDCC803 /* Debug */,
+				C77BDB0055618603E32DF514 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9FB0A8CA7247F38A9657BBB /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1DCD3C2296010B68C70B4B7 /* Debug */,
+				D77A18ADD28A4963C4C1DBF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2382228E07301448DBFCFDC /* Build configuration list for PBXNativeTarget "Pods-VideoDating-AmazonS3RequestManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1845C4E9C95AE3A15FDFEBC /* Debug */,
+				358DDC24A5FE8F6A69639FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC45AB38E7C9EAC366EC5AA4 /* Build configuration list for PBXNativeTarget "Pods-VideoDating-Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92937717DF266A0F59B782C4 /* Debug */,
+				81680612BDF5662296699DCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4295C384A4E2C5698DC964F7 /* Project object */;
+}

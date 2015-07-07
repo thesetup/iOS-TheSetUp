@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-VideoDating-AFAmazonS3Manager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VideoDating-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VideoDating-Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VideoDating-AmazonS3RequestManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VideoDating.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>098763BD196B8CD055334F0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>179F469AC66C854D864D2852</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2C80BB4070113629F48345CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>689DD66322B3CE1814F1B178</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAAF1134EDECC7880D77A5CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
