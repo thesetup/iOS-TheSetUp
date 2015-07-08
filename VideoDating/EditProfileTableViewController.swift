@@ -1,15 +1,41 @@
 //
-//  ProfileMenuViewController.swift
+//  EditProfileTableViewController.swift
 //  VideoDating
 //
-//  Created by Kyle Brooks Robinson on 7/6/15.
+//  Created by Kyle Brooks Robinson on 7/8/15.
 //  Copyright (c) 2015 Kyle Brooks Robinson. All rights reserved.
 //
 
 import UIKit
 
-class ProfileMenuViewController: UITableViewController {
+class EditProfileTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate {
 
+    //Section 1 Outlets
+    
+    @IBOutlet weak var profilePictureView: RadiusView!
+    @IBOutlet weak var addProfilePicture: UIButton!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var yearOfBirthTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var sexTextField: UITextField!
+    @IBOutlet weak var orientationTextField: UITextField!
+    @IBOutlet weak var occupationTextField: UITextField!
+    
+    // Main Video
+    @IBOutlet weak var mainVideo: UIImageView!
+    
+    // Looking For Video
+    @IBOutlet weak var lookingForVideo: RadiusView!
+    
+    // Collection Views
+    @IBOutlet weak var hobbyCollectionView: UICollectionView!
+    @IBOutlet weak var tastesCollectionView: UICollectionView!
+    
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,19 +65,47 @@ class ProfileMenuViewController: UITableViewController {
         return 0
     }
 
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let hobbiesCell = hobbyCollectionView.cellForItemAtIndexPath(indexPath) as! HobbiesCollectionViewCell
+        
+        let tastesCell = tastesCollectionView.cellForItemAtIndexPath(indexPath) as! TastesCollectionViewCell
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let hobbiesCell = collectionView.dequeueReusableCellWithReuseIdentifier("hobbiesCell", forIndexPath: indexPath) as! HobbiesCollectionViewCell
+        
+        let tastesCell = collectionView.dequeueReusableCellWithReuseIdentifier("tastesCell", forIndexPath: indexPath) as! TastesCollectionViewCell
+        
+        return hobbiesCell
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 0
+        
+    }
+    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("mainMenuCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
 
         return cell
     }
+    */
 
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
+    */
 
     /*
     // Override to support editing the table view.

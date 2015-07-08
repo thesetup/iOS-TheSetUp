@@ -23,11 +23,9 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func bypassButton(sender: AnyObject) {
         
-        var TakeVideoFlow = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
+        let mainMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
         
-        let videoCamVC = TakeVideoFlow.instantiateViewControllerWithIdentifier("videoCamVC") as! VideoCamViewController
-        
-        presentViewController(videoCamVC, animated: true, completion: nil)
+        presentViewController(mainMenuVC, animated: true, completion: nil)
         
     }
 

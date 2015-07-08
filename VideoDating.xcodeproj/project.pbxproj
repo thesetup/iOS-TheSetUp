@@ -11,7 +11,6 @@
 		9185EB251B4C09E3004A6BD8 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185EB241B4C09E3004A6BD8 /* PlayButton.swift */; };
 		9185EB271B4C0B9D004A6BD8 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185EB261B4C0B9D004A6BD8 /* Math.swift */; };
 		9185EB291B4C1050004A6BD8 /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185EB281B4C1050004A6BD8 /* StopButton.swift */; };
-		9185EB2C1B4C1F5B004A6BD8 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9185EB2B1B4C1F5B004A6BD8 /* CreateProfile.storyboard */; };
 		91B1B5021B45C38B00958D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5011B45C38B00958D38 /* AppDelegate.swift */; };
 		91B1B5071B45C38B00958D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5051B45C38B00958D38 /* Main.storyboard */; };
 		91B1B5091B45C38B00958D38 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5081B45C38B00958D38 /* Images.xcassets */; };
@@ -31,7 +30,7 @@
 		91B1B53D1B45D90D00958D38 /* EditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B53C1B45D90D00958D38 /* EditDetailViewController.swift */; };
 		91B1B5431B46BE3D00958D38 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5421B46BE3D00958D38 /* Keys.swift */; };
 		91B1B5451B470B1700958D38 /* S3Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5441B470B1700958D38 /* S3Request.swift */; };
-		91B1B5511B47226100958D38 /* VideoCamResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5501B47226100958D38 /* VideoCamResultViewController.swift */; };
+		91B1B5511B47226100958D38 /* SaveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5501B47226100958D38 /* SaveVideoViewController.swift */; };
 		91B1B5541B4722A900958D38 /* TakeVideoFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */; };
 		91B1B5581B48348300958D38 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5571B48348300958D38 /* EditProfileViewController.swift */; };
 		91B1B55A1B48356100958D38 /* EditSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5591B48356100958D38 /* EditSectionViewController.swift */; };
@@ -39,10 +38,14 @@
 		91B1B5A01B4B4F3E00958D38 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */; };
 		91B1B5A21B4B50CD00958D38 /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */; };
 		91B1B5A41B4B527F00958D38 /* ApplicationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */; };
-		91B1B5A71B4B535D00958D38 /* Applications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5A61B4B535D00958D38 /* Applications.storyboard */; };
+		91B1B5A71B4B535D00958D38 /* ProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5A61B4B535D00958D38 /* ProfileFlow.storyboard */; };
 		91B1B5A91B4B551E00958D38 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A81B4B551E00958D38 /* CircleView.swift */; };
 		91B1B5AB1B4B563100958D38 /* ApplicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5AA1B4B563100958D38 /* ApplicationsTableViewCell.swift */; };
 		91B1B5AD1B4B5A1600958D38 /* ApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */; };
+		91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */; };
+		91F5CBCA1B4D9FA90009A178 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */; };
+		91F5CBCC1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */; };
+		91F5CBCE1B4DAB0C0009A178 /* TastesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +64,6 @@
 		9185EB241B4C09E3004A6BD8 /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		9185EB261B4C0B9D004A6BD8 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		9185EB281B4C1050004A6BD8 /* StopButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
-		9185EB2B1B4C1F5B004A6BD8 /* CreateProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		91B1B4FC1B45C38B00958D38 /* VideoDating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoDating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B1B5001B45C38B00958D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B1B5011B45C38B00958D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +88,7 @@
 		91B1B5421B46BE3D00958D38 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		91B1B5441B470B1700958D38 /* S3Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3Request.swift; sourceTree = "<group>"; };
 		91B1B5481B470C4000958D38 /* VideoDating-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoDating-Bridging-Header.h"; sourceTree = "<group>"; };
-		91B1B5501B47226100958D38 /* VideoCamResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCamResultViewController.swift; sourceTree = "<group>"; };
+		91B1B5501B47226100958D38 /* SaveVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveVideoViewController.swift; sourceTree = "<group>"; };
 		91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TakeVideoFlow.storyboard; sourceTree = "<group>"; };
 		91B1B5571B48348300958D38 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		91B1B5591B48356100958D38 /* EditSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSectionViewController.swift; sourceTree = "<group>"; };
@@ -94,10 +96,14 @@
 		91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMenuCell.swift; sourceTree = "<group>"; };
 		91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewController.swift; sourceTree = "<group>"; };
-		91B1B5A61B4B535D00958D38 /* Applications.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Applications.storyboard; sourceTree = "<group>"; };
+		91B1B5A61B4B535D00958D38 /* ProfileFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileFlow.storyboard; sourceTree = "<group>"; };
 		91B1B5A81B4B551E00958D38 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		91B1B5AA1B4B563100958D38 /* ApplicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewCell.swift; sourceTree = "<group>"; };
 		91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDetailViewController.swift; sourceTree = "<group>"; };
+		91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
+		91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastesCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1221190F24DD6BD0C5479FD /* Pods-VideoDating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoDating.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoDating/Pods-VideoDating.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,9 +137,15 @@
 		9185EB2A1B4C1F35004A6BD8 /* ProfileFlow */ = {
 			isa = PBXGroup;
 			children = (
-				9185EB2B1B4C1F5B004A6BD8 /* CreateProfile.storyboard */,
+				91B1B5A61B4B535D00958D38 /* ProfileFlow.storyboard */,
 				91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */,
 				91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */,
+				91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */,
+				91B1B5AA1B4B563100958D38 /* ApplicationsTableViewCell.swift */,
+				91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */,
+				91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */,
+				91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */,
+				91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */,
 			);
 			name = ProfileFlow;
 			sourceTree = "<group>";
@@ -163,7 +175,6 @@
 			children = (
 				91B1B54E1B4721D400958D38 /* LoginFlow */,
 				9185EB2A1B4C1F35004A6BD8 /* ProfileFlow */,
-				91B1B5A51B4B534300958D38 /* ApplicationsFlow */,
 				91B1B5521B47226C00958D38 /* ProfileFlow */,
 				91B1B54F1B4721E500958D38 /* TakeVideoFlow */,
 				91B1B52D1B45C4F300958D38 /* CustomElements */,
@@ -225,6 +236,7 @@
 				91B1B5211B45C3AC00958D38 /* WelcomeViewController.swift */,
 				91B1B5231B45C3D300958D38 /* LoginViewController.swift */,
 				91B1B5251B45C3DF00958D38 /* RegisterViewController.swift */,
+				91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */,
 			);
 			name = LoginFlow;
 			sourceTree = "<group>";
@@ -234,7 +246,7 @@
 			children = (
 				91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */,
 				91B1B5271B45C3F300958D38 /* VideoCamViewController.swift */,
-				91B1B5501B47226100958D38 /* VideoCamResultViewController.swift */,
+				91B1B5501B47226100958D38 /* SaveVideoViewController.swift */,
 				91B1B5291B45C40300958D38 /* EditVideoViewController.swift */,
 				91B1B53C1B45D90D00958D38 /* EditDetailViewController.swift */,
 				91B1B5321B45C6E300958D38 /* VideoCell.swift */,
@@ -251,17 +263,6 @@
 				91B1B5591B48356100958D38 /* EditSectionViewController.swift */,
 			);
 			name = ProfileFlow;
-			sourceTree = "<group>";
-		};
-		91B1B5A51B4B534300958D38 /* ApplicationsFlow */ = {
-			isa = PBXGroup;
-			children = (
-				91B1B5A61B4B535D00958D38 /* Applications.storyboard */,
-				91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */,
-				91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */,
-				91B1B5AA1B4B563100958D38 /* ApplicationsTableViewCell.swift */,
-			);
-			name = ApplicationsFlow;
 			sourceTree = "<group>";
 		};
 		EDC2672AF4930C3EEB385F73 /* Pods */ = {
@@ -358,9 +359,8 @@
 			files = (
 				91B1B55C1B48357900958D38 /* Profile.storyboard in Resources */,
 				91B1B5371B45C93100958D38 /* Porkins.jpg in Resources */,
-				91B1B5A71B4B535D00958D38 /* Applications.storyboard in Resources */,
+				91B1B5A71B4B535D00958D38 /* ProfileFlow.storyboard in Resources */,
 				91B1B5071B45C38B00958D38 /* Main.storyboard in Resources */,
-				9185EB2C1B4C1F5B004A6BD8 /* CreateProfile.storyboard in Resources */,
 				91B1B50C1B45C38B00958D38 /* LaunchScreen.xib in Resources */,
 				91B1B5091B45C38B00958D38 /* Images.xcassets in Resources */,
 				91B1B5541B4722A900958D38 /* TakeVideoFlow.storyboard in Resources */,
@@ -430,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B1B5A01B4B4F3E00958D38 /* ProfileMenuViewController.swift in Sources */,
+				91F5CBCA1B4D9FA90009A178 /* EditProfileTableViewController.swift in Sources */,
 				91B1B52A1B45C40300958D38 /* EditVideoViewController.swift in Sources */,
 				91B1B5A41B4B527F00958D38 /* ApplicationsTableViewController.swift in Sources */,
 				91B1B5241B45C3D300958D38 /* LoginViewController.swift in Sources */,
@@ -438,7 +439,9 @@
 				9185EB251B4C09E3004A6BD8 /* PlayButton.swift in Sources */,
 				91B1B5311B45C53D00958D38 /* CustomButton.swift in Sources */,
 				91B1B5281B45C3F300958D38 /* VideoCamViewController.swift in Sources */,
+				91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */,
 				91B1B5221B45C3AC00958D38 /* WelcomeViewController.swift in Sources */,
+				91F5CBCC1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift in Sources */,
 				91B1B5A21B4B50CD00958D38 /* ProfileMenuCell.swift in Sources */,
 				91B1B5391B45D3EE00958D38 /* RailsRequest.swift in Sources */,
 				91B1B5AB1B4B563100958D38 /* ApplicationsTableViewCell.swift in Sources */,
@@ -446,6 +449,7 @@
 				91B1B5451B470B1700958D38 /* S3Request.swift in Sources */,
 				9185EB291B4C1050004A6BD8 /* StopButton.swift in Sources */,
 				91B1B5A91B4B551E00958D38 /* CircleView.swift in Sources */,
+				91F5CBCE1B4DAB0C0009A178 /* TastesCollectionViewCell.swift in Sources */,
 				91B1B5581B48348300958D38 /* EditProfileViewController.swift in Sources */,
 				91B1B5021B45C38B00958D38 /* AppDelegate.swift in Sources */,
 				91B1B5351B45C7FF00958D38 /* RadiusView.swift in Sources */,
@@ -454,7 +458,7 @@
 				91B1B55A1B48356100958D38 /* EditSectionViewController.swift in Sources */,
 				91B1B52F1B45C50B00958D38 /* GradientView.swift in Sources */,
 				91B1B5261B45C3DF00958D38 /* RegisterViewController.swift in Sources */,
-				91B1B5511B47226100958D38 /* VideoCamResultViewController.swift in Sources */,
+				91B1B5511B47226100958D38 /* SaveVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

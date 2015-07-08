@@ -16,61 +16,92 @@ private let _singleton = S3Request()
 
 let S3_URL = "https://s3.amazonaws.com/videodatingbucket/"
 
+let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+
 class S3Request: NSObject {
+    
+    class func session() -> S3Request { return _singleton }
     
     let s3Manager = AFAmazonS3Manager(accessKeyID: accessKey, secret: secret)
     
-    var userID = RailsRequest.session().email
+    var userID: String = "KyleTest"
     var newURL: String?
+    var videoURL: String?
+    var thumbnail: UIImage?
     
-    func saveImageToS3(image: UIImage) {
+    var timeyNumber = Int(NSDate().timeIntervalSince1970 * 0.01)
+    
+    var videoName: String {
+        return "/\(userID)_\(timeyNumber).mp4"
+    }
+    
+    var videoFile: String {
+        return documentsDirectory + videoName
+    }
+    
+    var resizedVideoURL: NSURL? {
+        return NSURL(fileURLWithPath: videoFile)
+    }
+    
+    
+    func saveVideoToS3() {
         
         s3Manager.requestSerializer.bucket = bucket
         s3Manager.requestSerializer.region = AFAmazonS3USStandardRegion
-        //                s3Manager.requestSerializer.setValue("public-read", forHTTPHeaderField: "x-amz-acl")
-        
-//        let username = RailsRequest.session().username
-        
-        let timestamp = Int(NSDate().timeIntervalSince1970)
-        
-        let imageName = "\(userID)_\(timestamp)"
-        
-        let imageData = UIImagePNGRepresentation(image)
+        //        s3Manager.requestSerializer.setValue("public-read", forHTTPHeaderField: "x-amz-acl")
         
         if let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as? String {
             
-            println(imageName)
+            let imagePath = documentPath.stringByAppendingPathComponent("\(userID)_\(timeyNumber)img.png")
             
-            let filePath = documentPath.stringByAppendingPathComponent(imageName + ".png")
+            let imageData = UIImagePNGRepresentation(thumbnail)
             
-            println(filePath)
+            imageData.writeToFile(imagePath, atomically: false)
             
-            imageData.writeToFile(filePath, atomically: false)
+            let imageURL = NSURL(fileURLWithPath: imagePath)
             
-            let fileURL = NSURL(fileURLWithPath: filePath)
-            
-            s3Manager.putObjectWithFile(filePath, destinationPath: imageName + ".png", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
+            // Thumbnail
+            s3Manager.postObjectWithFile(imagePath, destinationPath: "", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
                 
                 let percentageWritten = (CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100.0)
                 
-                println("Uploaded \(percentageWritten)%")
+                println("Thumbnail Uploaded \(percentageWritten)%")
                 
                 }, success: { (responseObject) -> Void in
                     
-                    let info = responseObject as! AFAmazonS3ResponseObject
+                    let thumbnailInfo = responseObject as! AFAmazonS3ResponseObject
                     
-                    self.newURL = info.URL.absoluteString
+                    self.newURL = thumbnailInfo.URL.absoluteString
                     
-//                    RailsRequest.session().postImage(self.newURL, completion: { () -> Void in
-//                        
-//                        
-//                    })
-                    
-                    println("\(responseObject)")
+                    // Send Rails the thumbnail URL here.
                     
                 }, failure: { (error) -> Void in
                     
                     println("\(error)")
+                    
+            })
+            
+            // Video
+            s3Manager.postObjectWithFile(videoFile, destinationPath: "", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
+                
+                let percentageWritten = (CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100.0)
+                
+                println("Video Uploaded \(percentageWritten)%")
+                
+                }, success: { (responseObject) -> Void in
+                    
+                    let videoInfo = responseObject as! AFAmazonS3ResponseObject
+                    
+                    self.newURL = videoInfo.URL.absoluteString
+                    
+                    println("Our response object: \(responseObject)")
+                    
+                    // Send Rails the video URL here.
+                    
+                    
+                }, failure: { (error) -> Void in
+                    
+                    println("Our error: \(error)")
                     
             })
             

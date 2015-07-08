@@ -367,115 +367,100 @@
             <point key="canvasLocation" x="1940" y="-91"/>
         </scene>
         <!--Main Menu View Controller-->
-        <scene sceneID="XWc-IS-Dte">
+        <scene sceneID="7il-f4-Ddd">
             <objects>
-                <tableViewController id="iie-fd-760" customClass="MainMenuViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="22" sectionFooterHeight="22" id="jv2-wl-l8N">
+                <viewController storyboardIdentifier="mainMenuVC" id="lRj-q5-SPh" customClass="MainMenuViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8mz-NI-uKE"/>
+                        <viewControllerLayoutGuide type="bottom" id="9l7-Uz-vkW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="You-Vc-3D7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainMenuCell" rowHeight="113" id="MuH-xi-TZB" customClass="MainMenuProfileCell" customModule="VideoDating" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MuH-xi-TZB" id="Atd-GR-PhW">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Porkins.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QSV-Wc-aSS" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="12" width="90" height="90"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="90" id="0BH-rL-Gn5"/>
-                                                <constraint firstAttribute="height" constant="90" id="2Ih-3u-QQP"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="imageViewRadius">
-                                                    <real key="value" value="10"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billy Bonkins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDX-BU-jsQ">
-                                            <rect key="frame" x="106" y="12" width="486" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="03j-yZ-RjY"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="was-qr-IVN" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                            <rect key="frame" x="492" y="62" width="100" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="F5H-YE-u9k"/>
-                                                <constraint firstAttribute="width" constant="100" id="wed-jI-Wf6"/>
-                                            </constraints>
-                                            <state key="normal" title="Edit">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                    <color key="value" red="0.9097024937" green="0.0" blue="0.050546871010000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="editProfileButtonPressed:" destination="MuH-xi-TZB" eventType="touchUpInside" id="cee-ao-mHz"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHb-i9-GPC" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                            <rect key="frame" x="106" y="62" width="378" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="aMg-Kb-42t"/>
-                                            </constraints>
-                                            <state key="normal" title="99 New Requests">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                    <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="applicationsButtonPressed:" destination="MuH-xi-TZB" eventType="touchUpInside" id="9O0-eB-VSD"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="QSV-Wc-aSS" firstAttribute="leading" secondItem="Atd-GR-PhW" secondAttribute="leading" constant="8" id="5Jd-nq-sNa"/>
-                                        <constraint firstAttribute="bottom" secondItem="QSV-Wc-aSS" secondAttribute="bottom" constant="10.5" id="84E-ph-F4o"/>
-                                        <constraint firstItem="was-qr-IVN" firstAttribute="top" secondItem="bDX-BU-jsQ" secondAttribute="bottom" constant="10" id="8Je-ns-hHs"/>
-                                        <constraint firstAttribute="trailing" secondItem="bDX-BU-jsQ" secondAttribute="trailing" constant="8" id="BIN-1J-JLK"/>
-                                        <constraint firstAttribute="trailing" secondItem="was-qr-IVN" secondAttribute="trailing" constant="8" id="JIp-5G-jVX"/>
-                                        <constraint firstItem="was-qr-IVN" firstAttribute="leading" secondItem="EHb-i9-GPC" secondAttribute="trailing" constant="8" id="KQS-5D-Kac"/>
-                                        <constraint firstItem="QSV-Wc-aSS" firstAttribute="top" secondItem="Atd-GR-PhW" secondAttribute="top" constant="12" id="YfR-UZ-got"/>
-                                        <constraint firstItem="bDX-BU-jsQ" firstAttribute="leading" secondItem="QSV-Wc-aSS" secondAttribute="trailing" constant="8" id="Yr4-JY-ytG"/>
-                                        <constraint firstAttribute="bottom" secondItem="was-qr-IVN" secondAttribute="bottom" constant="10.5" id="ab5-0J-kf3"/>
-                                        <constraint firstItem="EHb-i9-GPC" firstAttribute="leading" secondItem="QSV-Wc-aSS" secondAttribute="trailing" constant="8" id="eHp-j3-yL7"/>
-                                        <constraint firstItem="bDX-BU-jsQ" firstAttribute="top" secondItem="Atd-GR-PhW" secondAttribute="top" constant="12" id="g6R-5m-vJN"/>
-                                        <constraint firstAttribute="bottom" secondItem="EHb-i9-GPC" secondAttribute="bottom" constant="10.5" id="lvP-1y-FiX"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdl-0x-DX6">
+                                <rect key="frame" x="16" y="28" width="568" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="uku-aI-MjY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your destiny." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3c-hj-vml">
+                                <rect key="frame" x="16" y="97" width="568" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="fUs-Y9-WmV"/>
+                                    <constraint firstAttribute="height" constant="40" id="waj-MB-Svh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fUs-Y9-WmV"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt3-Ff-PoE" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="532" width="568" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tUq-xm-D43"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Friends' Profiles">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.88139204550000005" green="0.029348310499999999" blue="0.2511193645" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="applicationsButton" destination="EHb-i9-GPC" id="AdA-Xm-ljR"/>
-                                    <outlet property="applicationsButtonPressed" destination="EHb-i9-GPC" id="hcw-bw-nWr"/>
-                                    <outlet property="nameLabel" destination="bDX-BU-jsQ" id="9Cj-5w-hCT"/>
-                                    <outlet property="profilePicture" destination="QSV-Wc-aSS" id="moC-tJ-HOB"/>
+                                    <action selector="friendProfileButtonPressed:" destination="lRj-q5-SPh" eventType="touchUpInside" id="NoZ-lr-gP5"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="iie-fd-760" id="0va-iE-761"/>
-                            <outlet property="delegate" destination="iie-fd-760" id="o5V-4D-YMH"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="uBh-TM-Xd9"/>
-                        <barButtonItem systemItem="add" id="oyY-jE-dJE"/>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qnz-Py-9VX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE4-7y-35j" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="464" width="568" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PCx-yV-CsG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Your Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.88139204550000005" green="0.029348310499999999" blue="0.2511193645" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="yourProfileButtonPressed:" destination="lRj-q5-SPh" eventType="touchUpInside" id="LQG-2x-Ykb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xt3-Ff-PoE" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="0Wa-qg-tsK"/>
+                            <constraint firstAttribute="trailing" secondItem="Xt3-Ff-PoE" secondAttribute="trailing" constant="16" id="6gJ-AE-lUs"/>
+                            <constraint firstItem="9l7-Uz-vkW" firstAttribute="top" secondItem="Xt3-Ff-PoE" secondAttribute="bottom" constant="8" id="FtV-sX-aQg"/>
+                            <constraint firstAttribute="trailing" secondItem="Cdl-0x-DX6" secondAttribute="trailing" constant="16" id="Iwc-lC-nG4"/>
+                            <constraint firstItem="Cdl-0x-DX6" firstAttribute="top" secondItem="8mz-NI-uKE" secondAttribute="bottom" constant="8" id="NEG-Bm-JEw"/>
+                            <constraint firstItem="E3c-hj-vml" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="dCn-2z-ICa"/>
+                            <constraint firstItem="Xt3-Ff-PoE" firstAttribute="top" secondItem="WE4-7y-35j" secondAttribute="bottom" constant="8" id="gd4-Wf-jTx"/>
+                            <constraint firstItem="WE4-7y-35j" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="kE8-1I-ceS"/>
+                            <constraint firstAttribute="trailing" secondItem="WE4-7y-35j" secondAttribute="trailing" constant="16" id="lVt-LQ-CaB"/>
+                            <constraint firstItem="Cdl-0x-DX6" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="yI7-o1-kiW"/>
+                            <constraint firstAttribute="trailing" secondItem="E3c-hj-vml" secondAttribute="trailing" constant="16" id="yYN-Jc-kAj"/>
+                            <constraint firstItem="E3c-hj-vml" firstAttribute="top" secondItem="Cdl-0x-DX6" secondAttribute="bottom" constant="8" id="z6d-I1-4tM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vht-sb-bIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2645" y="337"/>
+            <point key="canvasLocation" x="2664" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XAf-ES-7I7">
@@ -497,7 +482,4 @@
             <point key="canvasLocation" x="466" y="337"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Porkins.jpg" width="672" height="672"/>
-    </resources>
 </document>

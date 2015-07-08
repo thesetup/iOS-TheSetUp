@@ -70,8 +70,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     
                 })
                 
+                let createProfile = UIStoryboard(name: "CreateProfile", bundle: nil)
                 
-                let mainMenuVC = storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
+                let mainMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
                 
                 self.navigationController?.pushViewController(mainMenuVC, animated: true)
                 
