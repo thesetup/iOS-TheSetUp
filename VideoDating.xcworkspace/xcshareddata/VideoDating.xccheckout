@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9EE25604-E153-4E96-A1EB-57C0C2CE8C9E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VideoDating</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8C3ABD5BDA1B7350822C9E63AE1237EED7CBA4F4</key>
+		<string>https://github.com/kylerobinson1988/VideoDating.git</string>
+		<key>A12D91EB20A6480A66B7936CCD299E0FF0E8AD6B</key>
+		<string>https://github.com/thesetup/iOS-TheSetUp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VideoDating.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8C3ABD5BDA1B7350822C9E63AE1237EED7CBA4F4</key>
+		<string>..VideoDating</string>
+		<key>A12D91EB20A6480A66B7936CCD299E0FF0E8AD6B</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/thesetup/iOS-TheSetUp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A12D91EB20A6480A66B7936CCD299E0FF0E8AD6B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A12D91EB20A6480A66B7936CCD299E0FF0E8AD6B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-TheSetUp</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8C3ABD5BDA1B7350822C9E63AE1237EED7CBA4F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-TheSetUpVideoDating</string>
+		</dict>
+	</array>
+</dict>
+</plist>
