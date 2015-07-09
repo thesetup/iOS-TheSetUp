@@ -1,5 +1,6 @@
+
 //
-//  YourProfileViewController.swift
+//  YourMainMenuViewController.swift
 //  VideoDating
 //
 //  Created by Kyle Brooks Robinson on 7/9/15.
@@ -8,8 +9,11 @@
 
 import UIKit
 
-class YourProfileViewController: UIViewController {
+class YourMainMenuViewController: UIViewController {
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

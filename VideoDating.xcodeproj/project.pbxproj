@@ -47,8 +47,14 @@
 		91F5CBCC1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */; };
 		91F5CBCE1B4DAB0C0009A178 /* TastesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */; };
 		91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */; };
-		91F5CBD31B4ECF920009A178 /* YourProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBD21B4ECF920009A178 /* YourProfileViewController.swift */; };
 		91F5CBD51B4ECFA70009A178 /* YourProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F5CBD41B4ECFA70009A178 /* YourProfileFlow.storyboard */; };
+		91F5CBD71B4EECC00009A178 /* YourProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBD61B4EECC00009A178 /* YourProfileViewController.swift */; };
+		91F5CBD91B4EF3750009A178 /* YourMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBD81B4EF3750009A178 /* YourMainMenuViewController.swift */; };
+		91F5CBDB1B4EF6B10009A178 /* YourMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBDA1B4EF6B10009A178 /* YourMessagesViewController.swift */; };
+		91F5CBDD1B4EF8D60009A178 /* YourMessagesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBDC1B4EF8D60009A178 /* YourMessagesDetailViewController.swift */; };
+		91F5CBDF1B4EFD190009A178 /* MessageReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBDE1B4EFD190009A178 /* MessageReplyViewController.swift */; };
+		91F5CBE11B4F19F00009A178 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBE01B4F19F00009A178 /* SearchViewController.swift */; };
+		91F5CBE31B4F21480009A178 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBE21B4F21480009A178 /* SearchResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +114,14 @@
 		91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastesCollectionViewCell.swift; sourceTree = "<group>"; };
 		91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
-		91F5CBD21B4ECF920009A178 /* YourProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourProfileViewController.swift; sourceTree = "<group>"; };
 		91F5CBD41B4ECFA70009A178 /* YourProfileFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YourProfileFlow.storyboard; sourceTree = "<group>"; };
+		91F5CBD61B4EECC00009A178 /* YourProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourProfileViewController.swift; sourceTree = "<group>"; };
+		91F5CBD81B4EF3750009A178 /* YourMainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourMainMenuViewController.swift; sourceTree = "<group>"; };
+		91F5CBDA1B4EF6B10009A178 /* YourMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourMessagesViewController.swift; sourceTree = "<group>"; };
+		91F5CBDC1B4EF8D60009A178 /* YourMessagesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourMessagesDetailViewController.swift; sourceTree = "<group>"; };
+		91F5CBDE1B4EFD190009A178 /* MessageReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageReplyViewController.swift; sourceTree = "<group>"; };
+		91F5CBE01B4F19F00009A178 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		91F5CBE21B4F21480009A178 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		D1221190F24DD6BD0C5479FD /* Pods-VideoDating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoDating.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoDating/Pods-VideoDating.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,7 +290,13 @@
 			isa = PBXGroup;
 			children = (
 				91F5CBD41B4ECFA70009A178 /* YourProfileFlow.storyboard */,
-				91F5CBD21B4ECF920009A178 /* YourProfileViewController.swift */,
+				91F5CBD81B4EF3750009A178 /* YourMainMenuViewController.swift */,
+				91F5CBD61B4EECC00009A178 /* YourProfileViewController.swift */,
+				91F5CBDA1B4EF6B10009A178 /* YourMessagesViewController.swift */,
+				91F5CBDC1B4EF8D60009A178 /* YourMessagesDetailViewController.swift */,
+				91F5CBDE1B4EFD190009A178 /* MessageReplyViewController.swift */,
+				91F5CBE01B4F19F00009A178 /* SearchViewController.swift */,
+				91F5CBE21B4F21480009A178 /* SearchResultViewController.swift */,
 			);
 			name = YourProfileFlow;
 			sourceTree = "<group>";
@@ -456,10 +474,13 @@
 				91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */,
 				9185EB271B4C0B9D004A6BD8 /* Math.swift in Sources */,
 				91B1B53D1B45D90D00958D38 /* EditDetailViewController.swift in Sources */,
+				91F5CBD91B4EF3750009A178 /* YourMainMenuViewController.swift in Sources */,
 				9185EB251B4C09E3004A6BD8 /* PlayButton.swift in Sources */,
+				91F5CBDB1B4EF6B10009A178 /* YourMessagesViewController.swift in Sources */,
 				91B1B5311B45C53D00958D38 /* CustomButton.swift in Sources */,
 				91B1B5281B45C3F300958D38 /* VideoCamViewController.swift in Sources */,
 				91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */,
+				91F5CBDF1B4EFD190009A178 /* MessageReplyViewController.swift in Sources */,
 				91B1B5221B45C3AC00958D38 /* WelcomeViewController.swift in Sources */,
 				91F5CBCC1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift in Sources */,
 				91B1B5A21B4B50CD00958D38 /* ProfileMenuCell.swift in Sources */,
@@ -471,14 +492,17 @@
 				91B1B5A91B4B551E00958D38 /* CircleView.swift in Sources */,
 				91F5CBCE1B4DAB0C0009A178 /* TastesCollectionViewCell.swift in Sources */,
 				91B1B5581B48348300958D38 /* EditProfileViewController.swift in Sources */,
+				91F5CBE11B4F19F00009A178 /* SearchViewController.swift in Sources */,
 				91B1B5021B45C38B00958D38 /* AppDelegate.swift in Sources */,
 				91B1B5351B45C7FF00958D38 /* RadiusView.swift in Sources */,
-				91F5CBD31B4ECF920009A178 /* YourProfileViewController.swift in Sources */,
+				91F5CBD71B4EECC00009A178 /* YourProfileViewController.swift in Sources */,
 				91B1B5431B46BE3D00958D38 /* Keys.swift in Sources */,
+				91F5CBDD1B4EF8D60009A178 /* YourMessagesDetailViewController.swift in Sources */,
 				91B1B5AD1B4B5A1600958D38 /* ApplicationDetailViewController.swift in Sources */,
 				91B1B55A1B48356100958D38 /* EditSectionViewController.swift in Sources */,
 				91B1B52F1B45C50B00958D38 /* GradientView.swift in Sources */,
 				91B1B5261B45C3DF00958D38 /* RegisterViewController.swift in Sources */,
+				91F5CBE31B4F21480009A178 /* SearchResultViewController.swift in Sources */,
 				91B1B5511B47226100958D38 /* SaveVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
