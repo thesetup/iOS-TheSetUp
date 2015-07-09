@@ -11,7 +11,7 @@ import UIKit
 private let defaults = NSUserDefaults.standardUserDefaults()
 private let _singleton = RailsRequest()
 
-let API_URL = "New URL Goes Here"
+let API_URL = "https://still-island-6789.herokuapp.com"
 
 class RailsRequest: NSObject {
     
@@ -38,6 +38,10 @@ class RailsRequest: NSObject {
     var firstname: String!
     var lastname: String!
     var password: String!
+    var registerID: Int!
+    var loginID: String!
+    var createdAt: String!
+    var updatedAt: String!
     
     func logOut() {
         
@@ -58,10 +62,11 @@ class RailsRequest: NSObject {
             "endpoint" : "/users/register",
             "parameters" : [
                 
-                "password" : password,
-                "first_name" : firstname,
-                "last_name" : lastname,
+                "id": registerID,
                 "email" : email,
+                "password" : password,
+                "created_at": createdAt,
+                "updated_at": updatedAt,
                 
             ],
             
@@ -92,8 +97,12 @@ class RailsRequest: NSObject {
             "endpoint" : "/users/login",
             "parameters" : [
                 
+                "id" : loginID,
                 "email" : email,
                 "password" : password,
+                "access_token": token,
+                "created_at": createdAt,
+                "updated_at": updatedAt
                 
             ],
             
@@ -140,95 +149,8 @@ class RailsRequest: NSObject {
         
     }
     
-    func guessImage(postId: String, guess: String, completion: () -> Void) {
-        
-        var isCorrect: Bool?
-        
-        var info = [
-            
-            "method" : "POST",
-            "endpoint" : "/guesses",
-            "query" : [
-                
-                "post_id":postId,
-                "guess":guess
-                
-            ]
-            
-            ] as [String: AnyObject]
-        
-        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
-            
-            println(responseInfo)
-            
-            isCorrect = responseInfo?["won"] as? Bool
-            
-            completion()
-            
-        })
-        
-    }
+
     
-    func getPlayablePosts(completion: (posts: [AnyObject]) -> Void) {
-        
-        
-        var info = [
-            
-            "method" : "GET",
-            "endpoint" : "/posts/all/playable",
-            
-            "query" : [
-                
-                "page" : 1
-                
-            ]
-            
-            ] as [String: AnyObject]
-        
-        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
-            
-            
-            println(responseInfo)
-            
-            if let posts = responseInfo as? [AnyObject] {
-                
-                completion(posts: posts)
-                
-            } else {
-                
-                completion(posts: [])
-                
-            }
-            
-            
-        })
-        
-    }
-    
-    
-    
-    func scoreboard(username: String, score: String, completion: () -> Void) {
-        
-        var info = [
-            
-            "method" : "POST",
-            "endpoint" : "/topscores",
-            "parameters" : [
-                
-                "user_name":username,
-                "score":score
-                
-            ]
-            
-            ] as [String: AnyObject]
-        
-        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
-            
-            println(responseInfo)
-            
-        })
-        
-    }
     
     func requestWithInfo(info: [String:AnyObject], andCompletion completion: ((responseInfo: AnyObject?) -> Void)?) {
         

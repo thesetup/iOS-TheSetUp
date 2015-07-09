@@ -14,7 +14,7 @@ import AVFoundation
 class SaveVideoViewController: UIViewController {
     
     @IBOutlet weak var capturedVideo: UIView!
-    @IBOutlet weak var playButton: CustomButton!
+    @IBOutlet weak var playButton: PlayButton!
     @IBOutlet weak var stopButton: CustomButton!
     @IBOutlet weak var videoStillView: UIImageView!
     @IBOutlet weak var videoTitle: UITextField!
@@ -54,6 +54,18 @@ class SaveVideoViewController: UIViewController {
         
     }
     
+    func saveToS3() {
+        
+        S3Request.session().thumbnail = videoStillImage
+        
+        convertVideoQuality { () -> () in
+            
+            S3Request.session().saveVideoToS3()
+            
+        }
+        
+    }
+    
     @IBAction func playVid(sender: AnyObject) {
         
         videoStillView?.hidden = true
@@ -80,17 +92,24 @@ class SaveVideoViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
-    }
-    
-    @IBAction func s3ButtonPressed(sender: AnyObject) {
         
-        S3Request.session().thumbnail = videoStillImage
+        let saveAlert = UIAlertController(title: "Save Video", message: "Do you want to save this video?", preferredStyle: .Alert)
         
-        convertVideoQuality { () -> () in
+        let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (action: UIAlertAction!) -> Void in
             
-            S3Request.session().saveVideoToS3()
+            self.saveToS3()
+            self.dismissViewControllerAnimated(true, completion: nil)
             
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction!) -> Void in
+            
+        }
+        
+        saveAlert.addAction(confirmAction)
+        saveAlert.addAction(cancelAction)
+     
+        presentViewController(saveAlert, animated: true, completion: nil)
         
     }
     

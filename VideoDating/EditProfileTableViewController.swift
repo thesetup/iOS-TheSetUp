@@ -38,6 +38,9 @@ class EditProfileTableViewController: UITableViewController, UICollectionViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hobbyCollectionView.tag = 0
+        tastesCollectionView.tag = 1
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -67,25 +70,71 @@ class EditProfileTableViewController: UITableViewController, UICollectionViewDat
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let hobbiesCell = hobbyCollectionView.cellForItemAtIndexPath(indexPath) as! HobbiesCollectionViewCell
+        var cell: UICollectionViewCell
         
-        let tastesCell = tastesCollectionView.cellForItemAtIndexPath(indexPath) as! TastesCollectionViewCell
+        if collectionView.tag == 0 {
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("hobbiesCell", forIndexPath: indexPath) as! HobbiesCollectionViewCell
+            
+//            launchVideoPlayer(<#videoToPlay: String#>)
+            
+        } else {
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("tastesCell", forIndexPath: indexPath) as! TastesCollectionViewCell
+            
+//            launchVideoPlayer(<#videoToPlay: String#>)
+
+            
+        }
         
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let hobbiesCell = collectionView.dequeueReusableCellWithReuseIdentifier("hobbiesCell", forIndexPath: indexPath) as! HobbiesCollectionViewCell
+        var cell: UICollectionViewCell
         
-        let tastesCell = collectionView.dequeueReusableCellWithReuseIdentifier("tastesCell", forIndexPath: indexPath) as! TastesCollectionViewCell
+        if collectionView.tag == 0 {
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("hobbiesCell", forIndexPath: indexPath) as! HobbiesCollectionViewCell
+
+            
+        } else {
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("tastesCell", forIndexPath: indexPath) as! TastesCollectionViewCell
+
+        }
         
-        return hobbiesCell
+        return cell
         
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return 0
+        
+    }
+    
+    @IBAction func addHobbiesButtonPressed(sender: AnyObject) {
+    
+    
+    }
+    
+    @IBAction func addTastesButtonPressed(sender: AnyObject) {
+    
+    
+    }
+    
+    func launchVideoPlayer(videoToPlay: String) {
+        
+        let stringToURL = NSURL(string: videoToPlay)
+        
+        let videoStoryboard = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
+        
+        let videoPlayerVC = videoStoryboard.instantiateViewControllerWithIdentifier("playVideoVC") as! PlayVideoViewController
+        
+        videoPlayerVC.videoURL = stringToURL
+        
+        presentViewController(videoPlayerVC, animated: true, completion: nil)
         
     }
     

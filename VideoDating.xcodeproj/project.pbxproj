@@ -46,6 +46,9 @@
 		91F5CBCA1B4D9FA90009A178 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */; };
 		91F5CBCC1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */; };
 		91F5CBCE1B4DAB0C0009A178 /* TastesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */; };
+		91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */; };
+		91F5CBD31B4ECF920009A178 /* YourProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBD21B4ECF920009A178 /* YourProfileViewController.swift */; };
+		91F5CBD51B4ECFA70009A178 /* YourProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F5CBD41B4ECFA70009A178 /* YourProfileFlow.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +107,9 @@
 		91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastesCollectionViewCell.swift; sourceTree = "<group>"; };
+		91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
+		91F5CBD21B4ECF920009A178 /* YourProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourProfileViewController.swift; sourceTree = "<group>"; };
+		91F5CBD41B4ECFA70009A178 /* YourProfileFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YourProfileFlow.storyboard; sourceTree = "<group>"; };
 		D1221190F24DD6BD0C5479FD /* Pods-VideoDating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoDating.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoDating/Pods-VideoDating.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +140,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9185EB2A1B4C1F35004A6BD8 /* ProfileFlow */ = {
+		9185EB2A1B4C1F35004A6BD8 /* FriendProfileFlow */ = {
 			isa = PBXGroup;
 			children = (
 				91B1B5A61B4B535D00958D38 /* ProfileFlow.storyboard */,
@@ -147,13 +153,14 @@
 				91F5CBCB1B4DA81F0009A178 /* HobbiesCollectionViewCell.swift */,
 				91F5CBCD1B4DAB0C0009A178 /* TastesCollectionViewCell.swift */,
 			);
-			name = ProfileFlow;
+			name = FriendProfileFlow;
 			sourceTree = "<group>";
 		};
 		91B1B4F31B45C38B00958D38 = {
 			isa = PBXGroup;
 			children = (
 				91B1B4FE1B45C38B00958D38 /* VideoDating */,
+				91B1B5521B47226C00958D38 /* OldProfileFlow */,
 				91B1B5141B45C38B00958D38 /* VideoDatingTests */,
 				91B1B4FD1B45C38B00958D38 /* Products */,
 				EDC2672AF4930C3EEB385F73 /* Pods */,
@@ -174,8 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				91B1B54E1B4721D400958D38 /* LoginFlow */,
-				9185EB2A1B4C1F35004A6BD8 /* ProfileFlow */,
-				91B1B5521B47226C00958D38 /* ProfileFlow */,
+				91F5CBD11B4ECF6D0009A178 /* YourProfileFlow */,
+				9185EB2A1B4C1F35004A6BD8 /* FriendProfileFlow */,
 				91B1B54F1B4721E500958D38 /* TakeVideoFlow */,
 				91B1B52D1B45C4F300958D38 /* CustomElements */,
 				91B1B4FF1B45C38B00958D38 /* Supporting Files */,
@@ -245,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */,
+				91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */,
 				91B1B5271B45C3F300958D38 /* VideoCamViewController.swift */,
 				91B1B5501B47226100958D38 /* SaveVideoViewController.swift */,
 				91B1B5291B45C40300958D38 /* EditVideoViewController.swift */,
@@ -255,14 +263,24 @@
 			name = TakeVideoFlow;
 			sourceTree = "<group>";
 		};
-		91B1B5521B47226C00958D38 /* ProfileFlow */ = {
+		91B1B5521B47226C00958D38 /* OldProfileFlow */ = {
 			isa = PBXGroup;
 			children = (
 				91B1B55B1B48357900958D38 /* Profile.storyboard */,
 				91B1B5571B48348300958D38 /* EditProfileViewController.swift */,
 				91B1B5591B48356100958D38 /* EditSectionViewController.swift */,
 			);
-			name = ProfileFlow;
+			name = OldProfileFlow;
+			path = VideoDating;
+			sourceTree = "<group>";
+		};
+		91F5CBD11B4ECF6D0009A178 /* YourProfileFlow */ = {
+			isa = PBXGroup;
+			children = (
+				91F5CBD41B4ECFA70009A178 /* YourProfileFlow.storyboard */,
+				91F5CBD21B4ECF920009A178 /* YourProfileViewController.swift */,
+			);
+			name = YourProfileFlow;
 			sourceTree = "<group>";
 		};
 		EDC2672AF4930C3EEB385F73 /* Pods */ = {
@@ -358,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B1B55C1B48357900958D38 /* Profile.storyboard in Resources */,
+				91F5CBD51B4ECFA70009A178 /* YourProfileFlow.storyboard in Resources */,
 				91B1B5371B45C93100958D38 /* Porkins.jpg in Resources */,
 				91B1B5A71B4B535D00958D38 /* ProfileFlow.storyboard in Resources */,
 				91B1B5071B45C38B00958D38 /* Main.storyboard in Resources */,
@@ -434,6 +453,7 @@
 				91B1B52A1B45C40300958D38 /* EditVideoViewController.swift in Sources */,
 				91B1B5A41B4B527F00958D38 /* ApplicationsTableViewController.swift in Sources */,
 				91B1B5241B45C3D300958D38 /* LoginViewController.swift in Sources */,
+				91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */,
 				9185EB271B4C0B9D004A6BD8 /* Math.swift in Sources */,
 				91B1B53D1B45D90D00958D38 /* EditDetailViewController.swift in Sources */,
 				9185EB251B4C09E3004A6BD8 /* PlayButton.swift in Sources */,
@@ -453,6 +473,7 @@
 				91B1B5581B48348300958D38 /* EditProfileViewController.swift in Sources */,
 				91B1B5021B45C38B00958D38 /* AppDelegate.swift in Sources */,
 				91B1B5351B45C7FF00958D38 /* RadiusView.swift in Sources */,
+				91F5CBD31B4ECF920009A178 /* YourProfileViewController.swift in Sources */,
 				91B1B5431B46BE3D00958D38 /* Keys.swift in Sources */,
 				91B1B5AD1B4B5A1600958D38 /* ApplicationDetailViewController.swift in Sources */,
 				91B1B55A1B48356100958D38 /* EditSectionViewController.swift in Sources */,

@@ -832,6 +832,41 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="htB-AP-0gx">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="htB-AP-0gx" id="Ups-XI-KlZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking For" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eER-Us-dda">
+                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DDR-nv-Mdu" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
+                                                    <rect key="frame" x="200" y="37" width="200" height="200"/>
+                                                    <color key="backgroundColor" red="0.6219069358" green="0.96517913509999997" blue="0.76591620049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="QaK-mv-8UZ"/>
+                                                        <constraint firstAttribute="width" constant="200" id="nhy-m6-Pk0"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="imageViewRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eER-Us-dda" firstAttribute="leading" secondItem="Ups-XI-KlZ" secondAttribute="leading" constant="8" id="4lW-U5-uhd"/>
+                                                <constraint firstItem="DDR-nv-Mdu" firstAttribute="top" secondItem="eER-Us-dda" secondAttribute="bottom" constant="8" id="5Gc-oK-huz"/>
+                                                <constraint firstAttribute="centerX" secondItem="DDR-nv-Mdu" secondAttribute="centerX" id="R24-iS-2Dq"/>
+                                                <constraint firstAttribute="trailing" secondItem="eER-Us-dda" secondAttribute="trailing" constant="8" id="tzm-mk-nro"/>
+                                                <constraint firstItem="eER-Us-dda" firstAttribute="top" secondItem="Ups-XI-KlZ" secondAttribute="top" constant="8" id="vEN-U1-Pka"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="202" id="Q8g-6B-a1b">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -918,7 +953,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOx-P8-RzQ">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOx-P8-RzQ">
                                                                         <rect key="frame" x="0.0" y="99" width="120" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="p5e-fe-OoY"/>
@@ -952,14 +987,38 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5v-54-0Bp" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                                    <rect key="frame" x="552" y="37" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="fwD-k9-nVl"/>
+                                                        <constraint firstAttribute="height" constant="40" id="nrj-Mv-M79"/>
+                                                    </constraints>
+                                                    <state key="normal" title="➕">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                            <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="addHobbiesButtonPressed:" destination="m6u-NG-Avw" eventType="touchUpInside" id="4NV-jr-i53"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="b5v-54-0Bp" firstAttribute="top" secondItem="2kg-Bw-OR5" secondAttribute="bottom" constant="8" id="0GU-oP-ZQw"/>
                                                 <constraint firstAttribute="trailing" secondItem="2kg-Bw-OR5" secondAttribute="trailing" constant="8" id="1o9-CO-jZJ"/>
                                                 <constraint firstItem="jod-yC-4Zl" firstAttribute="top" secondItem="2kg-Bw-OR5" secondAttribute="bottom" constant="8" id="7xa-Pz-23r"/>
                                                 <constraint firstAttribute="bottom" secondItem="jod-yC-4Zl" secondAttribute="bottom" constant="8" id="B5m-qA-8ra"/>
                                                 <constraint firstItem="2kg-Bw-OR5" firstAttribute="top" secondItem="HNW-Jy-8d7" secondAttribute="top" constant="8" id="EJb-mB-neg"/>
                                                 <constraint firstItem="2kg-Bw-OR5" firstAttribute="leading" secondItem="HNW-Jy-8d7" secondAttribute="leading" constant="8" id="QD5-Un-AqX"/>
                                                 <constraint firstAttribute="trailing" secondItem="jod-yC-4Zl" secondAttribute="trailing" constant="8" id="huU-Ro-lK5"/>
+                                                <constraint firstAttribute="trailing" secondItem="b5v-54-0Bp" secondAttribute="trailing" constant="8" id="pHm-Ox-nxn"/>
                                                 <constraint firstItem="jod-yC-4Zl" firstAttribute="leading" secondItem="HNW-Jy-8d7" secondAttribute="leading" constant="8" id="uPb-Ar-O5T"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1000,7 +1059,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uf-wx-fbg">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uf-wx-fbg">
                                                                         <rect key="frame" x="0.0" y="99" width="120" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="ZiY-KC-s5n"/>
@@ -1028,50 +1087,39 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opw-mL-PEY" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                                    <rect key="frame" x="552" y="32" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="2hn-8A-9sM"/>
+                                                        <constraint firstAttribute="height" constant="40" id="6X6-MO-TYf"/>
+                                                    </constraints>
+                                                    <state key="normal" title="➕">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                            <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="addTastesButtonPressed:" destination="m6u-NG-Avw" eventType="touchUpInside" id="rGC-dm-esV"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="IcK-hU-wwk" secondAttribute="trailing" constant="8" id="CVa-hP-iDW"/>
                                                 <constraint firstAttribute="trailing" secondItem="E2b-Po-okZ" secondAttribute="trailing" constant="8" id="MTh-d7-DQt"/>
                                                 <constraint firstItem="IcK-hU-wwk" firstAttribute="leading" secondItem="AAk-yT-Egw" secondAttribute="leading" constant="8" id="Tuo-AT-Lpb"/>
                                                 <constraint firstItem="E2b-Po-okZ" firstAttribute="leading" secondItem="AAk-yT-Egw" secondAttribute="leading" constant="8" id="dXJ-kC-CEe"/>
+                                                <constraint firstAttribute="trailing" secondItem="Opw-mL-PEY" secondAttribute="trailing" constant="8" id="e1m-Sg-YvK"/>
                                                 <constraint firstItem="E2b-Po-okZ" firstAttribute="top" secondItem="IcK-hU-wwk" secondAttribute="bottom" constant="3" id="e3V-lz-8Xa"/>
+                                                <constraint firstItem="Opw-mL-PEY" firstAttribute="top" secondItem="IcK-hU-wwk" secondAttribute="bottom" constant="3" id="eX4-wI-Q3d"/>
                                                 <constraint firstAttribute="bottom" secondItem="E2b-Po-okZ" secondAttribute="bottom" constant="8" id="mu6-5G-t4M"/>
                                                 <constraint firstItem="IcK-hU-wwk" firstAttribute="top" secondItem="AAk-yT-Egw" secondAttribute="top" constant="8" id="oRy-kg-cyD"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="htB-AP-0gx">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="htB-AP-0gx" id="Ups-XI-KlZ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking For" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eER-Us-dda">
-                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DDR-nv-Mdu" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
-                                                    <rect key="frame" x="200" y="37" width="200" height="200"/>
-                                                    <color key="backgroundColor" red="0.6219069358" green="0.96517913509999997" blue="0.76591620049999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="QaK-mv-8UZ"/>
-                                                        <constraint firstAttribute="width" constant="200" id="nhy-m6-Pk0"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="imageViewRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="eER-Us-dda" firstAttribute="leading" secondItem="Ups-XI-KlZ" secondAttribute="leading" constant="8" id="4lW-U5-uhd"/>
-                                                <constraint firstItem="DDR-nv-Mdu" firstAttribute="top" secondItem="eER-Us-dda" secondAttribute="bottom" constant="8" id="5Gc-oK-huz"/>
-                                                <constraint firstAttribute="centerX" secondItem="DDR-nv-Mdu" secondAttribute="centerX" id="R24-iS-2Dq"/>
-                                                <constraint firstAttribute="trailing" secondItem="eER-Us-dda" secondAttribute="trailing" constant="8" id="tzm-mk-nro"/>
-                                                <constraint firstItem="eER-Us-dda" firstAttribute="top" secondItem="Ups-XI-KlZ" secondAttribute="top" constant="8" id="vEN-U1-Pka"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

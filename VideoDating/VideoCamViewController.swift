@@ -15,7 +15,7 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     
     //Outlets for the camera elements.
     @IBOutlet weak var videoView: UIImageView!
-    @IBOutlet weak var startButton: CustomButton!
+    @IBOutlet weak var startButton: PlayButton!
     @IBOutlet weak var stopButton: CustomButton!
     @IBOutlet weak var flipButton: CustomButton!
     @IBOutlet weak var backButton: CustomButton!
@@ -28,13 +28,11 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     var videoDuration: Int = 30
     var countDown: Int = 30
     
-    
     var saveVideoVC: SaveVideoViewController?
     var thumbnail: UIImage?
     
     var videoURL: NSURL?
     var videoStillImage: UIImage?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
