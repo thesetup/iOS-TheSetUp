@@ -17,7 +17,6 @@ class PlayVideoViewController: UIViewController {
     @IBOutlet weak var playButton: PlayButton!
     @IBOutlet weak var stopButton: CustomButton!
     
-    
     var vidPlayer: MPMoviePlayerController?
     var videoURL: NSURL?
     var videoStillImage: UIImage?

@@ -33,14 +33,25 @@ class EditProfileTableViewController: UITableViewController, UICollectionViewDat
     @IBOutlet weak var hobbyCollectionView: UICollectionView!
     @IBOutlet weak var tastesCollectionView: UICollectionView!
     
-    
+    var isAddingNewProfile: Bool = false
+    var loadingFromId: String = ""
 
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         hobbyCollectionView.tag = 0
         tastesCollectionView.tag = 1
+        
+        if isAddingNewProfile == false {
+            
+            //Add code to load the text fields with info from the Rails Request.
+            
+//            RailsRequest.session().getProfile(userId: loadingFromID)
+            
+            
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,10 +60,53 @@ class EditProfileTableViewController: UITableViewController, UICollectionViewDat
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
     }
+    
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+        
+        if nameTextField.text.isEmpty == false && emailTextField.text.isEmpty == false && yearOfBirthTextField.text.isEmpty == false && locationTextField.text.isEmpty == false && sexTextField.text.isEmpty == false && orientationTextField.text.isEmpty == false && occupationTextField.text.isEmpty == false {
+        
+            //Make RailsRequest to save data.
+            if isAddingNewProfile == true {
+                
+                RailsRequest.session().createProfile(emailTextField.text, completion: { (responseInfo) -> Void in
+                    
+                    println("Here's my response info for creating a profile: \(responseInfo)")
+                    
+                })
+                
+                
+            } else {
+                
+                // Update profile RailsRequest.
+//                RailsRequest.session().updateProfile()
+                
+            }
+            
+        
+        } else {
+            
+            let submitAlert = UIAlertController(title: "Error", message: "Please complete all text fields.", preferredStyle: .Alert)
+            
+            let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+            }
+            
+            submitAlert.addAction(confirmAction)
+            
+            presentViewController(submitAlert, animated: true, completion: nil)
+            
+            
+        }
+    }
+    
 
     // MARK: - Table view data source
 

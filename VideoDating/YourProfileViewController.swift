@@ -1,5 +1,5 @@
 //
-//  SearchResultViewController.swift
+//  YourProfileViewController.swift
 //  VideoDating
 //
 //  Created by Kyle Brooks Robinson on 7/9/15.
@@ -8,22 +8,22 @@
 
 import UIKit
 
-class SearchResultViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class YourProfileViewController: UITableViewController, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    @IBOutlet weak var profilePicView: RadiusView!
+    @IBOutlet weak var profilePictureView: RadiusView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sexAndAgeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var interestedInLabel: UILabel!
     @IBOutlet weak var occupationLabel: UILabel!
     
-    @IBOutlet weak var mainVideoOutlet: UIView!
-    @IBOutlet weak var lookingForVideoOutlet: RadiusView!
+    @IBOutlet weak var mainVideo: RadiusView!
+    @IBOutlet weak var lookingForVideo: RadiusView!
+    @IBOutlet weak var likesVideo: RadiusView!
+    @IBOutlet weak var dislikesVideo: RadiusView!
     
-    @IBOutlet weak var likesVideoOutlet: UIView!
-    @IBOutlet weak var dislikesVideoOutlet: RadiusView!
-    
-    @IBOutlet weak var hobbiesCollectionViewOutlet: UICollectionView!
-    @IBOutlet weak var tastesCollectionViewOutlet: UILabel!
+    @IBOutlet weak var hobbiesCollectionView: UICollectionView!
+    @IBOutlet weak var tastesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,14 +49,20 @@ class SearchResultViewController: UITableViewController, UICollectionViewDelegat
         
     }
 
-    @IBAction func sendApplicationButtonPressed(sender: AnyObject) {
-    
-        let messageReplyVC = storyboard?.instantiateViewControllerWithIdentifier("messageReplyVC") as! MessageReplyViewController
-        
-        self.navigationController?.pushViewController(messageReplyVC, animated: true)
-        
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 0
     }
-    
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return 0
+    }
+
     // MARK: - Collection View Data Source
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -103,21 +109,7 @@ class SearchResultViewController: UITableViewController, UICollectionViewDelegat
         return 0
         
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
-
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell

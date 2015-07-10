@@ -32,9 +32,6 @@
 		91B1B5451B470B1700958D38 /* S3Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5441B470B1700958D38 /* S3Request.swift */; };
 		91B1B5511B47226100958D38 /* SaveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5501B47226100958D38 /* SaveVideoViewController.swift */; };
 		91B1B5541B4722A900958D38 /* TakeVideoFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */; };
-		91B1B5581B48348300958D38 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5571B48348300958D38 /* EditProfileViewController.swift */; };
-		91B1B55A1B48356100958D38 /* EditSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5591B48356100958D38 /* EditSectionViewController.swift */; };
-		91B1B55C1B48357900958D38 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B55B1B48357900958D38 /* Profile.storyboard */; };
 		91B1B5A01B4B4F3E00958D38 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */; };
 		91B1B5A21B4B50CD00958D38 /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */; };
 		91B1B5A41B4B527F00958D38 /* ApplicationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */; };
@@ -99,9 +96,6 @@
 		91B1B5481B470C4000958D38 /* VideoDating-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoDating-Bridging-Header.h"; sourceTree = "<group>"; };
 		91B1B5501B47226100958D38 /* SaveVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveVideoViewController.swift; sourceTree = "<group>"; };
 		91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TakeVideoFlow.storyboard; sourceTree = "<group>"; };
-		91B1B5571B48348300958D38 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		91B1B5591B48356100958D38 /* EditSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSectionViewController.swift; sourceTree = "<group>"; };
-		91B1B55B1B48357900958D38 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMenuCell.swift; sourceTree = "<group>"; };
 		91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				91B1B4FE1B45C38B00958D38 /* VideoDating */,
-				91B1B5521B47226C00958D38 /* OldProfileFlow */,
 				91B1B5141B45C38B00958D38 /* VideoDatingTests */,
 				91B1B4FD1B45C38B00958D38 /* Products */,
 				EDC2672AF4930C3EEB385F73 /* Pods */,
@@ -273,17 +266,6 @@
 				91B1B5A81B4B551E00958D38 /* CircleView.swift */,
 			);
 			name = TakeVideoFlow;
-			sourceTree = "<group>";
-		};
-		91B1B5521B47226C00958D38 /* OldProfileFlow */ = {
-			isa = PBXGroup;
-			children = (
-				91B1B55B1B48357900958D38 /* Profile.storyboard */,
-				91B1B5571B48348300958D38 /* EditProfileViewController.swift */,
-				91B1B5591B48356100958D38 /* EditSectionViewController.swift */,
-			);
-			name = OldProfileFlow;
-			path = VideoDating;
 			sourceTree = "<group>";
 		};
 		91F5CBD11B4ECF6D0009A178 /* YourProfileFlow */ = {
@@ -393,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91B1B55C1B48357900958D38 /* Profile.storyboard in Resources */,
 				91F5CBD51B4ECFA70009A178 /* YourProfileFlow.storyboard in Resources */,
 				91B1B5371B45C93100958D38 /* Porkins.jpg in Resources */,
 				91B1B5A71B4B535D00958D38 /* ProfileFlow.storyboard in Resources */,
@@ -491,7 +472,6 @@
 				9185EB291B4C1050004A6BD8 /* StopButton.swift in Sources */,
 				91B1B5A91B4B551E00958D38 /* CircleView.swift in Sources */,
 				91F5CBCE1B4DAB0C0009A178 /* TastesCollectionViewCell.swift in Sources */,
-				91B1B5581B48348300958D38 /* EditProfileViewController.swift in Sources */,
 				91F5CBE11B4F19F00009A178 /* SearchViewController.swift in Sources */,
 				91B1B5021B45C38B00958D38 /* AppDelegate.swift in Sources */,
 				91B1B5351B45C7FF00958D38 /* RadiusView.swift in Sources */,
@@ -499,7 +479,6 @@
 				91B1B5431B46BE3D00958D38 /* Keys.swift in Sources */,
 				91F5CBDD1B4EF8D60009A178 /* YourMessagesDetailViewController.swift in Sources */,
 				91B1B5AD1B4B5A1600958D38 /* ApplicationDetailViewController.swift in Sources */,
-				91B1B55A1B48356100958D38 /* EditSectionViewController.swift in Sources */,
 				91B1B52F1B45C50B00958D38 /* GradientView.swift in Sources */,
 				91B1B5261B45C3DF00958D38 /* RegisterViewController.swift in Sources */,
 				91F5CBE31B4F21480009A178 /* SearchResultViewController.swift in Sources */,

@@ -34,6 +34,8 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     var videoURL: NSURL?
     var videoStillImage: UIImage?
     
+    var replyViewController: MessageReplyViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,17 +96,23 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     
     func imageResize() {
         
-        var newSize = CGSize(width: 480,height: 640)
-        let rect = CGRectMake(0,0, newSize.width, newSize.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        // "Parameters" :: videoStillImage (UIImage), newSize (CGSize)
+        var newSize = CGSize(width: 480,height: 480)
+        var scaleImageRect = CGRectMake(0,0, newSize.width, newSize.height)
         
-        videoStillImage!.drawInRect(rect)
+        let ratio: CGFloat = newSize.width / videoStillImage!.size.width
+        let newHeight = ratio * videoStillImage!.size.height
+        let newY = (newSize.height - newHeight) / 2
+        
+        scaleImageRect = CGRectMake(0, newY, newSize.width, newHeight)
+        
+        UIGraphicsBeginImageContext(newSize)
+        
+        videoStillImage!.drawInRect(scaleImageRect)
         videoStillImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
     }
-    
-    
     
     func updateSecondsLeft() {
         
@@ -169,6 +177,9 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        replyViewController?.videoURL = videoURL
+        replyViewController?.videoStillImage = videoStillImage
         
         imagePickerControllerDidCancel(videoPick)
         navigationController?.popToRootViewControllerAnimated(true)

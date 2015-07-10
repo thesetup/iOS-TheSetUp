@@ -10,11 +10,19 @@ import UIKit
 
 class MessageReplyViewController: UITableViewController {
 
-    @IBOutlet weak var videoView: UIImageView!
+    @IBOutlet weak var videoThumbnailView: UIImageView!
+    @IBOutlet weak var addVideoButton: CustomButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    var videoURL: NSURL?
+    var videoStillImage: UIImage?
+    
+    var isThereAVideo: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             
@@ -42,7 +50,20 @@ class MessageReplyViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBAction func addVideoButtonPressed(sender: AnyObject) {
+        
+        let takeVideoFlow = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
+        
+        let videoCamVC = takeVideoFlow.instantiateViewControllerWithIdentifier("takeVideoVC") as! VideoCamViewController
+        
+        videoCamVC.replyViewController = self
+        
+        presentViewController(videoCamVC, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func submitButtonPressed(sender: AnyObject) {
+        
         
         let saveAlert = UIAlertController(title: "Save Video", message: "Do you want to save this video?", preferredStyle: .Alert)
         

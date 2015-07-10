@@ -10,8 +10,24 @@ import UIKit
 
 class ProfileMenuViewController: UITableViewController {
 
+    var profilesToLoad = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        RailsRequest.session().getAllProfiles { (responseInfo) -> Void in
+            
+            for item in responseInfo {
+                
+                if item["profiler_id"] as? Int == RailsRequest.session().userId {
+                    
+                    //Do a Rails Request for the specific user profile if it's stored at a separate location, and then add it to the ProfilesToLoad collection.
+                    
+                }
+                
+            }
+            
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,10 +36,23 @@ class ProfileMenuViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        
+        let editProfileVC = storyboard?.instantiateViewControllerWithIdentifier("editProfileVC") as! EditProfileTableViewController
+        
+        editProfileVC.isAddingNewProfile = true
+        
+        presentViewController(editProfileVC, animated: true, completion: nil)
+        
     }
+    
+    @IBAction func backButtonPressed(sender: AnyObject) {
+    
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    
+    }
+    
+    
 
     // MARK: - Table view data source
 

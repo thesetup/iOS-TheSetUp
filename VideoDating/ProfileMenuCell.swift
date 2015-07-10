@@ -18,6 +18,9 @@ class ProfileMenuCell: UITableViewCell {
     
     //Add Applications Count that judges whether you can view the Applications VC or not.
     
+    @IBOutlet weak var hasViewedCircle: CircleView!
+    var hasViewed: Bool = false
+    
     
     @IBAction func applicationsButtonPressed(sender: AnyObject) {
         

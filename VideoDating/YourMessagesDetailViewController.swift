@@ -11,14 +11,6 @@ import MediaPlayer
 import MobileCoreServices
 
 class YourMessagesDetailViewController: UITableViewController {
-
-    // Profile info section outlets and buttons
-    @IBOutlet weak var profilePicImageView: RadiusView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var jobLabel: UILabel!
-    @IBOutlet weak var aboutMeLabel: UILabel!
     
     // Video section outlets and buttons
     
@@ -47,62 +39,12 @@ class YourMessagesDetailViewController: UITableViewController {
     }
     
     
-    
-    //Evaluation section outlets and buttons
-    
-    var canSubmit: Bool = false
-    
-    @IBOutlet weak var redButton: CustomButton!
-    @IBOutlet weak var blueButton: CustomButton!
-    @IBOutlet weak var greenButton: CustomButton!
-    @IBOutlet weak var orangeButton: CustomButton!
-    
-    
-    
-    @IBAction func buttonSelected(sender: CustomButton) {
+
+    @IBAction func replyButtonPressed(sender: AnyObject) {
         
-        var evaluationButtons = [
-            redButton, blueButton, greenButton, orangeButton
-        ]
+        let messageReplyVC = storyboard?.instantiateViewControllerWithIdentifier("messageReplyVC") as! MessageReplyViewController
         
-        for button in evaluationButtons {
-            
-            if button == sender as CustomButton {
-                
-                sender.selectedButton = true
-                canSubmit = true
-                
-            } else {
-                
-                sender.selectedButton = false
-                
-            }
-            
-        }
-        
-    }
-    
-    
-    
-    // Contact section outlets and buttons
-    @IBOutlet weak var messageField: UITextView!
-    @IBOutlet weak var submitButton: CustomButton!
-    @IBOutlet weak var errorLabel: UILabel!
-    
-    @IBAction func submitButtonPressed(sender: AnyObject) {
-        
-        if canSubmit == false {
-            
-            errorLabel.text = "Please select an approval level."
-            
-        } else {
-            
-            errorLabel.text = ""
-            
-            // Show Alert asking for confirmation here.
-            
-            
-        }
+        self.navigationController?.pushViewController(messageReplyVC, animated: true)
         
     }
     
@@ -111,13 +53,9 @@ class YourMessagesDetailViewController: UITableViewController {
         
         // PENDING:  Set text to info from Rails Request
         
-        aboutMeLabel.text = ""
-        errorLabel.text = ""
         stopButton.hidden = true
         
         if videoData != nil {
-            
-            println("This stuff should be running.")
             
             vidPlayer = MPMoviePlayerController(contentURL: videoURL)
             vidPlayer?.controlStyle = MPMovieControlStyle.None
@@ -126,11 +64,6 @@ class YourMessagesDetailViewController: UITableViewController {
             videoView.addSubview(vidPlayer!.view)
             
         }
-        
-        //PENDING: Set Name, Age, Location, Job, and About Me labels to info from Rails request.
-        
-        
-        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -10,6 +10,7 @@ import UIKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -58,10 +59,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         if emailTextField.text.isEmpty == false && passwordTextField.text.isEmpty == false && confirmPasswordTextField.text.isEmpty == false {
             
-            if passwordTextField.text == confirmPasswordTextField {
+            if passwordTextField.text == confirmPasswordTextField.text {
                 
                 errorLabel.text = ""
                 
+                RailsRequest.session().username = usernameTextField.text
                 RailsRequest.session().email = emailTextField.text
                 RailsRequest.session().password = passwordTextField.text
                 RailsRequest.session().registerWithCompletion({ () -> Void in
@@ -69,8 +71,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     println("Theoretically, you just registered.")
                     
                 })
-                
-                let createProfile = UIStoryboard(name: "CreateProfile", bundle: nil)
                 
                 let mainMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
                 

@@ -991,15 +991,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hmU-qE-tnV" id="W0Y-tV-DmP">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Thoughts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WP4-I9-h59">
-                                                    <rect key="frame" x="8" y="8" width="584" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="UW8-RZ-xSQ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M92-9k-eJ5" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="65" width="584" height="45"/>
                                                     <constraints>
@@ -1015,16 +1006,20 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
+                                                        <action selector="replyButtonPressed:" destination="zgZ-GF-eIt" eventType="touchUpInside" id="mzW-ef-8ax"/>
                                                         <action selector="submitButtonPressed:" destination="zgZ-GF-eIt" eventType="touchUpInside" id="wab-nJ-YtE"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add friend application input" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ7-Q8-yyI">
+                                                    <rect key="frame" x="184" y="13" width="213" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="M92-9k-eJ5" secondAttribute="bottom" constant="8.5" id="5XD-f3-BtB"/>
                                                 <constraint firstAttribute="trailing" secondItem="M92-9k-eJ5" secondAttribute="trailing" constant="8" id="E25-8H-vC1"/>
-                                                <constraint firstItem="WP4-I9-h59" firstAttribute="top" secondItem="W0Y-tV-DmP" secondAttribute="top" constant="8" id="JbS-EJ-9np"/>
-                                                <constraint firstItem="WP4-I9-h59" firstAttribute="leading" secondItem="W0Y-tV-DmP" secondAttribute="leading" constant="8" id="KcI-6u-yUg"/>
-                                                <constraint firstAttribute="trailing" secondItem="WP4-I9-h59" secondAttribute="trailing" constant="8" id="jiJ-W2-fAT"/>
                                                 <constraint firstItem="M92-9k-eJ5" firstAttribute="leading" secondItem="W0Y-tV-DmP" secondAttribute="leading" constant="8" id="tEd-2f-DJ6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1057,7 +1052,7 @@
         <!--Message Reply View Controller-->
         <scene sceneID="Q5B-og-OdP">
             <objects>
-                <tableViewController id="3Ch-rr-f5P" customClass="MessageReplyViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="messageReplyVC" id="3Ch-rr-f5P" customClass="MessageReplyViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CQU-OY-nOE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1065,7 +1060,7 @@
                         <sections>
                             <tableViewSection id="2jZ-GV-mna">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="580" id="IGD-F6-v5X">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="343" id="IGD-F6-v5X">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGD-F6-v5X" id="K5p-4E-pGg">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1085,63 +1080,81 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SsB-yK-kVU">
-                                                    <rect key="frame" x="8" y="66" width="584" height="500"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omK-NH-xDa" customClass="PlayButton" customModule="VideoDating" customModuleProvider="target">
-                                                    <rect key="frame" x="270" y="491" width="60" height="60"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a video and/or message." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzt-Mb-vXV">
+                                                    <rect key="frame" x="8" y="66" width="584" height="49"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="LIY-it-ZVS"/>
-                                                        <constraint firstAttribute="height" constant="60" id="iB7-Ln-GAv"/>
+                                                        <constraint firstAttribute="height" constant="49" id="Ohg-zj-SAW"/>
                                                     </constraints>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTV-wT-gCd" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
+                                                    <rect key="frame" x="200" y="123" width="200" height="200"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-iw-ame" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                                            <rect key="frame" x="75" y="75" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="2hs-Dm-3j3"/>
+                                                                <constraint firstAttribute="width" constant="50" id="yUi-gA-ciA"/>
+                                                            </constraints>
+                                                            <state key="normal" title="➕">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                                    <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="addVideoButtonPressed:" destination="3Ch-rr-f5P" eventType="touchUpInside" id="nCd-fh-aPp"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.89210858589999997" green="0.900686553" blue="0.88353061870000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="8zI-iw-ame" secondAttribute="bottom" constant="75" id="AKc-Xl-wMa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8zI-iw-ame" secondAttribute="trailing" constant="75" id="H2Q-W4-eta"/>
+                                                        <constraint firstAttribute="height" constant="200" id="RCS-B5-bqV"/>
+                                                        <constraint firstItem="8zI-iw-ame" firstAttribute="top" secondItem="eTV-wT-gCd" secondAttribute="top" constant="75" id="exq-8b-OGX"/>
+                                                        <constraint firstAttribute="width" constant="200" id="k71-Yg-3nz"/>
+                                                        <constraint firstItem="8zI-iw-ame" firstAttribute="leading" secondItem="eTV-wT-gCd" secondAttribute="leading" constant="75" id="xUX-Ym-m5y"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                            <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="curveAmount">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="rotation">
-                                                            <real key="value" value="90"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="topInset">
-                                                            <real key="value" value="15"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
-                                                            <real key="value" value="21"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="imageViewRadius">
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="SsB-yK-kVU" secondAttribute="bottom" constant="13.5" id="8sT-x0-dTz"/>
                                                 <constraint firstAttribute="trailing" secondItem="GY5-5A-bLR" secondAttribute="trailing" constant="8" id="9WE-MJ-8ey"/>
-                                                <constraint firstItem="SsB-yK-kVU" firstAttribute="top" secondItem="GY5-5A-bLR" secondAttribute="bottom" constant="8" id="AJJ-yd-sko"/>
                                                 <constraint firstItem="GY5-5A-bLR" firstAttribute="leading" secondItem="K5p-4E-pGg" secondAttribute="leading" constant="8" id="AWX-jD-MXP"/>
+                                                <constraint firstAttribute="centerX" secondItem="eTV-wT-gCd" secondAttribute="centerX" id="Jf9-F6-Wa6"/>
+                                                <constraint firstItem="Fzt-Mb-vXV" firstAttribute="leading" secondItem="K5p-4E-pGg" secondAttribute="leading" constant="8" id="Lgx-We-hg1"/>
                                                 <constraint firstItem="GY5-5A-bLR" firstAttribute="top" secondItem="K5p-4E-pGg" secondAttribute="top" constant="8" id="NYe-0A-iyM"/>
-                                                <constraint firstAttribute="trailing" secondItem="SsB-yK-kVU" secondAttribute="trailing" constant="8" id="Wkk-He-wJY"/>
-                                                <constraint firstAttribute="bottom" secondItem="omK-NH-xDa" secondAttribute="bottom" constant="28.5" id="XYV-d5-9C5"/>
-                                                <constraint firstItem="SsB-yK-kVU" firstAttribute="leading" secondItem="K5p-4E-pGg" secondAttribute="leading" constant="8" id="jTi-ze-X24"/>
-                                                <constraint firstAttribute="centerX" secondItem="omK-NH-xDa" secondAttribute="centerX" id="ncK-bF-ZjD"/>
+                                                <constraint firstItem="Fzt-Mb-vXV" firstAttribute="top" secondItem="GY5-5A-bLR" secondAttribute="bottom" constant="8" id="QLP-Z0-jmW"/>
+                                                <constraint firstItem="eTV-wT-gCd" firstAttribute="top" secondItem="Fzt-Mb-vXV" secondAttribute="bottom" constant="8" id="UDo-EY-E35"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fzt-Mb-vXV" secondAttribute="trailing" constant="8" id="dDl-KX-jFu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="225" id="hMp-Lm-G46">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="258" id="hMp-Lm-G46">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hMp-Lm-G46" id="bGI-Qb-3vZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a short text message (optional)" translatesAutoresizingMaskIntoConstraints="NO" id="Mzy-Ex-xrJ">
-                                                    <rect key="frame" x="8" y="8" width="584" height="149.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mzy-Ex-xrJ">
+                                                    <rect key="frame" x="8" y="8" width="584" height="180"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcL-I0-nRP" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="171" width="584" height="45"/>
+                                                    <rect key="frame" x="8" y="196" width="584" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="FXX-bo-pTf"/>
                                                     </constraints>
@@ -1161,8 +1174,8 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="rcL-I0-nRP" secondAttribute="bottom" constant="8.5" id="F7m-TP-HOD"/>
-                                                <constraint firstItem="rcL-I0-nRP" firstAttribute="top" secondItem="Mzy-Ex-xrJ" secondAttribute="bottom" constant="13.5" id="OhV-Nj-qj6"/>
+                                                <constraint firstAttribute="bottom" secondItem="rcL-I0-nRP" secondAttribute="bottom" constant="16.5" id="F7m-TP-HOD"/>
+                                                <constraint firstItem="rcL-I0-nRP" firstAttribute="top" secondItem="Mzy-Ex-xrJ" secondAttribute="bottom" constant="8" id="OhV-Nj-qj6"/>
                                                 <constraint firstItem="rcL-I0-nRP" firstAttribute="leading" secondItem="bGI-Qb-3vZ" secondAttribute="leading" constant="8" id="Rfx-uF-W2E"/>
                                                 <constraint firstItem="Mzy-Ex-xrJ" firstAttribute="leading" secondItem="bGI-Qb-3vZ" secondAttribute="leading" constant="8" id="Ru3-vN-GnL"/>
                                                 <constraint firstAttribute="trailing" secondItem="rcL-I0-nRP" secondAttribute="trailing" constant="8" id="W5S-jJ-nJ6"/>
@@ -1180,13 +1193,14 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="addVideoButton" destination="8zI-iw-ame" id="eyU-bM-ae7"/>
                         <outlet property="bottomConstraint" destination="F7m-TP-HOD" id="e3b-Nf-lCN"/>
-                        <outlet property="videoView" destination="SsB-yK-kVU" id="u7H-AY-EQT"/>
+                        <outlet property="videoThumbnailView" destination="eTV-wT-gCd" id="VVl-EH-aBW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6la-wN-sH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8628" y="-48"/>
+            <point key="canvasLocation" x="7952" y="673"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ov1-lw-nuI">

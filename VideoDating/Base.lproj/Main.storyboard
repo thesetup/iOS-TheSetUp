@@ -12,7 +12,7 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="GradientView" customModule="VideoDating" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -134,26 +134,10 @@
                         <viewControllerLayoutGuide type="top" id="bvq-3N-X1G"/>
                         <viewControllerLayoutGuide type="bottom" id="MHD-vp-Jft"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nf2-HT-qfP" customClass="GradientView" customModule="VideoDating" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="nf2-HT-qfP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofY-10-Bc8" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                <rect key="frame" x="16" y="520" width="568" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="JWf-bh-0lh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                        <color key="value" red="0.88139204550000005" green="0.029348310499999999" blue="0.2511193645" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewo-eE-8Au">
                                 <rect key="frame" x="16" y="72" width="568" height="61"/>
                                 <constraints>
@@ -196,6 +180,30 @@
                                 <color key="textColor" red="0.88139204550000005" green="0.029348310499999999" blue="0.2511193645" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-aG-tWc">
+                                <rect key="frame" x="16" y="330" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofY-10-Bc8" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="520" width="568" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="JWf-bh-0lh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.88139204550000005" green="0.029348310499999999" blue="0.2511193645" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="A90-8Z-IZr" eventType="touchUpInside" id="3Df-GZ-aWM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -212,9 +220,12 @@
                             <constraint firstItem="ofY-10-Bc8" firstAttribute="top" secondItem="6De-vR-RyE" secondAttribute="bottom" constant="46" id="Jii-DO-udI"/>
                             <constraint firstItem="Jdf-Uf-QOy" firstAttribute="top" secondItem="Ewo-eE-8Au" secondAttribute="bottom" constant="8" id="MlX-G6-EJr"/>
                             <constraint firstItem="Jdf-Uf-QOy" firstAttribute="leading" secondItem="nf2-HT-qfP" secondAttribute="leading" constant="16" id="N0F-Ui-OcN"/>
+                            <constraint firstItem="XWk-aG-tWc" firstAttribute="leading" secondItem="nf2-HT-qfP" secondAttribute="leading" constant="16" id="N9i-4a-dnn"/>
                             <constraint firstItem="HfZ-bv-jrk" firstAttribute="leading" secondItem="nf2-HT-qfP" secondAttribute="leading" constant="16" id="SF1-MT-Drr"/>
                             <constraint firstItem="HfZ-bv-jrk" firstAttribute="top" secondItem="6oK-O5-wtr" secondAttribute="bottom" constant="8" id="WeJ-kv-uEy"/>
                             <constraint firstItem="BBt-bB-s8s" firstAttribute="leading" secondItem="nf2-HT-qfP" secondAttribute="leading" constant="16" id="anK-7R-gsh"/>
+                            <constraint firstItem="6oK-O5-wtr" firstAttribute="top" secondItem="XWk-aG-tWc" secondAttribute="bottom" constant="8" id="iXp-Us-WEE"/>
+                            <constraint firstAttribute="trailing" secondItem="XWk-aG-tWc" secondAttribute="trailing" constant="16" id="kPz-5k-lCX"/>
                             <constraint firstItem="6De-vR-RyE" firstAttribute="leading" secondItem="nf2-HT-qfP" secondAttribute="leading" constant="16" id="kmh-Y4-UdL"/>
                             <constraint firstAttribute="trailing" secondItem="HfZ-bv-jrk" secondAttribute="trailing" constant="16" id="ojx-0q-goc"/>
                             <constraint firstItem="MHD-vp-Jft" firstAttribute="top" secondItem="ofY-10-Bc8" secondAttribute="bottom" constant="20" id="s2D-lm-858"/>
@@ -242,6 +253,7 @@
                         <outlet property="emailTextField" destination="6oK-O5-wtr" id="4I5-H9-4VD"/>
                         <outlet property="errorLabel" destination="BBt-bB-s8s" id="OLp-AV-xGW"/>
                         <outlet property="passwordTextField" destination="HfZ-bv-jrk" id="7zk-LE-aBq"/>
+                        <outlet property="usernameTextField" destination="XWk-aG-tWc" id="9wi-87-9pm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZN-SZ-wS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -256,7 +268,7 @@
                         <viewControllerLayoutGuide type="top" id="TPJ-xe-BYW"/>
                         <viewControllerLayoutGuide type="bottom" id="2lH-8t-JET"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2H5-WR-tfE" customClass="GradientView" customModule="VideoDating" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="2H5-WR-tfE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -294,8 +306,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="anotherButton:" destination="0Ae-bY-RKh" eventType="touchUpInside" id="b8r-2a-yr1"/>
-                                    <action selector="loginButtonPressed:" destination="0Ae-bY-RKh" eventType="touchUpInside" id="gTm-gb-9PE"/>
+                                    <action selector="loginButtonPressed:" destination="0Ae-bY-RKh" eventType="touchUpInside" id="lm7-01-JT8"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VXn-BZ-fVe">
@@ -358,7 +369,6 @@
                         <outlet property="bottomConstraint" destination="tHx-xq-rC0" id="I7O-4l-TvM"/>
                         <outlet property="emailField" destination="XBv-P3-tfa" id="h9C-UW-2dU"/>
                         <outlet property="errorLabel" destination="W0f-1b-tNx" id="cMy-ps-IXJ"/>
-                        <outlet property="loginButton" destination="2Mz-bs-dPz" id="jL0-u0-PZS"/>
                         <outlet property="passwordField" destination="VXn-BZ-fVe" id="kye-lI-Ugw"/>
                     </connections>
                 </viewController>
@@ -440,13 +450,34 @@
                                     <action selector="yourProfileButtonPressed:" destination="lRj-q5-SPh" eventType="touchUpInside" id="LQG-2x-Ykb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gq-iz-vdJ" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="39" width="75" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Czd-pv-LOe"/>
+                                    <constraint firstAttribute="height" constant="40" id="mMI-oG-cUG"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.9097024937" green="0.0" blue="0.050546871010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="lRj-q5-SPh" eventType="touchUpInside" id="EAo-bn-mBu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xt3-Ff-PoE" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="0Wa-qg-tsK"/>
                             <constraint firstAttribute="trailing" secondItem="Xt3-Ff-PoE" secondAttribute="trailing" constant="16" id="6gJ-AE-lUs"/>
+                            <constraint firstItem="2Gq-iz-vdJ" firstAttribute="top" secondItem="8mz-NI-uKE" secondAttribute="bottom" constant="19" id="CfQ-VP-EIv"/>
                             <constraint firstItem="9l7-Uz-vkW" firstAttribute="top" secondItem="Xt3-Ff-PoE" secondAttribute="bottom" constant="8" id="FtV-sX-aQg"/>
                             <constraint firstAttribute="trailing" secondItem="Cdl-0x-DX6" secondAttribute="trailing" constant="16" id="Iwc-lC-nG4"/>
+                            <constraint firstItem="2Gq-iz-vdJ" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="LuI-gj-hBv"/>
                             <constraint firstItem="Cdl-0x-DX6" firstAttribute="top" secondItem="8mz-NI-uKE" secondAttribute="bottom" constant="8" id="NEG-Bm-JEw"/>
                             <constraint firstItem="E3c-hj-vml" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="dCn-2z-ICa"/>
                             <constraint firstItem="Xt3-Ff-PoE" firstAttribute="top" secondItem="WE4-7y-35j" secondAttribute="bottom" constant="8" id="gd4-Wf-jTx"/>

@@ -34,9 +34,25 @@ class RailsRequest: NSObject {
         
     }
     
+    var userId: Int? {
+        
+        get {
+            
+            return defaults.objectForKey("Id") as? Int
+            
+        }
+        
+        set {
+            
+            defaults.setValue(newValue, forKey: "Id")
+            defaults.synchronize()
+            
+        }
+        
+    }
+    
     var email: String!
-    var firstname: String!
-    var lastname: String!
+    var username: String!
     var password: String!
     var registerID: Int!
     var loginID: String!
@@ -46,8 +62,7 @@ class RailsRequest: NSObject {
     func logOut() {
         
         email = ""
-        firstname = ""
-        lastname = ""
+        username = ""
         password = ""
         
         token = nil
@@ -62,14 +77,11 @@ class RailsRequest: NSObject {
             "endpoint" : "/users/register",
             "parameters" : [
                 
-                "id": registerID,
+                "username": username,
                 "email" : email,
                 "password" : password,
-                "created_at": createdAt,
-                "updated_at": updatedAt,
                 
             ],
-            
             
             ] as [String:AnyObject]
         
@@ -80,6 +92,12 @@ class RailsRequest: NSObject {
             if let accessToken = responseInfo?["access_token"] as? String {
                 
                 self.token = accessToken
+                
+                if let id = responseInfo?["id"] as? Int {
+                    
+                    self.userId = id
+                    
+                }
                 
                 completion()
                 
@@ -97,12 +115,8 @@ class RailsRequest: NSObject {
             "endpoint" : "/users/login",
             "parameters" : [
                 
-                "id" : loginID,
                 "email" : email,
                 "password" : password,
-                "access_token": token,
-                "created_at": createdAt,
-                "updated_at": updatedAt
                 
             ],
             
@@ -117,11 +131,96 @@ class RailsRequest: NSObject {
                 
                 self.token = accessToken
                 
+                if let id = responseInfo?["id"] as? Int {
+                    
+                    self.userId = id
+                    
+                }
+                
                 completion()
                 
             }
             
         })
+        
+    }
+    
+    func createProfile(friendEmail: String, completion: () -> Void) {
+        
+        var info = [
+            
+            "method" : "POST",
+            "endpoint" : "/profiles",
+            "parameters" : [
+                
+                "email": friendEmail,
+                
+            ]
+            
+            ] as [String: AnyObject]
+        
+        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+        })
+        
+    }
+    
+    func updateProfile(completion: () -> Void) {
+        
+        var info = [
+            
+            "method" : "POST",
+            "endpoint" : "/posts/new",
+            "parameters" : [
+                
+               
+                
+            ]
+            
+            ] as [String: AnyObject]
+        
+        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+        })
+        
+    }
+    
+    func getAllProfiles(completion: (profilesInfo: [[String:AnyObject]]) -> Void) {
+        
+        var info = [
+            
+            "method" : "GET",
+            "endpoint" : "/profiles"
+            
+            ] as [String: AnyObject]
+        
+        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+            completion(profilesInfo: responseInfo as! [[String:AnyObject]])
+            println("Get all profiles response info! \(responseInfo)")
+            
+            
+        })
+        
+    }
+    
+    func getProfile(userId: String, completion: () -> Void) {
+        
+        var info = [
+            
+            "method" : "GET",
+            "endpoint" : "/profiles/\(userId)",
+            
+            ] as [String: AnyObject]
+        
+        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+            println("Get single profile response info! \(responseInfo)")
+            
+            
+        })
+        
+        
         
     }
     
@@ -134,8 +233,8 @@ class RailsRequest: NSObject {
             "endpoint" : "/posts/new",
             "parameters" : [
                 
-                "image_url":imageURL,
-                "answer":answer
+                "image_url": imageURL,
+                "answer": answer
                 
             ]
             
@@ -144,6 +243,7 @@ class RailsRequest: NSObject {
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
             println(responseInfo)
+            
             
         })
         

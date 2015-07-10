@@ -12,6 +12,8 @@ class MainMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBarHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -34,6 +36,17 @@ class MainMenuViewController: UIViewController {
         let profileMenuVC = profileFlow.instantiateViewControllerWithIdentifier("profileNavController") as! UINavigationController
         
         presentViewController(profileMenuVC, animated: true, completion: nil)
+    
+    }
+    
+    @IBAction func logoutButtonPressed(sender: AnyObject) {
+    
+            RailsRequest.session().userId = nil
+            RailsRequest.session().token = nil
+            RailsRequest.session().username = ""
+            RailsRequest.session().email = ""
+            RailsRequest.session().password = ""
+        self.navigationController?.popToRootViewControllerAnimated(true)
     
     }
 
