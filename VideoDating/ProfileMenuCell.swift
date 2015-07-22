@@ -13,14 +13,11 @@ class ProfileMenuCell: UITableViewCell {
     
     // Load name label, applications, and picture based on JSON data.
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profilePicture: RadiusView!
+    @IBOutlet weak var profilePicture: RadiusView?
     @IBOutlet weak var applicationsButton: CustomButton!
+    @IBOutlet weak var editButton: OutlineButton!
     
     //Add Applications Count that judges whether you can view the Applications VC or not.
-    
-    @IBOutlet weak var hasViewedCircle: CircleView!
-    var hasViewed: Bool = false
-    
     
     @IBAction func applicationsButtonPressed(sender: AnyObject) {
         
@@ -28,11 +25,7 @@ class ProfileMenuCell: UITableViewCell {
         
     }
     
-    @IBAction func editProfileButtonPressed(sender: AnyObject) {
-        
-        
-        
-    }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

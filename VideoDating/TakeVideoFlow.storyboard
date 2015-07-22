@@ -18,131 +18,145 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-5U-KBE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAR-FR-c0y" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="60" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="IW9-mQ-Lce"/>
-                                            <constraint firstAttribute="height" constant="40" id="z8X-wE-OpD"/>
-                                        </constraints>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="backButtonPressed:" destination="cly-ZJ-tOf" eventType="touchUpInside" id="Rt3-BG-Pec"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhj-Ql-nS2" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                        <rect key="frame" x="270" y="532" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Ltg-0f-lEl"/>
-                                            <constraint firstAttribute="width" constant="60" id="feA-iO-8cx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                        <state key="normal" title="❏">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="squareColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbb-F1-pvD" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                        <rect key="frame" x="379" y="536" width="51" height="51"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="51" id="EJx-z6-9AL"/>
-                                            <constraint firstAttribute="width" constant="51" id="Ocg-k9-ixe"/>
-                                        </constraints>
-                                        <state key="normal" title="Flip">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="45"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                <color key="value" red="0.95488049539999997" green="0.96517913509999997" blue="0.35100207960000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="flipButtonPressed:" destination="cly-ZJ-tOf" eventType="touchUpInside" id="8Fm-2J-YBD"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5I-6x-ae9">
-                                        <rect key="frame" x="542" y="22" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="bJC-GG-7b7"/>
-                                            <constraint firstAttribute="width" constant="50" id="zYt-FR-7BR"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                        <color key="textColor" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zk7-NF-HhU" customClass="PlayButton" customModule="VideoDating" customModuleProvider="target">
-                                        <rect key="frame" x="270" y="532" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="Ed0-G0-1Pm"/>
-                                            <constraint firstAttribute="height" constant="60" id="gLT-NU-Goi"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="curveAmount">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
-                                                <real key="value" value="90"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="topInset">
-                                                <real key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
-                                                <real key="value" value="21"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="zk7-NF-HhU" secondAttribute="centerX" id="3c7-eE-NUl"/>
-                                    <constraint firstItem="LAR-FR-c0y" firstAttribute="top" secondItem="j2i-5U-KBE" secondAttribute="top" constant="8" id="6yC-JE-ROi"/>
-                                    <constraint firstAttribute="trailing" secondItem="o5I-6x-ae9" secondAttribute="trailing" constant="8" id="D1S-6x-ePO"/>
-                                    <constraint firstItem="Wbb-F1-pvD" firstAttribute="leading" secondItem="zk7-NF-HhU" secondAttribute="trailing" constant="49" id="PWy-AZ-O3p"/>
-                                    <constraint firstAttribute="bottom" secondItem="Jhj-Ql-nS2" secondAttribute="bottom" constant="8" id="QpV-LI-AHN"/>
-                                    <constraint firstItem="o5I-6x-ae9" firstAttribute="top" secondItem="j2i-5U-KBE" secondAttribute="top" constant="22" id="dnz-BI-MtA"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wbb-F1-pvD" secondAttribute="bottom" constant="13" id="jur-Vd-pSo"/>
-                                    <constraint firstAttribute="centerX" secondItem="Jhj-Ql-nS2" secondAttribute="centerX" id="sFT-IL-vTF"/>
-                                    <constraint firstItem="LAR-FR-c0y" firstAttribute="leading" secondItem="j2i-5U-KBE" secondAttribute="leading" constant="8" id="stO-1Q-HCX"/>
-                                    <constraint firstAttribute="bottom" secondItem="zk7-NF-HhU" secondAttribute="bottom" constant="8" id="uSP-Q0-bUj"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhj-Ql-nS2" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="260" y="506" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ltg-0f-lEl"/>
+                                    <constraint firstAttribute="width" constant="80" id="feA-iO-8cx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="❏">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="squareColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="cly-ZJ-tOf" eventType="touchUpInside" id="HqM-Yi-Jbl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbb-F1-pvD" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="370" y="520" width="51" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="EJx-z6-9AL"/>
+                                    <constraint firstAttribute="width" constant="51" id="Ocg-k9-ixe"/>
+                                </constraints>
+                                <state key="normal" title="Flip">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.5739500141637961" green="0.90571559251598843" blue="0.96517913509999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="flipButtonPressed:" destination="cly-ZJ-tOf" eventType="touchUpInside" id="8Fm-2J-YBD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5I-6x-ae9">
+                                <rect key="frame" x="542" y="21" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bJC-GG-7b7"/>
+                                    <constraint firstAttribute="width" constant="50" id="zYt-FR-7BR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <color key="textColor" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zk7-NF-HhU" customClass="PlayButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="260" y="506" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ed0-G0-1Pm"/>
+                                    <constraint firstAttribute="height" constant="80" id="gLT-NU-Goi"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAmount">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="cly-ZJ-tOf" eventType="touchUpInside" id="Z5Z-is-RZc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAR-FR-c0y" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="IW9-mQ-Lce"/>
+                                    <constraint firstAttribute="height" constant="40" id="z8X-wE-OpD"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="cly-ZJ-tOf" eventType="touchUpInside" id="Rt3-BG-Pec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="zk7-NF-HhU" secondAttribute="centerX" id="0up-YO-gsa"/>
+                            <constraint firstAttribute="trailing" secondItem="o5I-6x-ae9" secondAttribute="trailing" constant="8" id="3Dw-D0-UT3"/>
+                            <constraint firstItem="LAR-FR-c0y" firstAttribute="leading" secondItem="1Jh-ub-XIl" secondAttribute="leading" constant="16" id="I1D-Et-74B"/>
+                            <constraint firstItem="zfa-MT-0ge" firstAttribute="top" secondItem="Jhj-Ql-nS2" secondAttribute="bottom" constant="14" id="Luv-CP-M4a"/>
+                            <constraint firstItem="LAR-FR-c0y" firstAttribute="top" secondItem="j0n-iJ-CjO" secondAttribute="bottom" id="NC3-gZ-0JV"/>
+                            <constraint firstItem="zfa-MT-0ge" firstAttribute="top" secondItem="zk7-NF-HhU" secondAttribute="bottom" constant="14" id="Ovu-Od-bf9"/>
                             <constraint firstAttribute="trailing" secondItem="j2i-5U-KBE" secondAttribute="trailing" id="V5c-pJ-j7F"/>
+                            <constraint firstItem="o5I-6x-ae9" firstAttribute="top" secondItem="j0n-iJ-CjO" secondAttribute="bottom" constant="1" id="VCa-96-rkN"/>
                             <constraint firstAttribute="bottom" secondItem="j2i-5U-KBE" secondAttribute="bottom" id="ZmH-Gc-b2k"/>
+                            <constraint firstItem="zfa-MT-0ge" firstAttribute="top" secondItem="Wbb-F1-pvD" secondAttribute="bottom" constant="29" id="fDv-HL-1Gf"/>
+                            <constraint firstItem="Wbb-F1-pvD" firstAttribute="leading" secondItem="zk7-NF-HhU" secondAttribute="trailing" constant="30" id="iD9-Kh-oet"/>
+                            <constraint firstAttribute="centerX" secondItem="Jhj-Ql-nS2" secondAttribute="centerX" id="jaZ-Lr-gAA"/>
                             <constraint firstItem="j2i-5U-KBE" firstAttribute="leading" secondItem="1Jh-ub-XIl" secondAttribute="leading" id="l37-Rw-qET"/>
                             <constraint firstItem="j2i-5U-KBE" firstAttribute="top" secondItem="1Jh-ub-XIl" secondAttribute="top" id="mCY-JC-ofj"/>
                         </constraints>
@@ -161,10 +175,105 @@
             </objects>
             <point key="canvasLocation" x="4204" y="-122"/>
         </scene>
+        <!--Camera Choose View Controller-->
+        <scene sceneID="fgR-hM-gzM">
+            <objects>
+                <viewController storyboardIdentifier="cameraChooseVC" id="Q9u-Kb-zzP" customClass="CameraChooseViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k5u-rI-4CF"/>
+                        <viewControllerLayoutGuide type="bottom" id="kFB-74-DvI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rAi-ZR-pve">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsu-of-eZh" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="267" width="568" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="qUJ-sX-eWA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="TAKE PICTURE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.12156999860000001" green="0.75293999909999998" blue="0.72548997400000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="takePicturePressed:" destination="Q9u-Kb-zzP" eventType="touchUpInside" id="Lpn-30-0mr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afm-6M-r90" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="350" width="568" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="J63-Mx-fFg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="CHOOSE FROM LIBRARY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.12156999860000001" green="0.75293999909999998" blue="0.72548997400000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="choosePressed:" destination="Q9u-Kb-zzP" eventType="touchUpInside" id="1Tv-Fi-Gd3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGO-ER-T3D" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hhN-qI-Yfk"/>
+                                    <constraint firstAttribute="width" constant="70" id="puy-Nf-BJX"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.52769292599999995" green="0.82740337559999999" blue="0.88512073869999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="cly-ZJ-tOf" eventType="touchUpInside" id="lAt-MK-lWv"/>
+                                    <action selector="backButtonPressed:" destination="Q9u-Kb-zzP" eventType="touchUpInside" id="v8n-pJ-Axs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="nsu-of-eZh" secondAttribute="centerY" constant="0.5" id="6q5-n1-ZYT"/>
+                            <constraint firstItem="TGO-ER-T3D" firstAttribute="top" secondItem="k5u-rI-4CF" secondAttribute="bottom" id="Csv-Cp-W47"/>
+                            <constraint firstItem="TGO-ER-T3D" firstAttribute="leading" secondItem="rAi-ZR-pve" secondAttribute="leading" constant="16" id="NTm-mX-NNn"/>
+                            <constraint firstAttribute="trailing" secondItem="afm-6M-r90" secondAttribute="trailing" constant="16" id="hUZ-Fp-rg2"/>
+                            <constraint firstItem="afm-6M-r90" firstAttribute="leading" secondItem="rAi-ZR-pve" secondAttribute="leading" constant="16" id="iZ0-TW-SPu"/>
+                            <constraint firstAttribute="trailing" secondItem="nsu-of-eZh" secondAttribute="trailing" constant="16" id="nkP-AU-b9w"/>
+                            <constraint firstItem="nsu-of-eZh" firstAttribute="leading" secondItem="rAi-ZR-pve" secondAttribute="leading" constant="16" id="npU-06-XPl"/>
+                            <constraint firstItem="afm-6M-r90" firstAttribute="top" secondItem="nsu-of-eZh" secondAttribute="bottom" constant="18" id="qTp-je-dvZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HOg-Tw-KLk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIS-xB-7Yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4912" y="613"/>
+        </scene>
         <!--Save Video View Controller-->
         <scene sceneID="oma-L0-cNr">
             <objects>
-                <viewController id="5CN-hY-jqz" customClass="SaveVideoViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="saveVideoVC" id="5CN-hY-jqz" customClass="SaveVideoViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SDw-SQ-UeT"/>
                         <viewControllerLayoutGuide type="bottom" id="2oY-59-vTL"/>
@@ -180,11 +289,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hW-wS-skx">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvV-XA-L2l" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="60" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvV-XA-L2l" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dB7-Rm-dnS"/>
-                                    <constraint firstAttribute="width" constant="60" id="uY1-j4-Oko"/>
+                                    <constraint firstAttribute="width" constant="70" id="uY1-j4-Oko"/>
                                 </constraints>
                                 <state key="normal" title="Retry">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,6 +303,12 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                         <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="5CN-hY-jqz" eventType="touchUpInside" id="HOg-Zp-p6k"/>
@@ -202,9 +317,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Video Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Jl-Vx-PDv">
                                 <rect key="frame" x="16" y="502" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPf-Bb-gWl" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPf-Bb-gWl" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
                                 <rect key="frame" x="16" y="540" width="568" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Fbv-dg-DQA"/>
@@ -218,6 +333,12 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                         <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -255,6 +376,9 @@
                                         <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="stopVid:" destination="5CN-hY-jqz" eventType="touchUpInside" id="caR-pb-utL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URf-ot-2ug" customClass="PlayButton" customModule="VideoDating" customModuleProvider="target">
                                 <rect key="frame" x="270" y="434" width="60" height="60"/>
@@ -276,12 +400,15 @@
                                         <real key="value" value="90"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="topInset">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
                                         <real key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playVid:" destination="5CN-hY-jqz" eventType="touchUpInside" id="UCq-lC-gMB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -309,6 +436,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="6fp-VD-zDk" id="zJP-od-JcK"/>
+                        <outlet property="capturedVideo" destination="VZD-Hc-jc7" id="xan-Sh-cag"/>
                         <outlet property="playButton" destination="URf-ot-2ug" id="FMR-qM-T2A"/>
                         <outlet property="stopButton" destination="e7f-gE-8aa" id="tUx-Bw-stl"/>
                         <outlet property="videoStillView" destination="2hW-wS-skx" id="qC8-Yw-sub"/>
@@ -322,7 +451,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Nk0-rf-dRG">
             <objects>
-                <navigationController storyboardIdentifier="videoCamNavVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ItD-2o-69A" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="videoCamNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="ItD-2o-69A" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ba6-w7-fIP">
@@ -337,6 +466,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npl-yG-XMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3459" y="-122"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="FfS-GM-8Y0">
+            <objects>
+                <viewController storyboardIdentifier="cameraVC" id="aQM-rg-m0F" customClass="CameraViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rw9-nT-KWp"/>
+                        <viewControllerLayoutGuide type="bottom" id="hkR-Kd-o7S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pHx-2p-IP7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hGu-1p-dmD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rXk-Fz-KxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5631" y="613"/>
         </scene>
         <!--Play Video View Controller-->
         <scene sceneID="pQl-gA-Y2h">
@@ -354,11 +502,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b93-RV-XmE" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="60" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b93-RV-XmE" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WuL-2J-8Le"/>
-                                    <constraint firstAttribute="width" constant="60" id="dAL-zh-piD"/>
+                                    <constraint firstAttribute="width" constant="70" id="dAL-zh-piD"/>
                                 </constraints>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,6 +515,15 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                         <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -455,7 +612,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h07-pU-Vxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4912" y="613"/>
+            <point key="canvasLocation" x="5631" y="-122"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n95-Vi-g73">
+            <objects>
+                <navigationController storyboardIdentifier="cameraNavVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bjy-mQ-ApS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wjz-fn-dSp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q9u-Kb-zzP" kind="relationship" relationship="rootViewController" id="3pZ-pT-y8n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dT-LS-ecb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4204" y="613"/>
         </scene>
     </scenes>
 </document>

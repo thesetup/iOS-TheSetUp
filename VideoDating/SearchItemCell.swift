@@ -1,22 +1,19 @@
 //
-//  ApplicationsTableViewCell.swift
+//  SearchItemCell.swift
 //  VideoDating
 //
-//  Created by Kyle Brooks Robinson on 7/6/15.
+//  Created by Kyle Brooks Robinson on 7/21/15.
 //  Copyright (c) 2015 Kyle Brooks Robinson. All rights reserved.
 //
 
 import UIKit
 
-class ApplicationsTableViewCell: UITableViewCell {
+class SearchItemCell: UITableViewCell {
 
     @IBOutlet weak var profilePicView: RadiusView!
-    @IBOutlet weak var profileNameLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var colorCircleView: CircleView!
-    
-    var profileId: Int = 0
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var genderAgeLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

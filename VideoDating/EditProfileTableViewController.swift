@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfileTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate {
+class EditProfileTableViewController: UITableViewController, UITextFieldDelegate {
 
     //Section 1 Outlets
     
@@ -17,180 +17,260 @@ class EditProfileTableViewController: UITableViewController, UICollectionViewDat
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var yearOfBirthTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var sexTextField: UITextField!
-    @IBOutlet weak var orientationTextField: UITextField!
     @IBOutlet weak var occupationTextField: UITextField!
     
-    // Main Video
-    @IBOutlet weak var mainVideo: UIImageView!
+    @IBOutlet weak var genderSegment: UISegmentedControl!
     
-    // Looking For Video
-    @IBOutlet weak var lookingForVideo: RadiusView!
+    @IBOutlet weak var orientationSegment: UISegmentedControl!
     
-    // Collection Views
-    @IBOutlet weak var hobbyCollectionView: UICollectionView!
-    @IBOutlet weak var tastesCollectionView: UICollectionView!
+    var orientation: String = "Straight"
+    var gender: String = "Male"
     
-    var isAddingNewProfile: Bool = false
-    var loadingFromId: String = ""
-
+    // Optional variable for info. Set this when instantiating this VC.
+    var loadingFromId: Int?
+    
+    var profilesToLoad: [[String:AnyObject]] = []
+    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        if RecordedVideo.session().profilePicture != nil {
+            
+            profilePictureView.contentMode = UIViewContentMode.ScaleAspectFit
+            profilePictureView.backgroundColor = UIColor.clearColor()
+            profilePictureView.image = RecordedVideo.session().profilePicture
+            addProfilePicture.titleLabel?.hidden = true
+
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hobbyCollectionView.tag = 0
-        tastesCollectionView.tag = 1
-        
-        if isAddingNewProfile == false {
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             
-            //Add code to load the text fields with info from the Rails Request.
+            self.view.setNeedsUpdateConstraints()
+            self.view.setNeedsLayout()
             
-//            RailsRequest.session().getProfile(userId: loadingFromID)
-            
+            if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size{
+                
+                self.bottomConstraint.constant = 20 + kbSize.height
+                
+            }
             
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardDidHideNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            self.bottomConstraint.constant = 20
+            
+        }
+        
+        if loadingFromId != nil {
+            
+//            RecordedVideo.session().loadRailsInfoToSingleton(loadingFromId!)
+//            
+//            profilePictureView.image = RecordedVideo.session().profilePicture
+//            addProfilePicture.titleLabel!.hidden = true
+//            
+//            nameTextField.text = RecordedVideo.session().name
+//            emailTextField.text = RecordedVideo.session().email
+//            passwordTextField.text = RecordedVideo.session().password
+//            yearOfBirthTextField.text = RecordedVideo.session().birthyear
+//            locationTextField.text = RecordedVideo.session().location
+//            genderSegment.selectedSegmentIndex = RecordedVideo.session().gender
+//            orientationSegment.selectedSegmentIndex = RecordedVideo.session().orientation
+//            occupationTextField.text = RecordedVideo.session().occupation
+            
+        }
     }
+    
+    @IBAction func genderSwitchPressed(sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+            
+        case 0:
+            
+            gender = "Male";
+            
+        case 1:
+            
+            gender = "Female";
+            
+        default:
+            
+            break
+            
+        }
+        
+    }
+    
+    @IBAction func orientationSwitchPressed(sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+            
+        case 0:
+            
+            orientation = "Straight";
+            
+        case 1:
+            
+            orientation = "Gay";
+            
+        default:
+            
+            break
+            
+        }
+        
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return false
 
-
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        self.view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+        
+        nameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        yearOfBirthTextField.resignFirstResponder()
+        locationTextField.resignFirstResponder()
+        occupationTextField.resignFirstResponder()
+        
+    }
+    
+    func convertURLtoViewImage(stringToConvert: String, viewToAddImage: RadiusView) {
+        
+        if let newURL = NSURL(string: stringToConvert) {
+            
+            let newUIImage = UIImage(data: NSData(contentsOfURL: newURL)!)
+            viewToAddImage.image = newUIImage
+            
+        }
+        
+    }
+    
+    @IBAction func addProfilePicture(sender: AnyObject) {
+        
+        let videoStoryboard = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
+        
+        let cameraNavVC = videoStoryboard.instantiateViewControllerWithIdentifier("cameraNavVC") as! UINavigationController
+        
+        presentViewController(cameraNavVC, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func backButtonPressed(sender: AnyObject) {
         
+        RecordedVideo.session().resetSingleton()
         dismissViewControllerAnimated(true, completion: nil)
         
     }
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
         
-        if nameTextField.text.isEmpty == false && emailTextField.text.isEmpty == false && yearOfBirthTextField.text.isEmpty == false && locationTextField.text.isEmpty == false && sexTextField.text.isEmpty == false && orientationTextField.text.isEmpty == false && occupationTextField.text.isEmpty == false {
+        if nameTextField.text.isEmpty == false && emailTextField.text.isEmpty == false && passwordTextField.text.isEmpty == false && yearOfBirthTextField.text.isEmpty == false && locationTextField.text.isEmpty == false && occupationTextField.text.isEmpty == false {
         
             //Make RailsRequest to save data.
-            if isAddingNewProfile == true {
+            if loadingFromId != nil {
                 
-                RailsRequest.session().createProfile(emailTextField.text, completion: { (responseInfo) -> Void in
-                    
-                    println("Here's my response info for creating a profile: \(responseInfo)")
-                    
-                })
+                // Patch request to update profile will go here.
                 
+                
+                // This goes in the completion block.
+//                RecordedVideo.session().resetSingleton()
                 
             } else {
                 
-                // Update profile RailsRequest.
-//                RailsRequest.session().updateProfile()
+                RecordedVideo.session().name = nameTextField.text
+                RecordedVideo.session().email = emailTextField.text
+                RecordedVideo.session().password = passwordTextField.text
+                RecordedVideo.session().birthyear = yearOfBirthTextField.text
+                RecordedVideo.session().location = locationTextField.text
+                RecordedVideo.session().gender = gender
+                RecordedVideo.session().orientation = orientation
+                RecordedVideo.session().occupation = occupationTextField.text
                 
+                RailsRequest.session().createProfile({ () -> Void in
+                    // The completion of createProfiles gets the ID for the profile I'm current making and assigns it to the RailsRequest Current Creating Id.
+                    
+                    if RecordedVideo.session().profilePictureLink != nil {
+                        
+                        println("Current creating ID \(RailsRequest.session().currentCreatingId!)")
+                        println("Profile picture link \(RecordedVideo.session().profilePictureLink!)")
+                        
+                        RailsRequest.session().createAvatar(RailsRequest.session().currentCreatingId! ,avatarEndpoint: RecordedVideo.session().profilePictureLink!, completion: { () -> Void in
+                            
+                            S3Request.session().saveAvatarToS3(RecordedVideo.session().profilePicture!, avatarEndpoint: RecordedVideo.session().profilePictureLink!, completion: { () -> Void in
+                                
+                            })
+                            
+                        })
+                        
+                    }
+                    
+                    let editVideosVC = self.storyboard?.instantiateViewControllerWithIdentifier("editVideosVC") as! EditVideosViewController
+                    
+                    self.navigationController?.pushViewController(editVideosVC, animated: true)
+                    
+                })
+
             }
-            
         
         } else {
             
             let submitAlert = UIAlertController(title: "Error", message: "Please complete all text fields.", preferredStyle: .Alert)
             
             let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
-                
-                self.dismissViewControllerAnimated(true, completion: nil)
-                
+                                
             }
             
             submitAlert.addAction(confirmAction)
             
             presentViewController(submitAlert, animated: true, completion: nil)
             
-            
         }
     }
     
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
-
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func beginVideoRecording(videoCategory: VideoTypes, videoLength: Int) {
         
-        var cell: UICollectionViewCell
+        let videoStoryboard = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
         
-        if collectionView.tag == 0 {
-            
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("hobbiesCell", forIndexPath: indexPath) as! HobbiesCollectionViewCell
-            
-//            launchVideoPlayer(<#videoToPlay: String#>)
-            
-        } else {
-            
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("tastesCell", forIndexPath: indexPath) as! TastesCollectionViewCell
-            
-//            launchVideoPlayer(<#videoToPlay: String#>)
-
-            
-        }
+        let videoCamNavVC = videoStoryboard.instantiateViewControllerWithIdentifier("videoCamNavVC") as! UINavigationController
+        
+        (videoCamNavVC.viewControllers[0] as! VideoCamViewController).videoDuration = videoLength
+        (videoCamNavVC.viewControllers[0] as! VideoCamViewController).videoType = videoCategory
+        
+        presentViewController(videoCamNavVC, animated: true, completion: nil)
         
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        var cell: UICollectionViewCell
-        
-        if collectionView.tag == 0 {
-            
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("hobbiesCell", forIndexPath: indexPath) as! HobbiesCollectionViewCell
-
-            
-        } else {
-            
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("tastesCell", forIndexPath: indexPath) as! TastesCollectionViewCell
-
-        }
-        
-        return cell
-        
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 0
-        
-    }
-    
-    @IBAction func addHobbiesButtonPressed(sender: AnyObject) {
-    
-    
-    }
-    
-    @IBAction func addTastesButtonPressed(sender: AnyObject) {
-    
-    
-    }
-    
-    func launchVideoPlayer(videoToPlay: String) {
-        
-        let stringToURL = NSURL(string: videoToPlay)
+    func launchVideoPlayer(videoToPlay: NSURL) {
         
         let videoStoryboard = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
         
         let videoPlayerVC = videoStoryboard.instantiateViewControllerWithIdentifier("playVideoVC") as! PlayVideoViewController
         
-        videoPlayerVC.videoURL = stringToURL
+        videoPlayerVC.videoURL = videoToPlay
         
         presentViewController(videoPlayerVC, animated: true, completion: nil)
         
     }
+    
+
     
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

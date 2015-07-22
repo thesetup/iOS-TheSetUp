@@ -10,39 +10,47 @@ import UIKit
 
 class ProfileMenuViewController: UITableViewController {
 
-    var profilesToLoad = []
+    var profilesToLoad: [[String:AnyObject]] = []
+    var singleProfileInfo: [String:AnyObject] = [:]
+    var myNewArray: [[String:AnyObject]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        RailsRequest.session().getAllProfiles { (responseInfo) -> Void in
+        // Rails Request that fetches the data.
+        
+        RailsRequest.session().getYourCreatedProfiles { (profiles) -> Void in
             
-            for item in responseInfo {
-                
-                if item["profiler_id"] as? Int == RailsRequest.session().userId {
-                    
-                    //Do a Rails Request for the specific user profile if it's stored at a separate location, and then add it to the ProfilesToLoad collection.
-                    
-                }
-                
-            }
+            self.profilesToLoad = profiles
+            self.tableView.reloadData()
+            
+            println("Here's what should be going into my ProfileMenuViewController!!!!!!!!")
+            println(self.profilesToLoad)
             
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     @IBAction func addButtonPressed(sender: AnyObject) {
         
-        let editProfileVC = storyboard?.instantiateViewControllerWithIdentifier("editProfileVC") as! EditProfileTableViewController
+        RailsRequest.session().currentCreatingId = nil
+        RecordedVideo.session().resetSingleton()
         
-        editProfileVC.isAddingNewProfile = true
+        let createEditProfileNavVC = storyboard?.instantiateViewControllerWithIdentifier("createEditProfileNavVC") as! UINavigationController
+        presentViewController(createEditProfileNavVC, animated: true, completion: nil)
         
-        presentViewController(editProfileVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func editProfileButtonPressed(sender: UIButton) {
+        
+        RailsRequest.session().currentCreatingId = sender.tag
+        RecordedVideo.session().resetSingleton()
+       
+        let launchNavVC = storyboard?.instantiateViewControllerWithIdentifier("launchNavVC") as! UINavigationController
+        
+        (launchNavVC.viewControllers[0] as! LaunchViewController).userId = sender.tag
+        
+        presentViewController(launchNavVC, animated: true, completion: nil)
         
     }
     
@@ -52,71 +60,46 @@ class ProfileMenuViewController: UITableViewController {
     
     }
     
-    
-
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return profilesToLoad.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("mainMenuCell", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("mainMenuCell", forIndexPath: indexPath) as! ProfileMenuCell
+        
+        if let profilePicURL = profilesToLoad[indexPath.row]["avatar_url"] as? String {
+            
+            if profilePicURL != "/avatars/original/missing.png" {
+                
+                let avatarURL = NSURL(string: profilePicURL)
+                let data = NSData(contentsOfURL: avatarURL!)
+                let avatarImage = UIImage(data: data!)
+                
+                cell.profilePicture?.image = avatarImage
+                
+            }
+            
+        }
+        
+        if let profileName = profilesToLoad[indexPath.row]["username"] as? String {
+        
+            cell.nameLabel.text = profileName
+        
+        }
+        
+        if let profileId = profilesToLoad[indexPath.row]["id"] as? Int {
+            
+            cell.editButton.tag = profileId
+            
+        }
+        
+        
+          return cell
+        
+        }
+    
 }

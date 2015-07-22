@@ -26,18 +26,35 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var timerLabel: UILabel!
     var timer: NSTimer?
     var videoDuration: Int = 30
-    var countDown: Int = 30
+    var countdown: Int = 30
     
     var saveVideoVC: SaveVideoViewController?
     var thumbnail: UIImage?
     
     var videoURL: NSURL?
     var videoStillImage: UIImage?
+    var thumbnailImage: UIImage?
+    var videoString: String?
+    
+    var videoType: VideoTypes?
     
     var replyViewController: MessageReplyViewController?
     
+    override func viewWillAppear(animated: Bool) {
+        
+        timerLabel.hidden = false
+        timerLabel.text = "\(videoDuration)"
+        
+        startButton.hidden = false
+        stopButton.hidden = true
+        flipButton.hidden = false
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timerLabel.text = "\(videoDuration)"
         
         stopButton.hidden = true
         
@@ -58,6 +75,7 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
         if let vidURL = info[UIImagePickerControllerMediaURL] as? NSURL {
             
             videoURL = vidURL
+            println("here's my video url! \(videoURL)")
             
             createThumbnail()
             imageResize()
@@ -67,7 +85,10 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
             saveVideoVC = storyboard?.instantiateViewControllerWithIdentifier("saveVideoVC") as? SaveVideoViewController
             
             saveVideoVC!.videoURL = vidURL
+            saveVideoVC!.thumbnailImage = thumbnailImage
             saveVideoVC!.videoStillImage = videoStillImage
+            saveVideoVC!.videoType = videoType
+            saveVideoVC!.videoString = videoString
             
             self.navigationController?.pushViewController(saveVideoVC!, animated: true)
             
@@ -96,7 +117,6 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     
     func imageResize() {
         
-        // "Parameters" :: videoStillImage (UIImage), newSize (CGSize)
         var newSize = CGSize(width: 480,height: 480)
         var scaleImageRect = CGRectMake(0,0, newSize.width, newSize.height)
         
@@ -109,22 +129,22 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
         UIGraphicsBeginImageContext(newSize)
         
         videoStillImage!.drawInRect(scaleImageRect)
-        videoStillImage = UIGraphicsGetImageFromCurrentImageContext()
+        thumbnailImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
     }
     
     func updateSecondsLeft() {
         
-        countDown--
+        countdown--
         
-        if countDown == 0 {
+        if countdown == 0 {
             
             stopRecording()
             
         } else {
             
-            timerLabel.text = String(countDown)
+            timerLabel.text = String(countdown)
             
         }
         
@@ -135,12 +155,10 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
         timer?.invalidate()
         videoPick.stopVideoCapture()
         
-        countDown = videoDuration
+        var countDown = videoDuration
         
         timerLabel.text = "\(videoDuration)"
         stopButton.hidden = true
-        startButton.hidden = false
-        flipButton.hidden = false
         
     }
     
@@ -151,6 +169,8 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
         flipButton.hidden = true
         
         videoPick.startVideoCapture()
+        
+        countdown = videoDuration
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateSecondsLeft"), userInfo: nil, repeats: true)
         
@@ -178,11 +198,14 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBAction func backButtonPressed(sender: AnyObject) {
         
-        replyViewController?.videoURL = videoURL
-        replyViewController?.videoStillImage = videoStillImage
+        dismissViewControllerAnimated(true, completion: nil)
         
-        imagePickerControllerDidCancel(videoPick)
-        navigationController?.popToRootViewControllerAnimated(true)
+        //Not sure what this stuff's for.
+//        replyViewController?.videoURL = videoURL
+//        replyViewController?.videoStillImage = videoStillImage
+//        
+//        imagePickerControllerDidCancel(videoPick)
+//        navigationController?.popToRootViewControllerAnimated(true)
         
     }
     

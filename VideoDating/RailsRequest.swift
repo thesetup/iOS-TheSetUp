@@ -51,14 +51,18 @@ class RailsRequest: NSObject {
         
     }
     
+    var profileId: Int?
+    
     var email: String!
     var username: String!
     var password: String!
     var registerID: Int!
     var loginID: String!
-    var createdAt: String!
-    var updatedAt: String!
+    var currentCreatingId: Int?
     
+    // This is the number for your own Setup profile (if you've had one created.)
+    var yourOwnProfile: Int?
+        
     func logOut() {
         
         email = ""
@@ -69,7 +73,9 @@ class RailsRequest: NSObject {
         
     }
     
-    func registerWithCompletion(completion: () -> Void) {
+    func registerWithCompletion(errorLabel: UILabel, completion: () -> Void) {
+        
+        var myErrorLabel = errorLabel
         
         var info = [
             
@@ -97,9 +103,17 @@ class RailsRequest: NSObject {
                     
                     self.userId = id
                     
+                    completion()
+                    
                 }
+            
+            }
+            
+            if let error = responseInfo?["errors"] as? [String] {
                 
-                completion()
+                myErrorLabel.text = error[0]
+                println(error)
+                
                 
             }
             
@@ -107,7 +121,9 @@ class RailsRequest: NSObject {
         
     }
     
-    func login(completion: () -> Void) {
+    func login(errorLabel: UILabel, completion: () -> Void) {
+        
+        var myErrorLabel = errorLabel
         
         var info = [
             
@@ -126,9 +142,9 @@ class RailsRequest: NSObject {
             
             println(responseInfo)
             
-            
             if let accessToken = responseInfo?["access_token"] as? String {
                 
+                println("Here's my access token: \(accessToken)")
                 self.token = accessToken
                 
                 if let id = responseInfo?["id"] as? Int {
@@ -141,25 +157,161 @@ class RailsRequest: NSObject {
                 
             }
             
+            if let yourProfileInfo = responseInfo?["made_profile"] as? [String:AnyObject] {
+                
+                if let yourProfileId = yourProfileInfo["id"] as? Int {
+                    
+                    self.yourOwnProfile! = yourProfileId
+                    
+                }
+                
+            } else { self.yourOwnProfile = nil }
+            
+            println("Here's Your Own Profile status: \(self.yourOwnProfile)")
+            
+            if let error = responseInfo?["message"] as? String {
+                
+                myErrorLabel.text = error
+                println(error)
+                
+            }
+            
         })
         
     }
     
-    func createProfile(friendEmail: String, completion: () -> Void) {
+    func createProfile(completion: () -> Void) {
         
+        //Now my CreateProfile thingy is running.
+        
+        let name = RecordedVideo.session().name!
+        let email = RecordedVideo.session().email!
+        let password = RecordedVideo.session().password!
+        let birthyear = RecordedVideo.session().birthyear!
+        let gender = RecordedVideo.session().gender!
+        let orientation = RecordedVideo.session().orientation!
+        let occupation = RecordedVideo.session().occupation!
+        let location = RecordedVideo.session().location!
+                
         var info = [
             
             "method" : "POST",
             "endpoint" : "/profiles",
             "parameters" : [
+            
+                "username": name,
+                "email": email,
+                "password": password,
+                "birthyear": birthyear,
+                "gender": gender,
+                "orientation": orientation,
+                "occupation": occupation,
+                "location": location,
                 
-                "email": friendEmail,
+            ]
+            
+            ] as [String: AnyObject]
+        
+        println(info)
+        
+        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+            println("Here's my response info for creating a new profile. \(responseInfo)")
+            
+            if let profiles = responseInfo?["profiles"] as? [String:AnyObject] {
+                
+                if let newId: Int = profiles["id"] as? Int {
+                    
+                    self.currentCreatingId = newId
+                    
+                    println("Here's my PROFILE FRICKIN ID: \(newId)")
+                    
+                    completion()
+                
+                }
+                
+            }
+            
+        })
+        
+    }
+    
+
+    func createVideo(videoType: String, videoURL: String, videoData: NSURL, thumbnailImage: UIImage, thumbnailURL: String, caption: String, completion: () -> Void) {
+        
+        println(thumbnailImage)
+        let saveVideoThumbImage = thumbnailImage
+        
+        println("This is my Profile Id. \(profileId!)")
+        
+        let currentProfileId = currentCreatingId!
+        
+        println("This is my Current Creating Id. \(currentProfileId)")
+        
+        //Save videos for S3
+        let saveVideoURL = S3_URL + videoURL
+        println(saveVideoURL)
+        let saveVideoThumb = S3_URL + thumbnailURL
+        
+        println("Here's my profileID for the video endpoint: \(currentProfileId)")
+        
+        var info = [
+            
+            "method" : "POST",
+            "endpoint" : "/profiles/\(currentProfileId)/videos",
+            "parameters" : [
+                
+                "video_type": videoType,
+                "video_url" : saveVideoURL,
+                "thumbnail_url" : saveVideoThumb,
+                "caption" : caption,
+                
+            ]
+            
+            ] as [String: AnyObject]
+        
+        println("Here's my info for the Create Video request. \(info)")
+        
+        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+            println("Here's my post video response info! \(responseInfo)")
+            
+            if let responseURL = responseInfo?["video_url"] as? String {
+                
+                if responseURL == saveVideoURL {
+                    
+                    println("My S3 save request should now be running")
+                    S3Request.session().saveVideoToS3(saveVideoThumbImage, thumbnailEndpoint: thumbnailURL, videoData: videoData, videoEndpoint: videoURL)
+                    
+                    completion()
+                    
+                }
+                
+            }
+            
+        })
+        
+    }
+    
+    func createAvatar(userGettingAvatar: Int, avatarEndpoint: String, completion: () -> Void) {
+        
+        var info = [
+            
+            "method" : "PUT",
+            "endpoint" : "/profiles/\(userGettingAvatar)/avatar",
+            "parameters" : [
+                
+                "avatar_remote_url" : S3_URL + avatarEndpoint
                 
             ]
             
             ] as [String: AnyObject]
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+            println("Here's my response info for my Rails Create Avatar. \(responseInfo)")
+            
+            completion()
             
         })
         
@@ -169,12 +321,11 @@ class RailsRequest: NSObject {
         
         var info = [
             
-            "method" : "POST",
+            "method" : "PATCH",
             "endpoint" : "/posts/new",
             "parameters" : [
                 
-               
-                
+
             ]
             
             ] as [String: AnyObject]
@@ -185,7 +336,7 @@ class RailsRequest: NSObject {
         
     }
     
-    func getAllProfiles(completion: (profilesInfo: [[String:AnyObject]]) -> Void) {
+    func getAllProfiles(completion: (profilesInfo: [String:AnyObject]) -> Void) {
         
         var info = [
             
@@ -196,20 +347,20 @@ class RailsRequest: NSObject {
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            completion(profilesInfo: responseInfo as! [[String:AnyObject]])
+            completion(profilesInfo: responseInfo as! [String:AnyObject])
             println("Get all profiles response info! \(responseInfo)")
-            
             
         })
         
     }
     
-    func getProfile(userId: String, completion: () -> Void) {
+    func getSingleProfile(profileToGet: Int, completion: (profileInfo: [String:AnyObject]) -> Void) {
+        
         
         var info = [
             
             "method" : "GET",
-            "endpoint" : "/profiles/\(userId)",
+            "endpoint" : "/profiles/\(profileToGet)",
             
             ] as [String: AnyObject]
         
@@ -217,24 +368,54 @@ class RailsRequest: NSObject {
             
             println("Get single profile response info! \(responseInfo)")
             
-            
+            if let profile = responseInfo as? [String:AnyObject] {
+                
+                completion(profileInfo: profile)
+                
+            }
         })
-        
-        
         
     }
     
     
-    func postImage(imageURL: String, answer: String, completion: () -> Void) {
+    func getYourCreatedProfiles(completion: (profiles: [[String:AnyObject]]) -> Void) {
+        
+        let myProfileId = userId!
+        println(myProfileId)
         
         var info = [
             
-            "method" : "POST",
-            "endpoint" : "/posts/new",
+            "method" : "GET",
+            "endpoint" : "/users/\(myProfileId)/profiles",
+            
+            ] as [String: AnyObject]
+        
+        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+            
+            println("Here's my response info for fetched profiles. \(responseInfo)")
+        
+            
+            if let profiles = responseInfo as? [[String:AnyObject]] {
+            
+                completion(profiles: profiles)
+
+            }
+            
+        })
+        
+    }
+    
+    
+    
+    func searchProfiles(search: String, completion: (searchResults: [[String:AnyObject]]) -> Void) {
+        
+        var info = [
+            
+            "method" : "GET",
+            "endpoint" : "/questions/search",
             "parameters" : [
                 
-                "image_url": imageURL,
-                "answer": answer
+                "keywords" : search
                 
             ]
             
@@ -242,14 +423,13 @@ class RailsRequest: NSObject {
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            println(responseInfo)
+            completion(searchResults: responseInfo as! [[String:AnyObject]])
+            println("Search result response info! \(responseInfo)")
             
             
         })
         
     }
-    
-
     
     
     func requestWithInfo(info: [String:AnyObject], andCompletion completion: ((responseInfo: AnyObject?) -> Void)?) {
@@ -286,6 +466,7 @@ class RailsRequest: NSObject {
             if let token = token {
                 
                 request.setValue(token, forHTTPHeaderField: "Access-Token")
+                println("Here's my request value: \(request)")
                 
             }
             
@@ -312,11 +493,18 @@ class RailsRequest: NSObject {
             ////// BODY
             
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+
+                if data != nil {
                 
-                
-                if let json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) {
+                    if let json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) {
+                        
+                        completion?(responseInfo: json)
+                        
+                    }
                     
-                    completion?(responseInfo: json)
+                } else {
+                    
+                    completion?(responseInfo: nil)
                     
                 }
                 

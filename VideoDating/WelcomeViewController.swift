@@ -10,23 +10,77 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var setupLogo: UIImageView!
+    @IBOutlet weak var loginButton: OutlineButton!
+    @IBOutlet weak var registerButton: OutlineButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupLogo.center.y -= view.bounds.height
+
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.setupLogo.center.y += self.view.bounds.height
+            
+        })
+    
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        loginButton.center.y += view.bounds.height
+        registerButton.center.y += view.bounds.height
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+
+            self.loginButton.center.y -= self.view.bounds.height
+            self.registerButton.center.y -= self.view.bounds.height
+
+        })
+        
+    }
+    
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        
+        let loginVC = storyboard?.instantiateViewControllerWithIdentifier("loginVC") as! LoginViewController
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.loginButton.center.y += self.view.bounds.height
+            self.registerButton.center.y += self.view.bounds.height
+            
+        }) { (finished) -> Void in
+            
+            self.navigationController?.pushViewController(loginVC, animated: false)
+            
+        }
+    
+    }
+    
+    @IBAction func registerButtonPressed(sender: AnyObject) {
+        
+        let registerVC = storyboard?.instantiateViewControllerWithIdentifier("registerVC") as! RegisterViewController
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.loginButton.center.y += self.view.bounds.height
+            self.registerButton.center.y += self.view.bounds.height
+            
+            }) { (finished) -> Void in
+                
+                self.navigationController?.pushViewController(registerVC, animated: false)
+                
+        }
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func bypassButton(sender: AnyObject) {
-        
-        let mainMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
-        
-        presentViewController(mainMenuVC, animated: true, completion: nil)
-        
     }
 
     /*

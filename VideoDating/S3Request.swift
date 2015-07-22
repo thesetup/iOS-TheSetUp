@@ -15,6 +15,7 @@ private let defaults = NSUserDefaults.standardUserDefaults()
 private let _singleton = S3Request()
 
 let S3_URL = "https://s3.amazonaws.com/videodatingbucket/"
+let railsBucket = "https://tiysetup.s3.amazonaws.com"
 
 let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
 
@@ -24,44 +25,73 @@ class S3Request: NSObject {
     
     let s3Manager = AFAmazonS3Manager(accessKeyID: accessKey, secret: secret)
     
-    var userID: String = "KyleTest"
     var newURL: String?
     var videoURL: String?
     var thumbnail: UIImage?
     
-    var timeyNumber = Int(NSDate().timeIntervalSince1970 * 0.01)
+    var timeyNumber = Int(NSDate().timeIntervalSince1970)
     
-    var videoName: String {
-        return "/\(userID)_\(timeyNumber).mp4"
-    }
-    
-    var videoFile: String {
-        return documentsDirectory + videoName
-    }
-    
-    var resizedVideoURL: NSURL? {
-        return NSURL(fileURLWithPath: videoFile)
-    }
-    
-    
-    func saveVideoToS3() {
+    func saveAvatarToS3(avatarImage: UIImage, avatarEndpoint: String, completion: () -> Void) {
         
         s3Manager.requestSerializer.bucket = bucket
         s3Manager.requestSerializer.region = AFAmazonS3USStandardRegion
-        //        s3Manager.requestSerializer.setValue("public-read", forHTTPHeaderField: "x-amz-acl")
         
         if let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as? String {
             
-            let imagePath = documentPath.stringByAppendingPathComponent("\(userID)_\(timeyNumber)img.png")
+            // This is where my thumbnail will be located.
+            let avatarPath = documentPath.stringByAppendingPathComponent(avatarEndpoint)
             
-            let imageData = UIImagePNGRepresentation(thumbnail)
+            // This writes the thumbnail to the thumbnailPath.
+            let imageData = UIImagePNGRepresentation(avatarImage)
+            imageData.writeToFile(avatarPath, atomically: false)
+            let imageURL = NSURL(fileURLWithPath: avatarPath)
             
-            imageData.writeToFile(imagePath, atomically: false)
+            // Avatar
+            s3Manager.putObjectWithFile(avatarPath, destinationPath: avatarEndpoint, parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
+                
+                let percentageWritten = (CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100.0)
+                
+                println("Avatar Uploaded \(percentageWritten)%")
+                
+                }, success: { (responseObject) -> Void in
+                    
+                    let avatarInfo = responseObject as! AFAmazonS3ResponseObject
+                    
+                    self.newURL = avatarInfo.URL.absoluteString
+                    print(self.newURL)
+                    
+                    
+                }, failure: { (error) -> Void in
+                    
+                    println("\(error)")
+                    
+                completion()
+                    
+            })
             
-            let imageURL = NSURL(fileURLWithPath: imagePath)
+        }
+        
+    }
+    
+    func saveVideoToS3(thumbnailImage: UIImage, thumbnailEndpoint: String, videoData: NSURL, videoEndpoint: String) {
+        
+        s3Manager.requestSerializer.bucket = bucket
+        s3Manager.requestSerializer.region = AFAmazonS3USStandardRegion
+        
+        if let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as? String {
+            
+            // This is where my thumbnail will be located.
+            let thumbnailPath = documentPath.stringByAppendingPathComponent(thumbnailEndpoint)
+            // This is where my resized video has already been written - converted to a string.
+            let videoPath = videoData.path
+            
+            // This writes the thumbnail to the thumbnailPath.
+            let imageData = UIImagePNGRepresentation(thumbnailImage)
+            imageData.writeToFile(thumbnailPath, atomically: false)
+            let imageURL = NSURL(fileURLWithPath: thumbnailPath)
             
             // Thumbnail
-            s3Manager.postObjectWithFile(imagePath, destinationPath: "", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
+            s3Manager.putObjectWithFile(thumbnailPath, destinationPath: thumbnailEndpoint, parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
                 
                 let percentageWritten = (CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100.0)
                 
@@ -72,8 +102,8 @@ class S3Request: NSObject {
                     let thumbnailInfo = responseObject as! AFAmazonS3ResponseObject
                     
                     self.newURL = thumbnailInfo.URL.absoluteString
+                    print(self.newURL)
                     
-                    // Send Rails the thumbnail URL here.
                     
                 }, failure: { (error) -> Void in
                     
@@ -82,7 +112,7 @@ class S3Request: NSObject {
             })
             
             // Video
-            s3Manager.postObjectWithFile(videoFile, destinationPath: "", parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
+            s3Manager.putObjectWithFile(videoPath, destinationPath: videoEndpoint, parameters: nil, progress: { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) -> Void in
                 
                 let percentageWritten = (CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite) * 100.0)
                 
@@ -95,9 +125,6 @@ class S3Request: NSObject {
                     self.newURL = videoInfo.URL.absoluteString
                     
                     println("Our response object: \(responseObject)")
-                    
-                    // Send Rails the video URL here.
-                    
                     
                 }, failure: { (error) -> Void in
                     

@@ -10,6 +10,11 @@ import UIKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var sShape: UIImageView!
+    @IBOutlet weak var setupLogo: UIImageView!
+    @IBOutlet weak var backButton: OutlineButton!
+    @IBOutlet weak var registerButton: OutlineButton!
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -48,6 +53,33 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        self.sShape.alpha = 0
+        
+        self.backButton.center.x -= self.view.bounds.width
+        self.registerButton.center.y += self.view.bounds.height
+        
+        self.usernameTextField.center.x -= self.view.bounds.width
+        self.emailTextField.center.x -= self.view.bounds.width
+        self.passwordTextField.center.x -= self.view.bounds.width
+        self.confirmPasswordTextField.center.x -= self.view.bounds.width
+
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.backButton.center.x += self.view.bounds.width
+            self.registerButton.center.y -= self.view.bounds.height
+            
+            self.usernameTextField.center.x += self.view.bounds.width
+            self.emailTextField.center.x += self.view.bounds.width
+            self.passwordTextField.center.x += self.view.bounds.width
+            self.confirmPasswordTextField.center.x += self.view.bounds.width
+            
+        })
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,15 +98,32 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 RailsRequest.session().username = usernameTextField.text
                 RailsRequest.session().email = emailTextField.text
                 RailsRequest.session().password = passwordTextField.text
-                RailsRequest.session().registerWithCompletion({ () -> Void in
+                RailsRequest.session().registerWithCompletion(errorLabel, completion: { () -> Void in
                     
-                    println("Theoretically, you just registered.")
+                    let mainMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
+                    
+                    UIView.animateWithDuration(1.0, animations: { () -> Void in
+                        
+                        self.sShape.alpha = 1
+                        
+                        self.setupLogo.center.y -= self.view.bounds.height
+                        self.backButton.center.x += self.view.bounds.width
+                        self.registerButton.center.y += self.view.bounds.height
+                        
+                        self.usernameTextField.center.x -= self.view.bounds.width
+                        self.emailTextField.center.x -= self.view.bounds.width
+                        self.passwordTextField.center.x -= self.view.bounds.width
+                        self.confirmPasswordTextField.center.x -= self.view.bounds.width
+                        
+                        //                    self.setupLogo.center.y -= self.view.bounds.height
+                        
+                        }, completion: { (finished) -> Void in
+                            
+                            self.navigationController?.pushViewController(mainMenuVC, animated: false)
+                            
+                    })
                     
                 })
-                
-                let mainMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
-                
-                self.navigationController?.pushViewController(mainMenuVC, animated: true)
                 
             } else {
                 
@@ -96,6 +145,29 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.backButton.center.x -= self.view.bounds.width
+            self.registerButton.center.y += self.view.bounds.height
+            
+            self.usernameTextField.center.x -= self.view.bounds.width
+            self.emailTextField.center.x -= self.view.bounds.width
+            self.passwordTextField.center.x -= self.view.bounds.width
+            self.confirmPasswordTextField.center.x -= self.view.bounds.width
+            
+            
+            }) { (finished) -> Void in
+                
+                self.navigationController?.popViewControllerAnimated(false)
+                
+                
+            }
+        
+        
+        
+    }
     
     /*
     // MARK: - Navigation

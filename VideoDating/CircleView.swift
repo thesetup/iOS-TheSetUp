@@ -25,7 +25,7 @@ import UIKit
         let context = UIGraphicsGetCurrentContext()
         circleColor.set()
         CGContextFillEllipseInRect(context, rect)
-        
+                
     }
 
 }
