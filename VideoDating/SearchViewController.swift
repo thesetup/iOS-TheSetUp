@@ -14,101 +14,180 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     var currentSearch: String = ""
     
-    var userInfoArray: [[String:AnyObject]] = []
-    var avatarInfo: [String] = []
-    var mySearchResults: [[String:AnyObject]] = []
+    var mySearchResults: [String:AnyObject] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
     }
-
-    // MARK: - Table view data source
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         
+        currentSearch = ""
         
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
+        currentSearch = searchText
         
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        RailsRequest.session().searchProfiles(searchBar.text, completion: { (searchResults) -> Void in
+        view.endEditing(true)
+        
+        var formattedSearch: String = ""
+        
+        for letter in currentSearch {
             
-            self.mySearchResults = searchResults
+            if letter == " " {
+                
+                formattedSearch += ","
+                
+            } else {
+                
+                formattedSearch += "\(letter)"
+                
+            }
             
-            self.tableView.reloadData()
+        }
+        
+        println(formattedSearch)
+        
+        RailsRequest.session().searchProfiles(formattedSearch) { (searchResults) -> Void in
             
-        })
+            if let noResults = searchResults["message"] as? String {
+                
+                let saveAlert = UIAlertController(title: "Error", message: "\(noResults)", preferredStyle: .Alert)
+                
+                let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action: UIAlertAction!) -> Void in
+                    
+                }
+                
+                saveAlert.addAction(okayAction)
+                
+                self.presentViewController(saveAlert, animated: true, completion: nil)
+                
+            } else {
+            
+                self.mySearchResults = searchResults
+                println("Here are my search results! \(self.mySearchResults)")
+                self.tableView.reloadData()
+            
+            }
+            
+        }
         
     }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        view.endEditing(true)
+        
+        super.touchesBegan(touches, withEvent: event)
+        
+    }
+    
+    // MARK: - Table view data source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return mySearchResults.count
+        
+        if let numberOfRows = mySearchResults["questions"] as? [[String:AnyObject]] {
+            
+            return numberOfRows.count
+            
+        } else {
+            
+            return 0
+            
+        }
+        
     }
 
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("searchItemCell", forIndexPath: indexPath) as! SearchItemCell
         
-        var ageText = ""
-        var genderText = ""
+        var timeInterval: NSTimeInterval = (0.5 + (NSTimeInterval(indexPath.row) * 0.1 ))
         
-        if let searchResultItem = mySearchResults[indexPath.row] as [String:AnyObject]? {
+        cell.center.x += self.tableView.bounds.width
+        
+        UIView.animateWithDuration(timeInterval, animations: { () -> Void in
             
-            if let profileId = searchResultItem["id"] as? Int {
+            cell.center.x -= self.tableView.bounds.width
+            
+        })
+        
+        if let profiles = mySearchResults["profiles"] as? [[String:AnyObject]] {
+            
+            if let profilePicURL = (profiles[indexPath.row]["avatar_remote_url"] as? String) ?? (profiles[indexPath.row]["avatar_url"] as? String) {
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                    
+                    if profilePicURL != "/avatars/original/missing.png" ?? "/avatars/remote/missing.png" ?? "null" {
+                        
+                        let avatarURL = NSURL(string: profilePicURL)
+                        let data = NSData(contentsOfURL: avatarURL!)
+                        let avatarImage = UIImage(data: data!)
+                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            
+                            cell.profilePicView?.image = avatarImage
+                            
+                        })
+                        
+                    }
+                    
+                })
+                
+            }
+            
+        }
+        
+        var genderAge = ""
+        
+        if let questions = mySearchResults["questions"] as? [[String:AnyObject]] {
+            
+            if let profileName = questions[indexPath.row]["name"] as? String {
+                
+                cell.nameLabel.text = profileName
+                
+            }
+            
+            if let profileId = questions[indexPath.row]["id"] as? Int {
                 
                 cell.tag = profileId
                 
             }
             
-            if let avatarURL = searchResultItem["avatar_url"] as? String {
+            if let gender = questions[indexPath.row]["gender"] as? String {
                 
-                let newURL: NSURL = NSURL(string: avatarURL)!
-                let data: NSData = NSData(contentsOfURL: newURL)!
-                let avatarImage = UIImage(data: data)
                 
-                cell.profilePicView.image = avatarImage
+                genderAge += (gender + ", ")
                 
             }
             
-            if let name = searchResultItem["name"] as? String {
+            if let birthyear = questions[indexPath.row]["birthyear"] as? Int {
                 
-                cell.nameLabel.text = name
+                let age = (2015 - birthyear)
                 
-            }
-            
-            if let location = searchResultItem["location"] as? String {
-                
-                cell.cityLabel.text = location
+                genderAge += "\(age)"
                 
             }
             
-            if let birthyear = searchResultItem["age"] as? Int {
+            cell.genderAgeLabel.text = genderAge
+            
+            if let city = questions[indexPath.row]["location"] as? String {
                 
-                ageText = "\(2015 - birthyear)"
+                cell.cityLabel.text = city
                 
             }
-            
-            if let gender = searchResultItem["gender"] as? String {
-                
-                genderText = gender
-                
-            }
-            
-            cell.genderAgeLabel.text = "\(genderText), \(ageText)"
             
         }
-
-    return cell
+        
+        return cell
         
     }
     
@@ -124,40 +203,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
+    @IBAction func backButtonPressed(sender: AnyObject) {
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        dismissViewControllerAnimated(true, completion: nil)
     
     }
-    */
     
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
 }

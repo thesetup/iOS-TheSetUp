@@ -50,9 +50,7 @@ class YourMessagesDetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // PENDING:  Set text to info from Rails Request
-        
+                
         stopButton.hidden = true
         
         if videoData != nil {

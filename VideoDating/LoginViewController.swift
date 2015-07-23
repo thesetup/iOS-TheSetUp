@@ -32,15 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             RailsRequest.session().email = emailField.text
             RailsRequest.session().password = passwordField.text
             
-//            println("Here's some more info for my Rails Request.")
-            println("User ID: \(RailsRequest.session().userId)")
-            println(RailsRequest.session().email)
-            println(RailsRequest.session().password)
-//            println("Profile ID: \(RailsRequest.session().userId)")
-            
             RailsRequest.session().login(errorLabel, completion: { () -> Void in
-                
-                println("Login storyboard transition should perform now.")
                 
                 let mainMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
                 

@@ -15,7 +15,6 @@ private let defaults = NSUserDefaults.standardUserDefaults()
 private let _singleton = S3Request()
 
 let S3_URL = "https://s3.amazonaws.com/videodatingbucket/"
-let railsBucket = "https://tiysetup.s3.amazonaws.com"
 
 let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
 
@@ -38,10 +37,10 @@ class S3Request: NSObject {
         
         if let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as? String {
             
-            // This is where my thumbnail will be located.
+            // This is where my avatar will be located.
             let avatarPath = documentPath.stringByAppendingPathComponent(avatarEndpoint)
             
-            // This writes the thumbnail to the thumbnailPath.
+            // This writes the avatar to the avatarPath.
             let imageData = UIImagePNGRepresentation(avatarImage)
             imageData.writeToFile(avatarPath, atomically: false)
             let imageURL = NSURL(fileURLWithPath: avatarPath)
@@ -103,7 +102,6 @@ class S3Request: NSObject {
                     
                     self.newURL = thumbnailInfo.URL.absoluteString
                     print(self.newURL)
-                    
                     
                 }, failure: { (error) -> Void in
                     

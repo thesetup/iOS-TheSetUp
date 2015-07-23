@@ -76,15 +76,7 @@ class YourMainMenuViewController: UIViewController {
         
         let yourProfileFlow = UIStoryboard(name: "YourProfileFlow", bundle: nil)
         
-        let searchProfilesNavVC = yourProfileFlow.instantiateViewControllerWithIdentifier("searchProfileNavVC") as! UINavigationController
-        
-        RailsRequest.session().getAllProfiles { (profilesInfo) -> Void in
-            
-            println("Here's all my profilesInfo.  \(profilesInfo)")
-            
-//            (searchProfilesNavVC.viewControllers[0] as! SearchViewController).allProfiles = profilesInfo
-            
-        }
+        let searchProfilesNavVC = yourProfileFlow.instantiateViewControllerWithIdentifier("searchProfilesNavVC") as! UINavigationController
         
         presentViewController(searchProfilesNavVC, animated: true, completion: nil)
         

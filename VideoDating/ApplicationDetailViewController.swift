@@ -57,8 +57,6 @@ class ApplicationDetailViewController: UITableViewController {
     @IBOutlet weak var greenButton: CustomButton!
     @IBOutlet weak var orangeButton: CustomButton!
     
-    
-    
     @IBAction func buttonSelected(sender: CustomButton) {
         
         var evaluationButtons = [
@@ -117,7 +115,6 @@ class ApplicationDetailViewController: UITableViewController {
             presentViewController(saveAlert, animated: true, completion: nil)
             
             }
-            
             
         }
     

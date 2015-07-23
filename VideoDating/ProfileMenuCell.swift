@@ -21,11 +21,7 @@ class ProfileMenuCell: UITableViewCell {
     
     @IBAction func applicationsButtonPressed(sender: AnyObject) {
         
-        
-        
     }
-    
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -32,8 +32,6 @@ import UIKit
         
         CGContextFillEllipseInRect(context, rect)
         
-        
-        
         arrowColor.set()
         
         CGContextMoveToPoint(context, leftInset, rect.width - bottomInset)

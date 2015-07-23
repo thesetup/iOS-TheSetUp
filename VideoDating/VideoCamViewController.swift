@@ -91,7 +91,6 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
         if let vidURL = info[UIImagePickerControllerMediaURL] as? NSURL {
             
             videoURL = vidURL
-            println("here's my video url! \(videoURL)")
             
             createThumbnail()
             imageResize()
@@ -225,13 +224,6 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func backButtonPressed(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
-        
-        //Not sure what this stuff's for.
-//        replyViewController?.videoURL = videoURL
-//        replyViewController?.videoStillImage = videoStillImage
-//        
-//        imagePickerControllerDidCancel(videoPick)
-//        navigationController?.popToRootViewControllerAnimated(true)
         
     }
     

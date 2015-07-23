@@ -214,9 +214,6 @@ class SaveVideoViewController: UIViewController {
         
         let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (action: UIAlertAction!) -> Void in
             
-            // Save to Rails, then reset the singleton.
-            // Save video URL and thumbnail image to the EditProfileVC.
-            
             self.convertVideoQuality({ () -> () in
                 
                 self.saveVideoToSingleton()

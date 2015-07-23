@@ -72,9 +72,7 @@ class EditVideosViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+    
 //        if loadingFromId != nil {
         
 //            RecordedVideo.session().loadRailsInfoToSingleton(loadingFromId!)
@@ -157,18 +155,15 @@ class EditVideosViewController: UITableViewController {
         //Make RailsRequest to save data.
         if loadingFromId != nil {
             
-            println("Here's my Loading From Id:  \(loadingFromId!)")
             RailsRequest.session().profileId = loadingFromId!
             
         }
         
         if RecordedVideo.session().mainVideoURL != nil {
             
-//            RecordedVideo.session().profilePicture = nil
-            
             RailsRequest.session().createVideo("main_video", videoURL: RecordedVideo.session().mainVideoLink!, videoData: RecordedVideo.session().mainVideoURL!, thumbnailImage:  RecordedVideo.session().mainVideoThumbnail!, thumbnailURL: RecordedVideo.session().mainVideoThumbnailLink!, caption: "", completion: { () -> Void in
                 
-                println("Here's my video NSURL data. \(RecordedVideo.session().mainVideoURL!) ")
+//                println("Here's my video NSURL data. \(RecordedVideo.session().mainVideoURL!) ")
                 
             })
             
@@ -178,8 +173,6 @@ class EditVideosViewController: UITableViewController {
                 
                 RailsRequest.session().createVideo("optional_video_1", videoURL: RecordedVideo.session().optionalVideo1Link!, videoData: RecordedVideo.session().optionalVideo1URL!, thumbnailImage: RecordedVideo.session().optionalVideo1Thumbnail!, thumbnailURL: RecordedVideo.session().optionalVideo1ThumbnailLink!, caption: RecordedVideo.session().optionalVideo1Label!, completion: { () -> Void in
                     
-                    println("Optional Video 1 Submitted!")
-
                 })
                 
             }
@@ -188,8 +181,6 @@ class EditVideosViewController: UITableViewController {
                 
                 RailsRequest.session().createVideo("optional_video_2", videoURL: RecordedVideo.session().optionalVideo2Link!, videoData: RecordedVideo.session().optionalVideo2URL!, thumbnailImage: RecordedVideo.session().optionalVideo2Thumbnail!, thumbnailURL: RecordedVideo.session().optionalVideo2ThumbnailLink!, caption: RecordedVideo.session().optionalVideo2Label!, completion: { () -> Void in
                     
-                    println("Optional Video 2 Submitted!")
-
                 })
                 
             }
@@ -197,8 +188,6 @@ class EditVideosViewController: UITableViewController {
             if RecordedVideo.session().optionalVideo3URL != nil {
                 
                 RailsRequest.session().createVideo("optional_video_3", videoURL: RecordedVideo.session().optionalVideo3Link!, videoData: RecordedVideo.session().optionalVideo3URL!, thumbnailImage: RecordedVideo.session().optionalVideo3Thumbnail!, thumbnailURL: RecordedVideo.session().optionalVideo3ThumbnailLink!, caption: RecordedVideo.session().optionalVideo3Label!, completion: { () -> Void in
-                    
-                    println("Optional Video 3 Submitted!")
                     
                 })
                 
@@ -233,15 +222,5 @@ class EditVideosViewController: UITableViewController {
         presentViewController(videoPlayerVC, animated: true, completion: nil)
         
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

@@ -27,9 +27,6 @@ class ProfileMenuViewController: UITableViewController {
             
             self.profilesToLoad = profiles
             self.tableView.reloadData()
-            println("Data Reloaded!!")
-            
-            println("Here's what should be going into my ProfileMenuViewController!!!!!!!!")
             println(self.profilesToLoad)
             
         }
@@ -83,13 +80,23 @@ class ProfileMenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("mainMenuCell", forIndexPath: indexPath) as! ProfileMenuCell
         
+        var timeInterval: NSTimeInterval = (0.5 + (NSTimeInterval(indexPath.row) * 0.1 ))
+        
+        cell.center.x += self.tableView.bounds.width
+        
+        UIView.animateWithDuration(timeInterval, animations: { () -> Void in
+            
+            cell.center.x -= self.tableView.bounds.width
+            
+        })
+        
         cell.profilePicture?.image = nil
         
         if let profilePicURL = (self.profilesToLoad[indexPath.row]["avatar_remote_url"] as? String) ?? (self.profilesToLoad[indexPath.row]["avatar_url"] as? String) {
 
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
                 
-                if profilePicURL != "/avatars/original/missing.png" {
+                if profilePicURL != "/avatars/original/missing.png" ?? "/avatars/remote/missing.png" ?? "null" {
                     
                     let avatarURL = NSURL(string: profilePicURL)
                     let data = NSData(contentsOfURL: avatarURL!)
@@ -99,11 +106,9 @@ class ProfileMenuViewController: UITableViewController {
                         
                         cell.profilePicture?.image = avatarImage
                         
-                        println("My Dispatch Main Queue is running.")
-                        
                         })
                     
-                } 
+                }
               
                 })
             
@@ -120,9 +125,8 @@ class ProfileMenuViewController: UITableViewController {
             }
             
             }
-        
-            return cell
-
+                
+        return cell
         
         }
     

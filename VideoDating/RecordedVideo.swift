@@ -13,6 +13,8 @@ private let _singleton = RecordedVideo()
 
 class RecordedVideo: NSObject {
     
+    // This singleton is where I store information for a currently-creating profile and its videos.
+    
     class func session() -> RecordedVideo { return _singleton }
     
     var name: String?
@@ -56,16 +58,6 @@ class RecordedVideo: NSObject {
     var videoEndpoint = S3_URL + ""
     
     func loadRailsInfoToSingleton(profileId: Int) {
-        
-        //Here, I'd run a request in my RailsRequest to get all profile info.  
-        // Rails request to get one profile's info based on my profileId.  This gets put into ProfileToLoad.
-//        RailsRequest.session().getSingleProfile(RailsRequest.session().currentCreatingId, completion: { (profileInfo) -> Void in
-//            
-//            
-//            
-//            
-//            
-//        })
         
         name = profileToLoad?["name"] as? String
         email = profileToLoad?["email"] as? String
@@ -162,8 +154,6 @@ class RecordedVideo: NSObject {
         profileToLoad = nil
         
     }
-
-    // Maybe insert an upload to S3 or Rails or something.
     
 }
 

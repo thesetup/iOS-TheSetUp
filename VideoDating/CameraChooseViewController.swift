@@ -19,14 +19,6 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-//        if loadingFromID != nil {
-//            
-//            RailsRequest.session().
-//            
-//        }
         
     }
 
@@ -74,7 +66,7 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
                 
                 println(RailsRequest.session().currentCreatingId!)
                 
-                RailsRequest.session().createAvatar(RailsRequest.session().currentCreatingId!, avatarEndpoint: profilePicEndpoint/*RecordedVideo.session().profilePictureLink!*/, completion: { () -> Void in
+                RailsRequest.session().createAvatar(RailsRequest.session().currentCreatingId!, avatarEndpoint: profilePicEndpoint, completion: { () -> Void in
                     
                     S3Request.session().saveAvatarToS3(self.resizedImage!, avatarEndpoint: profilePicEndpoint, completion: { () -> Void in
                         
@@ -101,12 +93,6 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
             })
             
         }
-        
-        
-        
-        
-            
-//        }
         
     }
     

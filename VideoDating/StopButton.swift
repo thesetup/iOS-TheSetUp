@@ -23,8 +23,7 @@ class StopButton: UIButton {
         let squareRect = (rect.width / 2)
         
         squareColor.set()
-//        CGContextFillRect(context, squareRect)
-        
+
     }
 
     

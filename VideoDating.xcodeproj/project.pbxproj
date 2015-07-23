@@ -54,7 +54,6 @@
 		91F5CBE11B4F19F00009A178 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBE01B4F19F00009A178 /* SearchViewController.swift */; };
 		91F5CBE31B4F21480009A178 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBE21B4F21480009A178 /* SearchResultViewController.swift */; };
 		91F5CBE71B52A2A30009A178 /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBE61B52A2A30009A178 /* OutlineButton.swift */; };
-		91F5CBE91B52D3A10009A178 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBE81B52D3A10009A178 /* FakeData.swift */; };
 		91F5CBEB1B53E5BF0009A178 /* RecordedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBEA1B53E5BF0009A178 /* RecordedVideo.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,7 +121,6 @@
 		91F5CBE01B4F19F00009A178 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		91F5CBE21B4F21480009A178 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		91F5CBE61B52A2A30009A178 /* OutlineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
-		91F5CBE81B52D3A10009A178 /* FakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		91F5CBEA1B53E5BF0009A178 /* RecordedVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedVideo.swift; sourceTree = "<group>"; };
 		D1221190F24DD6BD0C5479FD /* Pods-VideoDating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoDating.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoDating/Pods-VideoDating.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,18 +204,17 @@
 		91B1B4FF1B45C38B00958D38 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				910745DF1B543E18004B927F /* VideoTypes.swift */,
-				91F5CBE81B52D3A10009A178 /* FakeData.swift */,
-				91B1B5011B45C38B00958D38 /* AppDelegate.swift */,
-				91B1B5081B45C38B00958D38 /* Images.xcassets */,
-				91B1B50A1B45C38B00958D38 /* LaunchScreen.xib */,
-				91B1B5001B45C38B00958D38 /* Info.plist */,
 				91F5CBEA1B53E5BF0009A178 /* RecordedVideo.swift */,
 				91B1B5381B45D3EE00958D38 /* RailsRequest.swift */,
 				91B1B5441B470B1700958D38 /* S3Request.swift */,
 				91B1B5421B46BE3D00958D38 /* Keys.swift */,
 				91B1B5481B470C4000958D38 /* VideoDating-Bridging-Header.h */,
+				910745DF1B543E18004B927F /* VideoTypes.swift */,
 				9185EB261B4C0B9D004A6BD8 /* Math.swift */,
+				91B1B5011B45C38B00958D38 /* AppDelegate.swift */,
+				91B1B5081B45C38B00958D38 /* Images.xcassets */,
+				91B1B50A1B45C38B00958D38 /* LaunchScreen.xib */,
+				91B1B5001B45C38B00958D38 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -272,9 +269,9 @@
 				91B1B5271B45C3F300958D38 /* VideoCamViewController.swift */,
 				91B1B5501B47226100958D38 /* SaveVideoViewController.swift */,
 				91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */,
+				91C5B5DD1B5BFCB60040BCD3 /* CameraChooseViewController.swift */,
 				91B1B5321B45C6E300958D38 /* VideoCell.swift */,
 				91B1B5A81B4B551E00958D38 /* CircleView.swift */,
-				91C5B5DD1B5BFCB60040BCD3 /* CameraChooseViewController.swift */,
 			);
 			name = TakeVideoFlow;
 			sourceTree = "<group>";
@@ -470,7 +467,6 @@
 				9185EB251B4C09E3004A6BD8 /* PlayButton.swift in Sources */,
 				91F5CBDB1B4EF6B10009A178 /* YourMessagesViewController.swift in Sources */,
 				91B1B5311B45C53D00958D38 /* CustomButton.swift in Sources */,
-				91F5CBE91B52D3A10009A178 /* FakeData.swift in Sources */,
 				91B1B5281B45C3F300958D38 /* VideoCamViewController.swift in Sources */,
 				91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */,
 				91F5CBDF1B4EFD190009A178 /* MessageReplyViewController.swift in Sources */,

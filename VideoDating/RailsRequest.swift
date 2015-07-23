@@ -15,6 +15,8 @@ let API_URL = "https://still-island-6789.herokuapp.com"
 
 class RailsRequest: NSObject {
     
+    // This singleton contains everything related to my Ruby on Rails API/Server requests.
+    
     class func session() -> RailsRequest { return _singleton }
     
     var token: String? {
@@ -68,6 +70,8 @@ class RailsRequest: NSObject {
         
     }
     
+    //This information is used for login/registration/etc.
+    
     var profileId: Int?
     
     var email: String!
@@ -76,9 +80,6 @@ class RailsRequest: NSObject {
     var registerID: Int!
     var loginID: String!
     var currentCreatingId: Int?
-    
-    // This is the number for your own Setup profile (if you've had one created.)
-    
         
     func logOut() {
         
@@ -110,7 +111,7 @@ class RailsRequest: NSObject {
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            println(responseInfo)
+//            println(responseInfo)
             
             if let accessToken = responseInfo?["access_token"] as? String {
                 
@@ -130,7 +131,6 @@ class RailsRequest: NSObject {
                 
                 myErrorLabel.text = error[0]
                 println(error)
-                
                 
             }
             
@@ -178,7 +178,7 @@ class RailsRequest: NSObject {
                 
                 if let yourProfileId = yourProfileInfo["id"] as? Int {
                     
-                    println(yourProfileId)
+                    println("Your profile ID: \(yourProfileId)")
                     
                     self.yourOwnProfile = yourProfileId
                     
@@ -200,8 +200,6 @@ class RailsRequest: NSObject {
     }
     
     func createProfile(completion: () -> Void) {
-        
-        //Now my CreateProfile thingy is running.
         
         let name = RecordedVideo.session().name!
         let email = RecordedVideo.session().email!
@@ -243,8 +241,6 @@ class RailsRequest: NSObject {
                     
                     self.currentCreatingId = newId
                     
-                    println("Here's my PROFILE FRICKIN ID: \(newId)")
-                    
                     completion()
                 
                 }
@@ -258,21 +254,15 @@ class RailsRequest: NSObject {
 
     func createVideo(videoType: String, videoURL: String, videoData: NSURL, thumbnailImage: UIImage, thumbnailURL: String, caption: String, completion: () -> Void) {
         
-        println(thumbnailImage)
         let saveVideoThumbImage = thumbnailImage
-        
-        println("This is my Profile Id. \(profileId!)")
         
         let currentProfileId = currentCreatingId!
         
-        println("This is my Current Creating Id. \(currentProfileId)")
-        
         //Save videos for S3
         let saveVideoURL = S3_URL + videoURL
-        println(saveVideoURL)
         let saveVideoThumb = S3_URL + thumbnailURL
         
-        println("Here's my profileID for the video endpoint: \(currentProfileId)")
+//        println("Here's my profileID for the video endpoint: \(currentProfileId)")
         
         var info = [
             
@@ -289,17 +279,14 @@ class RailsRequest: NSObject {
             
             ] as [String: AnyObject]
         
-        println("Here's my info for the Create Video request. \(info)")
-        
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            println("Here's my post video response info! \(responseInfo)")
+//            println("Here's my post video response info! \(responseInfo)")
             
             if let responseURL = responseInfo?["video_url"] as? String {
                 
                 if responseURL == saveVideoURL {
                     
-                    println("My S3 save request should now be running")
                     S3Request.session().saveVideoToS3(saveVideoThumbImage, thumbnailEndpoint: thumbnailURL, videoData: videoData, videoEndpoint: videoURL)
                     
                     completion()
@@ -328,7 +315,7 @@ class RailsRequest: NSObject {
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            println("Here's my response info for my Rails Create Avatar. \(responseInfo)")
+//            println("Here's my response info for my Rails Create Avatar. \(responseInfo)")
             
             completion()
             
@@ -336,24 +323,24 @@ class RailsRequest: NSObject {
         
     }
     
-    func updateProfile(completion: () -> Void) {
-        
-        var info = [
-            
-            "method" : "PATCH",
-            "endpoint" : "/posts/new",
-            "parameters" : [
-                
-
-            ]
-            
-            ] as [String: AnyObject]
-        
-        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
-            
-        })
-        
-    }
+//    func updateProfile(completion: () -> Void) {
+//
+//        var info = [
+//            
+//            "method" : "PATCH",
+//            "endpoint" : "/posts/new",
+//            "parameters" : [
+//                
+//
+//            ]
+//            
+//            ] as [String: AnyObject]
+//        
+//        requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
+//            
+//        })
+//        
+//    }
     
     func getAllProfiles(completion: (profilesInfo: [String:AnyObject]) -> Void) {
         
@@ -367,14 +354,13 @@ class RailsRequest: NSObject {
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
             completion(profilesInfo: responseInfo as! [String:AnyObject])
-            println("Get all profiles response info! \(responseInfo)")
+//            println("Get all profiles response info: \(responseInfo)")
             
         })
         
     }
     
     func getSingleProfile(profileToGet: Int, completion: (profileInfo: [String:AnyObject]) -> Void) {
-        
         
         var info = [
             
@@ -385,7 +371,7 @@ class RailsRequest: NSObject {
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            println("Get single profile response info! \(responseInfo)")
+//            println("Get single profile response info: \(responseInfo)")
             
             if let profile = responseInfo as? [String:AnyObject] {
                 
@@ -395,7 +381,6 @@ class RailsRequest: NSObject {
         })
         
     }
-    
     
     func getYourCreatedProfiles(completion: (profiles: [[String:AnyObject]]) -> Void) {
         
@@ -411,8 +396,7 @@ class RailsRequest: NSObject {
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            println("Here's my response info for fetched profiles. \(responseInfo)")
-        
+//            println("Here's my response info for fetched profiles. \(responseInfo)")
             
             if let profiles = responseInfo as? [[String:AnyObject]] {
             
@@ -424,50 +408,42 @@ class RailsRequest: NSObject {
         
     }
     
-    
-    
-    func searchProfiles(search: String, completion: (searchResults: [[String:AnyObject]]) -> Void) {
+    func searchProfiles(searchTerm: String, completion: (searchResults: [String:AnyObject]) -> Void) {
         
         var info = [
             
             "method" : "GET",
-            "endpoint" : "/questions/search",
-            "parameters" : [
-                
-                "keywords" : search
-                
-            ]
+            "endpoint" : "/questions/search?keywords=\(searchTerm)",
             
             ] as [String: AnyObject]
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-            completion(searchResults: responseInfo as! [[String:AnyObject]])
-            println("Search result response info! \(responseInfo)")
+//            println("Search result response info: \(responseInfo)")
             
+            completion(searchResults: responseInfo as! [String:AnyObject])
             
         })
         
     }
     
-    
     func requestWithInfo(info: [String:AnyObject], andCompletion completion: ((responseInfo: AnyObject?) -> Void)?) {
         
         var endpoint = info["endpoint"] as! String
         
-        // query parameters for GET request
+        // Query parameters for GET request
         if let query = info["query"] as? [String:AnyObject] {
             
             var first = true
             
             for (key,value) in query {
                 
-                // choose sign if it is first ? else :
+                // Choose sign if it's first ? else:
                 var sign = first ? "?" : "&"
                 
                 endpoint = endpoint + "\(sign)\(key)=\(value)"
                 
-                // set first the first time it runs
+                // Set first the first time it runs:
                 first = false
                 
             }
@@ -485,7 +461,7 @@ class RailsRequest: NSObject {
             if let token = token {
                 
                 request.setValue(token, forHTTPHeaderField: "Access-Token")
-                println("Here's my request value: \(request)")
+//                println("Here's my request value: \(request)")
                 
             }
             
