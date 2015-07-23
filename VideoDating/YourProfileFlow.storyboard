@@ -128,6 +128,9 @@
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="backButtonPressed:" destination="DnH-w1-rlS" eventType="touchUpInside" id="vXD-eb-7U1"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Irr-Kv-JjQ" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
                                                     <rect key="frame" x="225" y="76" width="150" height="150"/>
@@ -428,8 +431,6 @@
                     <connections>
                         <outlet property="interestedInLabel" destination="Jyr-6V-rVU" id="aWp-zb-xCC"/>
                         <outlet property="locationLabel" destination="amN-wm-Lfa" id="aqA-8v-j60"/>
-                        <outlet property="lookingForVideo" destination="f1v-RC-ADF" id="qxy-OX-BBs"/>
-                        <outlet property="mainVideo" destination="qZt-C4-1rz" id="VqU-qL-0j8"/>
                         <outlet property="mainVideoOutlet" destination="qZt-C4-1rz" id="oRu-he-Evh"/>
                         <outlet property="nameLabel" destination="bzH-rE-Nc8" id="4oU-Fs-2JP"/>
                         <outlet property="occupationLabel" destination="8Ef-RW-AzJ" id="p6P-2P-rQc"/>
@@ -703,8 +704,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9dJ-d5-8yr" id="kgt-Ne-SrC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Porkins.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XZG-tn-VSr" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XZG-tn-VSr" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
                                             <rect key="frame" x="8" y="27" width="60" height="60"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="Aop-ZN-m69"/>
                                                 <constraint firstAttribute="height" constant="60" id="Po4-Ou-26d"/>
@@ -715,7 +717,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tina Tuple Tonkins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-s1-Fzu">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-s1-Fzu">
                                             <rect key="frame" x="76" y="8" width="458" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="fq4-7Q-xrh"/>
@@ -734,20 +736,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsU-Pw-VeK" customClass="CircleView" customModule="VideoDating" customModuleProvider="target">
-                                            <rect key="frame" x="542" y="32" width="50" height="50"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="3jc-Ef-zNj"/>
-                                                <constraint firstAttribute="width" constant="50" id="fFM-Qk-3AU"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                                    <color key="value" red="0.32449298500000001" green="0.88381865530000003" blue="0.45447848470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age: 39" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZq-6C-A2E">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Age: 39" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZq-6C-A2E">
                                             <rect key="frame" x="464" y="60" width="70" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="XQz-oe-jdW"/>
@@ -759,15 +748,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="OsU-Pw-VeK" firstAttribute="top" secondItem="kgt-Ne-SrC" secondAttribute="top" constant="32" id="4Mo-Yx-rHo"/>
                                         <constraint firstItem="SAO-cs-YqZ" firstAttribute="top" secondItem="qSL-s1-Fzu" secondAttribute="bottom" constant="8" id="59e-2i-S0Q"/>
-                                        <constraint firstItem="OsU-Pw-VeK" firstAttribute="leading" secondItem="uZq-6C-A2E" secondAttribute="trailing" constant="8" id="6EB-Ak-e2f"/>
-                                        <constraint firstItem="uZq-6C-A2E" firstAttribute="top" secondItem="OsU-Pw-VeK" secondAttribute="bottom" constant="-22" id="6NK-Kg-tjC"/>
                                         <constraint firstAttribute="bottom" secondItem="SAO-cs-YqZ" secondAttribute="bottom" constant="10.5" id="KkE-gx-xba"/>
                                         <constraint firstItem="qSL-s1-Fzu" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="QvF-7O-GvY"/>
-                                        <constraint firstAttribute="trailing" secondItem="OsU-Pw-VeK" secondAttribute="trailing" constant="8" id="VZ0-Bb-F0S"/>
                                         <constraint firstItem="qSL-s1-Fzu" firstAttribute="top" secondItem="kgt-Ne-SrC" secondAttribute="top" constant="8" id="cRb-hw-R2R"/>
-                                        <constraint firstItem="OsU-Pw-VeK" firstAttribute="leading" secondItem="qSL-s1-Fzu" secondAttribute="trailing" constant="8" id="dAv-hZ-gUF"/>
                                         <constraint firstItem="SAO-cs-YqZ" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="dqn-GP-6K6"/>
                                         <constraint firstAttribute="bottom" secondItem="uZq-6C-A2E" secondAttribute="bottom" constant="10.5" id="gpa-1w-DuA"/>
                                         <constraint firstItem="SAO-cs-YqZ" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="hQg-v1-6JW"/>
@@ -788,7 +772,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="ageLabel" destination="uZq-6C-A2E" id="dNp-VI-U1I"/>
-                                    <outlet property="colorCircleView" destination="OsU-Pw-VeK" id="aU9-6h-mqG"/>
                                     <outlet property="locationLabel" destination="SAO-cs-YqZ" id="BCa-VW-wtD"/>
                                     <outlet property="profileNameLabel" destination="qSL-s1-Fzu" id="AM1-li-DfE"/>
                                     <outlet property="profilePicView" destination="XZG-tn-VSr" id="bNr-yS-TFQ"/>
@@ -822,8 +805,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCv-8J-t1y" id="DRI-N4-vL4">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Porkins.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QWT-o5-k3z" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QWT-o5-k3z" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="90" height="90"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="4Zr-uY-rUb"/>
                                                         <constraint firstAttribute="height" constant="90" id="Ove-QT-nxB"/>
@@ -834,7 +818,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tina Tuple Tonkins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vu-aE-ysX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vu-aE-ysX">
                                                     <rect key="frame" x="106" y="8" width="486" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="L8o-Dv-Mti"/>
@@ -849,7 +833,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age: 39" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un0-l8-6zZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age: 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un0-l8-6zZ">
                                                     <rect key="frame" x="8" y="106" width="90" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="dWw-NR-CwM"/>
@@ -859,7 +843,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lawrenceville GA, USA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU8-BC-3mN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU8-BC-3mN">
                                                     <rect key="frame" x="106" y="66" width="486" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="Cye-5A-YUy"/>
@@ -868,7 +852,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogcatcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfl-2B-0Hh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfl-2B-0Hh">
                                                     <rect key="frame" x="106" y="106" width="486" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="GBm-Zf-eEs"/>
@@ -1081,7 +1065,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGD-F6-v5X" id="K5p-4E-pGg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reply to Tina" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-5A-bLR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reply to Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-5A-bLR">
                                                     <rect key="frame" x="8" y="8" width="584" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="al3-hb-4Gw"/>
@@ -1174,13 +1158,14 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="FXX-bo-pTf"/>
                                                     </constraints>
-                                                    <state key="normal" title="Submit Reply">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                                    <state key="normal" title="SUBMIT">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                            <color key="value" red="0.44717968870000002" green="0.215210711" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
@@ -1680,7 +1665,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Porkins.jpg" width="672" height="672"/>
         <image name="setup_logo_360" width="180" height="89"/>
     </resources>
 </document>

@@ -19,6 +19,8 @@ class SaveVideoViewController: UIViewController {
     @IBOutlet weak var videoStillView: UIImageView!
     @IBOutlet weak var videoTitle: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var retryButton: OutlineButton!
+    @IBOutlet weak var saveButton: OutlineButton!
 
     var timeyNumber = Int(NSDate().timeIntervalSince1970)
     
@@ -82,6 +84,26 @@ class SaveVideoViewController: UIViewController {
         videoStillView.image = videoStillImage!
         
         stopButton.hidden = true
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        retryButton.center.x -= view.bounds.height
+        playButton.center.y += view.bounds.height
+        stopButton.center.y += view.bounds.height
+        videoTitle.center.y += view.bounds.height
+        saveButton.center.y += view.bounds.height
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.retryButton.center.x += self.view.bounds.height
+            self.playButton.center.y -= self.view.bounds.height
+            self.stopButton.center.y -= self.view.bounds.height
+            self.videoTitle.center.y -= self.view.bounds.height
+            self.saveButton.center.y -= self.view.bounds.height
+            
+        })
         
     }
     

@@ -30,6 +30,14 @@ class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
+        if RailsRequest.session().token != nil {
+            
+            let mainMenuVC = storyboard?.instantiateViewControllerWithIdentifier("mainMenuVC") as! MainMenuViewController
+            
+            self.navigationController?.pushViewController(mainMenuVC, animated: false)
+            
+        }
+        
         loginButton.center.y += view.bounds.height
         registerButton.center.y += view.bounds.height
         

@@ -49,6 +49,22 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
         stopButton.hidden = true
         flipButton.hidden = false
         
+        timerLabel.center.x += view.bounds.width
+        backButton.center.y -= view.bounds.height
+        startButton.center.y += view.bounds.height
+        stopButton.center.y += view.bounds.height
+        flipButton.center.y += view.bounds.height
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.timerLabel.center.x -= self.view.bounds.width
+            self.backButton.center.y += self.view.bounds.height
+            self.startButton.center.y -= self.view.bounds.height
+            self.stopButton.center.y -= self.view.bounds.height
+            self.flipButton.center.y -= self.view.bounds.height
+            
+        })
+        
     }
     
     override func viewDidLoad() {
@@ -89,6 +105,16 @@ class VideoCamViewController: UIViewController, UINavigationControllerDelegate, 
             saveVideoVC!.videoStillImage = videoStillImage
             saveVideoVC!.videoType = videoType
             saveVideoVC!.videoString = videoString
+            
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                
+                self.timerLabel.center.x += self.view.bounds.width
+                self.backButton.center.y -= self.view.bounds.height
+                self.startButton.center.y += self.view.bounds.height
+                self.stopButton.center.y += self.view.bounds.height
+                self.flipButton.center.y += self.view.bounds.height
+                
+            })
             
             self.navigationController?.pushViewController(saveVideoVC!, animated: true)
             

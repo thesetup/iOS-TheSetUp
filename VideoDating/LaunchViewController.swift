@@ -13,23 +13,20 @@ class LaunchViewController: UIViewController {
     @IBOutlet weak var avatarButton: CustomButton!
     @IBOutlet weak var videosButton: CustomButton!
     
-    var userId: Int?
+    var userId = RailsRequest.session().currentCreatingId!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
     
     @IBAction func avatarButtonPressed(sender: AnyObject) {
         
         let videoStoryboard = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
         
         let cameraChooseVC = videoStoryboard.instantiateViewControllerWithIdentifier("cameraChooseVC") as! CameraChooseViewController
-        
-        cameraChooseVC.loadingFromId = RailsRequest.session().currentCreatingId!
-        
+                
         self.navigationController?.pushViewController(cameraChooseVC, animated: true)
         
     }

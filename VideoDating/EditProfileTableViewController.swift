@@ -59,7 +59,7 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
             
             if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size{
                 
-                self.bottomConstraint.constant = 20 + kbSize.height
+//                self.bottomConstraint.constant = 20 + kbSize.height
                 
             }
             
@@ -67,7 +67,7 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
         
         NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardDidHideNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             
-            self.bottomConstraint.constant = 20
+//            self.bottomConstraint.constant = 20
             
         }
         

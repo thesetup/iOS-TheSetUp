@@ -19,10 +19,15 @@ class ProfileMenuViewController: UITableViewController {
         
         // Rails Request that fetches the data.
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
         RailsRequest.session().getYourCreatedProfiles { (profiles) -> Void in
             
             self.profilesToLoad = profiles
             self.tableView.reloadData()
+            println("Data Reloaded!!")
             
             println("Here's what should be going into my ProfileMenuViewController!!!!!!!!")
             println(self.profilesToLoad)
@@ -43,14 +48,21 @@ class ProfileMenuViewController: UITableViewController {
     
     @IBAction func editProfileButtonPressed(sender: UIButton) {
         
-        RailsRequest.session().currentCreatingId = sender.tag
-        RecordedVideo.session().resetSingleton()
-       
-        let launchNavVC = storyboard?.instantiateViewControllerWithIdentifier("launchNavVC") as! UINavigationController
+        println(sender.tag)
         
-        (launchNavVC.viewControllers[0] as! LaunchViewController).userId = sender.tag
-        
-        presentViewController(launchNavVC, animated: true, completion: nil)
+        if let tag = sender.tag as? Int {
+            
+            RailsRequest.session().currentCreatingId = sender.tag
+            
+            
+            println(RailsRequest.session().currentCreatingId)
+            RecordedVideo.session().resetSingleton()
+            
+            let launchNavVC = storyboard?.instantiateViewControllerWithIdentifier("launchNavVC") as! UINavigationController
+            
+            presentViewController(launchNavVC, animated: true, completion: nil)
+            
+        }
         
     }
     
@@ -71,34 +83,46 @@ class ProfileMenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("mainMenuCell", forIndexPath: indexPath) as! ProfileMenuCell
         
-        if let profilePicURL = profilesToLoad[indexPath.row]["avatar_url"] as? String {
+        cell.profilePicture?.image = nil
+        
+        if let profilePicURL = (self.profilesToLoad[indexPath.row]["avatar_remote_url"] as? String) ?? (self.profilesToLoad[indexPath.row]["avatar_url"] as? String) {
+
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                
+                if profilePicURL != "/avatars/original/missing.png" {
+                    
+                    let avatarURL = NSURL(string: profilePicURL)
+                    let data = NSData(contentsOfURL: avatarURL!)
+                    let avatarImage = UIImage(data: data!)
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        cell.profilePicture?.image = avatarImage
+                        
+                        println("My Dispatch Main Queue is running.")
+                        
+                        })
+                    
+                } 
+              
+                })
             
-            if profilePicURL != "/avatars/original/missing.png" {
+            if let profileName = self.profilesToLoad[indexPath.row]["username"] as? String {
                 
-                let avatarURL = NSURL(string: profilePicURL)
-                let data = NSData(contentsOfURL: avatarURL!)
-                let avatarImage = UIImage(data: data!)
-                
-                cell.profilePicture?.image = avatarImage
+                cell.nameLabel.text = profileName
                 
             }
             
-        }
-        
-        if let profileName = profilesToLoad[indexPath.row]["username"] as? String {
-        
-            cell.nameLabel.text = profileName
-        
-        }
-        
-        if let profileId = profilesToLoad[indexPath.row]["id"] as? Int {
+            if let profileId = self.profilesToLoad[indexPath.row]["id"] as? Int {
+                
+                cell.editButton.tag = profileId
+                
+            }
             
-            cell.editButton.tag = profileId
-            
-        }
+            }
         
-        
-          return cell
+            return cell
+
         
         }
     

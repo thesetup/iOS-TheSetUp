@@ -37,18 +37,18 @@ class YourProfileViewController: UITableViewController {
         
         RailsRequest.session().getSingleProfile(loadingFromId, completion: { (profileInfo) -> Void in
             
-            if let questions = profileInfo["questions"] as? [String:AnyObject] {
+            if let questions = profileInfo["question"] as? [String:AnyObject] {
                 
                 let gender = questions["gender"] as? String
                 let birthyear = questions["birthyear"] as? Int
                 let orientation = questions["orientation"] as? String
                 
-                self.sexAndAgeLabel.text = "\(gender), \(2015 - birthyear!)"
+                self.sexAndAgeLabel.text = "\(gender!), \(2015 - birthyear!)"
                 self.nameLabel.text = questions["name"] as? String
                 self.locationLabel.text = questions["location"] as? String
                 self.occupationLabel.text = questions["occupation"] as? String
                 
-                if orientation == "straight" {
+                if orientation == "Straight" {
                     
                     self.interestedInLabel.text = "Seeking: The Opposite Sex"
                     
@@ -89,7 +89,7 @@ class YourProfileViewController: UITableViewController {
                 
                 if let mainVideo = videos[0] as [String:AnyObject]? {
                     
-                    let videoString = mainVideo["video_URL"] as! String
+                    let videoString = mainVideo["video_url"] as! String
                     self.videoURLArray.append(videoString)
                     
                     if let thumbnail = mainVideo["thumbnail_url"] as? String {
@@ -106,7 +106,7 @@ class YourProfileViewController: UITableViewController {
                 
                 if let optional1 = videos[1] as [String:AnyObject]? {
                     
-                    let videoString = optional1["video_URL"] as! String
+                    let videoString = optional1["video_url"] as! String
                     self.videoURLArray.append(videoString)
                     self.optional1.text = (optional1["caption"] as! String) ?? "Optional 2"
                     
@@ -124,7 +124,7 @@ class YourProfileViewController: UITableViewController {
                 
                 if let optional2 = videos[2] as [String:AnyObject]?  {
                     
-                    let videoString = optional2["video_URL"] as! String
+                    let videoString = optional2["video_url"] as! String
                     self.videoURLArray.append(videoString)
                     self.optional2.text = (optional2["caption"] as! String) ?? "Optional 2"
                     
@@ -143,7 +143,7 @@ class YourProfileViewController: UITableViewController {
                 
                 if let optional3 = videos[3] as [String:AnyObject]? {
                     
-                    let videoString = optional3["video_URL"] as! String
+                    let videoString = optional3["video_url"] as! String
                     self.videoURLArray.append(videoString)
                     self.optional3.text = (optional3["caption"] as! String) ?? "Optional 3"
                     
@@ -210,13 +210,19 @@ class YourProfileViewController: UITableViewController {
         
     }
     
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
     func launchPlayer(videoToPlay: String) {
         
         let stringToURL = NSURL(string: videoToPlay)
         
-        let videoStoryboard = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
+        let takeVideoFlow = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
         
-        let videoPlayerVC = videoStoryboard.instantiateViewControllerWithIdentifier("playVideoVC") as! PlayVideoViewController
+        let videoPlayerVC = takeVideoFlow.instantiateViewControllerWithIdentifier("playVideoVC") as! PlayVideoViewController
         
         videoPlayerVC.videoURL = stringToURL
         

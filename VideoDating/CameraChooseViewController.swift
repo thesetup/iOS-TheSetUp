@@ -14,7 +14,7 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
     
     var timeyNumber = Int(NSDate().timeIntervalSince1970)
     var resizedImage: UIImage?
-    var loadingFromId: Int?
+    var loadingFromId: Int? = RailsRequest.session().currentCreatingId
     
     
     override func viewDidLoad() {
@@ -60,7 +60,34 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
         
         let profilePic = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        if loadingFromId == nil {
+//        if loadingFromId == nil {
+//
+//            
+//            
+//        }
+        
+        if let id = RailsRequest.session().currentCreatingId {
+            
+            let profilePicEndpoint = "profilepic_TakenBy\(id).png"
+                
+            resizeImage(profilePic, completion: { () -> Void in
+                
+                println(RailsRequest.session().currentCreatingId!)
+                
+                RailsRequest.session().createAvatar(RailsRequest.session().currentCreatingId!, avatarEndpoint: profilePicEndpoint/*RecordedVideo.session().profilePictureLink!*/, completion: { () -> Void in
+                    
+                    S3Request.session().saveAvatarToS3(self.resizedImage!, avatarEndpoint: profilePicEndpoint, completion: { () -> Void in
+                        
+                        
+                    })
+                    
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                    
+                })
+                
+            })
+            
+        } else {
             
             let profilePicEndpoint = "profilepic_TakenBy\(RailsRequest.session().userId!).png"
             
@@ -73,27 +100,13 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
                 
             })
             
-        } else {
-            
-            let profilePicEndpoint = "profilepic_TakenBy\(RailsRequest.session().userId!).png"
-            
-            resizeImage(profilePic, completion: { () -> Void in
-                
-                RailsRequest.session().createAvatar(self.loadingFromId!, avatarEndpoint: RecordedVideo.session().profilePictureLink!, completion: { () -> Void in
-                    
-                    S3Request.session().saveAvatarToS3(self.resizedImage!, avatarEndpoint: profilePicEndpoint, completion: { () -> Void in
-                        
-                        
-                    })
-                    
-                    self.dismissViewControllerAnimated(true, completion: nil)
-
-                    
-                })
-                
-            })
-            
         }
+        
+        
+        
+        
+            
+//        }
         
     }
     

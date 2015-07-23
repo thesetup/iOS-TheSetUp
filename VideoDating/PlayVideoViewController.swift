@@ -16,6 +16,7 @@ class PlayVideoViewController: UIViewController {
     @IBOutlet weak var loadedVideo: UIView!
     @IBOutlet weak var playButton: PlayButton!
     @IBOutlet weak var stopButton: CustomButton!
+    @IBOutlet weak var backButton: OutlineButton!
     
     var vidPlayer: MPMoviePlayerController?
     var videoURL: NSURL?
@@ -32,6 +33,22 @@ class PlayVideoViewController: UIViewController {
         
         playButton.hidden = true
         vidPlayer?.play()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        backButton.center.x -= view.bounds.height
+        playButton.center.y += view.bounds.height
+        stopButton.center.y += view.bounds.height
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            
+            self.backButton.center.x += self.view.bounds.height
+            self.playButton.center.y -= self.view.bounds.height
+            self.stopButton.center.y -= self.view.bounds.height
+            
+        })
         
     }
     

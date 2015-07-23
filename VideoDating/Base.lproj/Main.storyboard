@@ -291,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZN-SZ-wS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="672"/>
+            <point key="canvasLocation" x="1926" y="786"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bv5-Z8-KDB">
@@ -446,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cf5-4T-Rnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="40"/>
+            <point key="canvasLocation" x="1926" y="-102"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="7il-f4-Ddd">
@@ -614,10 +614,10 @@
             </objects>
             <point key="canvasLocation" x="2664" y="337"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Welcome NavVC-->
         <scene sceneID="XAf-ES-7I7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="P2o-N2-THY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="welcomeNavVc" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="P2o-N2-THY" customClass="WelcomeNavVC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uew-GE-Aur">

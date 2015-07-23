@@ -9,173 +9,75 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459131409.125746"
+            filePath = "VideoDating/CameraChooseViewController.swift"
+            timestampString = "459287069.265908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "submitButtonPressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459130647.959833"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "submitButtonPressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459130647.959833"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "submitButtonPressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459130647.959833"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "submitButtonPressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459130647.959833"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "submitButtonPressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459130647.959833"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "submitButtonPressed(_:)"
-            landmarkType = "5">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "CameraChooseViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "VideoDating.EditVideosViewController.submitButtonPressed (VideoDating.EditVideosViewController)(Swift.AnyObject) -&gt; ()"
+                  symbolName = "VideoDating.CameraChooseViewController.loadingFromId.setter : Swift.Optional&lt;Swift.Int&gt;"
                   moduleName = "VideoDating"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/EditVideosViewController.swift"
-                  timestampString = "459208858.523102"
+                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/CameraChooseViewController.swift"
+                  timestampString = "459289258.998911"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "1001">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoDating.EditVideosViewController.(submitButtonPressed (VideoDating.EditVideosViewController) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1)"
-                  moduleName = "VideoDating"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/EditVideosViewController.swift"
-                  timestampString = "459208858.523313"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459131409.125746"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "submitButtonPressed(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoDating.EditVideosViewController.submitButtonPressed (VideoDating.EditVideosViewController)(Swift.AnyObject) -&gt; ()"
-                  moduleName = "VideoDating"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/EditVideosViewController.swift"
-                  timestampString = "459208858.524144"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "179"
-                  endingLineNumber = "179"
-                  offsetFromSymbolStart = "2502">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoDating.EditVideosViewController.(submitButtonPressed (VideoDating.EditVideosViewController) -&gt; (Swift.AnyObject) -&gt; ()).(closure #2)"
-                  moduleName = "VideoDating"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/EditVideosViewController.swift"
-                  timestampString = "459208858.52434"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "181"
-                  endingLineNumber = "181"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
                   offsetFromSymbolStart = "27">
                </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoDating.CameraChooseViewController.loadingFromId.materializeForSet : Swift.Optional&lt;Swift.Int&gt;"
+                  moduleName = "VideoDating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/CameraChooseViewController.swift"
+                  timestampString = "459289258.999024"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoDating.CameraChooseViewController.init (VideoDating.CameraChooseViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; VideoDating.CameraChooseViewController"
+                  moduleName = "VideoDating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/CameraChooseViewController.swift"
+                  timestampString = "459289258.999131"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "475">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoDating.CameraChooseViewController.init (VideoDating.CameraChooseViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; VideoDating.CameraChooseViewController"
+                  moduleName = "VideoDating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/CameraChooseViewController.swift"
+                  timestampString = "459289258.999404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "390">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +87,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VideoDating/EditVideosViewController.swift"
-            timestampString = "459130647.959833"
+            filePath = "VideoDating/CameraChooseViewController.swift"
+            timestampString = "459287120.739482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "submitButtonPressed(_:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,13 +103,109 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VideoDating/ProfileMenuViewController.swift"
-            timestampString = "459208650.802082"
+            filePath = "VideoDating/YourMainMenuViewController.swift"
+            timestampString = "459288730.810123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "yourProfileButtonPressed(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoDating.YourMainMenuViewController.yourProfileButtonPressed (VideoDating.YourMainMenuViewController)(Swift.AnyObject) -&gt; ()"
+                  moduleName = "VideoDating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/YourMainMenuViewController.swift"
+                  timestampString = "459289259.014453"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1235">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoDating.YourMainMenuViewController.(yourProfileButtonPressed (VideoDating.YourMainMenuViewController) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "VideoDating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kylebrooksrobinson/Documents/Programming/_github/iOS-TheSetUp/VideoDating/YourMainMenuViewController.swift"
+                  timestampString = "459289259.014647"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoDating/YourMainMenuViewController.swift"
+            timestampString = "459288731.95514"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "yourProfileButtonPressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoDating/YourMainMenuViewController.swift"
+            timestampString = "459288732.741433"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "yourProfileButtonPressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoDating/YourMainMenuViewController.swift"
+            timestampString = "459288733.797861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "yourProfileButtonPressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoDating/YourMainMenuViewController.swift"
+            timestampString = "459288734.661132"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "yourProfileButtonPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

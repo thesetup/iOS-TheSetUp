@@ -51,6 +51,23 @@ class RailsRequest: NSObject {
         
     }
     
+    var yourOwnProfile: Int? {
+        
+        get {
+            
+            return defaults.objectForKey("You") as? Int
+            
+        }
+        
+        set {
+            
+            defaults.setValue(newValue, forKey: "You")
+            defaults.synchronize()
+            
+        }
+        
+    }
+    
     var profileId: Int?
     
     var email: String!
@@ -61,7 +78,7 @@ class RailsRequest: NSObject {
     var currentCreatingId: Int?
     
     // This is the number for your own Setup profile (if you've had one created.)
-    var yourOwnProfile: Int?
+    
         
     func logOut() {
         
@@ -161,7 +178,9 @@ class RailsRequest: NSObject {
                 
                 if let yourProfileId = yourProfileInfo["id"] as? Int {
                     
-                    self.yourOwnProfile! = yourProfileId
+                    println(yourProfileId)
+                    
+                    self.yourOwnProfile = yourProfileId
                     
                 }
                 

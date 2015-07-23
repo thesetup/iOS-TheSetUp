@@ -19,8 +19,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mT3-fF-qwi" id="0ep-du-lb0">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Porkins.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-nE-vGB" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-nE-vGB" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
                                             <rect key="frame" x="8" y="27" width="60" height="60"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="lvf-qC-NJK"/>
                                                 <constraint firstAttribute="width" constant="60" id="zMG-vW-gCH"/>
@@ -31,13 +32,13 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tina Tuple Tonkins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-GU-2OX">
-                                            <rect key="frame" x="76" y="8" width="458" height="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-GU-2OX">
+                                            <rect key="frame" x="76" y="8" width="516" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="agJ-Rg-lfz"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="textColor" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lawrenceville GA, USA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU7-vE-Irc">
@@ -46,51 +47,35 @@
                                                 <constraint firstAttribute="width" constant="100" id="dDB-Bv-lWv"/>
                                                 <constraint firstAttribute="height" constant="42" id="mf8-qO-HDS"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ew8-jQ-u3a" customClass="CircleView" customModule="VideoDating" customModuleProvider="target">
-                                            <rect key="frame" x="542" y="32" width="50" height="50"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="8kN-s3-LK9"/>
-                                                <constraint firstAttribute="width" constant="50" id="Nam-PO-9xf"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                                    <color key="value" red="0.32449298500000001" green="0.88381865530000003" blue="0.45447848470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age: 39" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQz-Fh-eid">
-                                            <rect key="frame" x="464" y="60" width="70" height="42"/>
+                                            <rect key="frame" x="522" y="60" width="70" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="3IE-um-6na"/>
                                                 <constraint firstAttribute="height" constant="42" id="nXr-mh-OHX"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="QU7-vE-Irc" firstAttribute="top" secondItem="cwG-GU-2OX" secondAttribute="bottom" constant="8" id="4XG-bV-yyq"/>
-                                        <constraint firstAttribute="trailing" secondItem="ew8-jQ-u3a" secondAttribute="trailing" constant="8" id="BUw-rN-BDa"/>
                                         <constraint firstAttribute="bottom" secondItem="OLk-nE-vGB" secondAttribute="bottom" constant="25.5" id="HXG-bH-ABh"/>
                                         <constraint firstAttribute="bottom" secondItem="tQz-Fh-eid" secondAttribute="bottom" constant="10.5" id="IH7-cA-DPC"/>
-                                        <constraint firstItem="ew8-jQ-u3a" firstAttribute="leading" secondItem="cwG-GU-2OX" secondAttribute="trailing" constant="8" id="Md2-kq-pFQ"/>
                                         <constraint firstItem="OLk-nE-vGB" firstAttribute="leading" secondItem="0ep-du-lb0" secondAttribute="leading" constant="8" id="Ogd-Rj-3JN"/>
                                         <constraint firstItem="OLk-nE-vGB" firstAttribute="top" secondItem="0ep-du-lb0" secondAttribute="top" constant="27" id="T6i-5O-k2x"/>
-                                        <constraint firstItem="ew8-jQ-u3a" firstAttribute="leading" secondItem="tQz-Fh-eid" secondAttribute="trailing" constant="8" id="Yi5-GU-Ifw"/>
-                                        <constraint firstItem="ew8-jQ-u3a" firstAttribute="top" secondItem="0ep-du-lb0" secondAttribute="top" constant="32" id="ZRH-bh-ocn"/>
+                                        <constraint firstAttribute="trailing" secondItem="cwG-GU-2OX" secondAttribute="trailing" constant="8" id="WeH-jc-xMV"/>
                                         <constraint firstItem="cwG-GU-2OX" firstAttribute="leading" secondItem="OLk-nE-vGB" secondAttribute="trailing" constant="8" id="bh1-X5-kE9"/>
-                                        <constraint firstItem="tQz-Fh-eid" firstAttribute="top" secondItem="ew8-jQ-u3a" secondAttribute="bottom" constant="-22" id="bkV-3J-Nop"/>
                                         <constraint firstItem="QU7-vE-Irc" firstAttribute="leading" secondItem="OLk-nE-vGB" secondAttribute="trailing" constant="8" id="f5k-4t-9xC"/>
                                         <constraint firstItem="cwG-GU-2OX" firstAttribute="leading" secondItem="OLk-nE-vGB" secondAttribute="trailing" constant="8" id="gpl-Ss-PdE"/>
                                         <constraint firstItem="QU7-vE-Irc" firstAttribute="leading" secondItem="OLk-nE-vGB" secondAttribute="trailing" constant="8" id="lcw-UK-UeM"/>
                                         <constraint firstItem="cwG-GU-2OX" firstAttribute="top" secondItem="0ep-du-lb0" secondAttribute="top" constant="8" id="pFl-cM-wkL"/>
                                         <constraint firstItem="QU7-vE-Irc" firstAttribute="leading" secondItem="OLk-nE-vGB" secondAttribute="trailing" constant="8" id="r0Q-8e-pFp"/>
+                                        <constraint firstAttribute="trailing" secondItem="tQz-Fh-eid" secondAttribute="trailing" constant="8" id="xgH-uo-V2s"/>
                                         <constraint firstAttribute="bottom" secondItem="QU7-vE-Irc" secondAttribute="bottom" constant="10.5" id="zIE-HM-Bho"/>
                                     </constraints>
                                     <variation key="default">
@@ -104,7 +89,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="ageLabel" destination="tQz-Fh-eid" id="4c2-Pa-hX5"/>
-                                    <outlet property="colorCircleView" destination="ew8-jQ-u3a" id="fil-9b-JN8"/>
                                     <outlet property="locationLabel" destination="QU7-vE-Irc" id="0fv-Bc-Hle"/>
                                     <outlet property="profileNameLabel" destination="cwG-GU-2OX" id="xB9-25-7lR"/>
                                     <outlet property="profilePicView" destination="OLk-nE-vGB" id="8Lx-hB-qTV"/>
@@ -138,8 +122,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yH1-Up-ZBd" id="v0h-um-X93">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Porkins.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="u65-qs-2Pg" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u65-qs-2Pg" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="90" height="90"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="bQK-UP-miK"/>
                                                         <constraint firstAttribute="width" constant="90" id="xyF-03-akS"/>
@@ -150,7 +135,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tina Tuple Tonkins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIw-Az-Vns">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIw-Az-Vns">
                                                     <rect key="frame" x="106" y="8" width="486" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Fpg-iQ-lWG"/>
@@ -171,16 +156,16 @@
                                                         <constraint firstAttribute="width" constant="90" id="Eqg-Wd-Hzy"/>
                                                         <constraint firstAttribute="height" constant="29" id="hVC-YH-sRs"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lawrenceville GA, USA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQU-Kf-l4p">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQU-Kf-l4p">
                                                     <rect key="frame" x="106" y="66" width="486" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="kox-s7-YWZ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -189,7 +174,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="MeE-1L-fuo"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -227,14 +212,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z9y-Ts-1Ne" id="TlF-f3-Lg1">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KIB-qA-0Qr" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="584" height="500"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="imageViewRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWZ-pD-5Bt" customClass="PlayButton" customModule="VideoDating" customModuleProvider="target">
                                                     <rect key="frame" x="270" y="448" width="60" height="60"/>
                                                     <constraints>
@@ -294,6 +271,14 @@
                                                         <action selector="stopButtonPressed:" destination="cty-ij-5pY" eventType="touchUpInside" id="BqY-vJ-z6P"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KIB-qA-0Qr" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="584" height="500"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="imageViewRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="QWZ-pD-5Bt" secondAttribute="bottom" constant="11.5" id="3ZX-yw-ptj"/>
@@ -477,7 +462,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="AtQ-8d-4og"/>
                                                     </constraints>
-                                                    <state key="normal" title="Submit to Billy">
+                                                    <state key="normal" title="Submit to Profilee">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -994,7 +979,7 @@
                                                     <rect key="frame" x="8" y="243" width="584" height="30"/>
                                                     <color key="backgroundColor" red="0.89210858589999997" green="0.900686553" blue="0.88353061870000005" alpha="0.26000000000000001" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="m6u-NG-Avw" id="nR5-9p-KaJ"/>
                                                     </connections>
@@ -1049,7 +1034,7 @@
                                                     <rect key="frame" x="141" y="101" width="451" height="30"/>
                                                     <color key="backgroundColor" red="0.89210858589999997" green="0.900686553" blue="0.88353061870000005" alpha="0.26000000000000001" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="m6u-NG-Avw" id="8ay-Z4-sDc"/>
                                                     </connections>
@@ -1058,7 +1043,7 @@
                                                     <rect key="frame" x="8" y="290" width="584" height="30"/>
                                                     <color key="backgroundColor" red="0.89210858589999997" green="0.900686553" blue="0.88353061870000005" alpha="0.26000000000000001" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="m6u-NG-Avw" id="4FM-9R-jBt"/>
                                                     </connections>
@@ -1699,7 +1684,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Porkins.jpg" width="672" height="672"/>
         <image name="setup_logo_360" width="180" height="89"/>
         <image name="setup_s" width="256" height="358"/>
     </resources>
