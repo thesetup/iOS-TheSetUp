@@ -73,6 +73,7 @@ class RailsRequest: NSObject {
     //This information is used for login/registration/etc.
     
     var profileId: Int?
+    var avatarForProfileId: Int?
     
     var email: String!
     var username: String!
@@ -313,9 +314,12 @@ class RailsRequest: NSObject {
             
             ] as [String: AnyObject]
         
+        println("DANGEROUS INFO!!")
+        println(info)
+        
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-//            println("Here's my response info for my Rails Create Avatar. \(responseInfo)")
+            println("Here's my response info for my Rails Create Avatar. \(responseInfo)")
             
             completion()
             
@@ -396,7 +400,8 @@ class RailsRequest: NSObject {
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
-//            println("Here's my response info for fetched profiles. \(responseInfo)")
+            println("Here's my response info for profiles I created.")
+            println(responseInfo)
             
             if let profiles = responseInfo as? [[String:AnyObject]] {
             

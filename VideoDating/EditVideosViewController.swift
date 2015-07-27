@@ -30,7 +30,7 @@ class EditVideosViewController: UITableViewController {
     @IBOutlet weak var optionalLabel3: UILabel!
     
     // Optional variable for info. Set this when instantiating this VC from the Profile Menu Table View ONLY.
-    var loadingFromId = RailsRequest.session().currentCreatingId as Int?
+    var loadingFromId: Int? = RailsRequest.session().currentCreatingId!
     
     var profilesToLoad: [[String:AnyObject]] = []
     var mediaToPlay: String?
@@ -135,6 +135,7 @@ class EditVideosViewController: UITableViewController {
         let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
             
             RecordedVideo.session().resetSingleton()
+            RailsRequest.session().currentCreatingId = nil
             self.dismissViewControllerAnimated(true, completion: nil)
             
         }

@@ -156,7 +156,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 
             }
             
-            if let profileId = questions[indexPath.row]["id"] as? Int {
+            if let profileId = questions[indexPath.row]["profile_id"] as? Int {
                 
                 cell.tag = profileId
                 
@@ -194,6 +194,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! SearchItemCell
+
+        println("Cell tag! \(cell.tag)")
         
         let searchResultVC = storyboard?.instantiateViewControllerWithIdentifier("searchResultVC") as! SearchResultViewController
         

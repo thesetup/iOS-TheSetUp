@@ -34,6 +34,10 @@ class SearchResultViewController: UITableViewController {
         super.viewDidLoad()
 
         RailsRequest.session().getSingleProfile(profileToLoad, completion: { (profileInfo) -> Void in
+            
+            
+            println("Search result info!")
+            println(profileInfo)
                         
             if let questions = profileInfo["question"] as? [String:AnyObject] {
                 
@@ -85,6 +89,8 @@ class SearchResultViewController: UITableViewController {
             
             if let videos = profileInfo["videos"] as? [[String:AnyObject]] {
                 
+                if videos.count >= 1 {
+                
                 if let mainVideo = videos[0] as [String:AnyObject]? {
                     
                     let videoString = mainVideo["video_url"] as! String
@@ -101,6 +107,10 @@ class SearchResultViewController: UITableViewController {
                     }
                     
                 } else { self.videoURLArray.append("None") }
+                
+                }
+                
+                if videos.count >= 2 {
                 
                 if let optional1 = videos[1] as [String:AnyObject]? {
                     
@@ -120,6 +130,10 @@ class SearchResultViewController: UITableViewController {
                     
                 } else { self.videoURLArray.append("None") }
                 
+                }
+                
+                if videos.count >= 3 {
+                    
                 if let optional2 = videos[2] as [String:AnyObject]?  {
                     
                     let videoString = optional2["video_url"] as! String
@@ -138,6 +152,10 @@ class SearchResultViewController: UITableViewController {
                     
                     
                 } else { self.videoURLArray.append("None") }
+                    
+                }
+                
+                if videos.count >= 4 {
                 
                 if let optional3 = videos[3] as [String:AnyObject]? {
                     
@@ -157,6 +175,8 @@ class SearchResultViewController: UITableViewController {
                     
                     
                 } else { self.videoURLArray.append("None") }
+                
+                }
                 
             }
             

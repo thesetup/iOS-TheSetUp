@@ -13,7 +13,7 @@ class LaunchViewController: UIViewController {
     @IBOutlet weak var avatarButton: CustomButton!
     @IBOutlet weak var videosButton: CustomButton!
     
-    var userId = RailsRequest.session().currentCreatingId!
+    var userId: Int? = RailsRequest.session().currentCreatingId!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +34,14 @@ class LaunchViewController: UIViewController {
     @IBAction func videosButtonPressed(sender: AnyObject) {
         
         let editVideosVC = self.storyboard?.instantiateViewControllerWithIdentifier("editVideosVC") as! EditVideosViewController
-        
-        editVideosVC.loadingFromId = RailsRequest.session().currentCreatingId!
-        
+                
         self.navigationController?.pushViewController(editVideosVC, animated: true)
         
     }
     
     @IBAction func backButtonPressed(sender: AnyObject) {
         
+        RailsRequest.session().currentCreatingId = nil
         dismissViewControllerAnimated(true, completion: nil)
         
     }

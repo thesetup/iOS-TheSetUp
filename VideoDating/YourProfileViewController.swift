@@ -35,6 +35,8 @@ class YourProfileViewController: UITableViewController {
         
         RailsRequest.session().getSingleProfile(loadingFromId, completion: { (profileInfo) -> Void in
             
+            println("profileInfo: \(profileInfo)")
+            
             if let questions = profileInfo["question"] as? [String:AnyObject] {
                 
                 let gender = questions["gender"] as? String
@@ -85,6 +87,8 @@ class YourProfileViewController: UITableViewController {
             
             if let videos = profileInfo["videos"] as? [[String:AnyObject]] {
                 
+                if videos.count >= 1 {
+                
                 if let mainVideo = videos[0] as [String:AnyObject]? {
                     
                     let videoString = mainVideo["video_url"] as! String
@@ -101,6 +105,10 @@ class YourProfileViewController: UITableViewController {
                     }
                     
                 } else { self.videoURLArray.append("None") }
+                
+                }
+                
+                if videos.count >= 2 {
                 
                 if let optional1 = videos[1] as [String:AnyObject]? {
                     
@@ -119,6 +127,10 @@ class YourProfileViewController: UITableViewController {
                     }
                     
                 } else { self.videoURLArray.append("None") }
+                    
+                }
+                
+                if videos.count >= 3 {
                 
                 if let optional2 = videos[2] as [String:AnyObject]?  {
                     
@@ -136,8 +148,11 @@ class YourProfileViewController: UITableViewController {
                         
                     }
                     
-                    
                 } else { self.videoURLArray.append("None") }
+                    
+                }
+                
+                if videos.count >= 4 {
                 
                 if let optional3 = videos[3] as [String:AnyObject]? {
                     
@@ -157,6 +172,8 @@ class YourProfileViewController: UITableViewController {
                     
                     
                 } else { self.videoURLArray.append("None") }
+                    
+                }
                 
             }
             

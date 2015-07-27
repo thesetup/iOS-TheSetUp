@@ -17,17 +17,19 @@ class ProfileMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Rails Request that fetches the data.
+        
+        
         
     }
     
     override func viewWillAppear(animated: Bool) {
         
+        // Rails Request that fetches the data.
         RailsRequest.session().getYourCreatedProfiles { (profiles) -> Void in
             
             self.profilesToLoad = profiles
             self.tableView.reloadData()
-            println(self.profilesToLoad)
+            println("These profiles loaded. \(profiles)")
             
         }
         
@@ -45,21 +47,18 @@ class ProfileMenuViewController: UITableViewController {
     
     @IBAction func editProfileButtonPressed(sender: UIButton) {
         
-        println(sender.tag)
+        let tag = sender.tag
         
-        if let tag = sender.tag as? Int {
-            
-            RailsRequest.session().currentCreatingId = sender.tag
-            
-            
-            println(RailsRequest.session().currentCreatingId)
-            RecordedVideo.session().resetSingleton()
-            
-            let launchNavVC = storyboard?.instantiateViewControllerWithIdentifier("launchNavVC") as! UINavigationController
-            
-            presentViewController(launchNavVC, animated: true, completion: nil)
-            
-        }
+        println("Tag: \(tag)")
+
+        RailsRequest.session().currentCreatingId = sender.tag
+        
+        println("Current Creating ID: \(RailsRequest.session().currentCreatingId)")
+        RecordedVideo.session().resetSingleton()
+        
+        let launchNavVC = storyboard?.instantiateViewControllerWithIdentifier("launchNavVC") as! UINavigationController
+        
+        presentViewController(launchNavVC, animated: true, completion: nil)
         
     }
     
@@ -74,11 +73,16 @@ class ProfileMenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        
+
+        
         return profilesToLoad.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("mainMenuCell", forIndexPath: indexPath) as! ProfileMenuCell
+        
+        cell.profilePicture?.image = nil
         
         var timeInterval: NSTimeInterval = (0.5 + (NSTimeInterval(indexPath.row) * 0.1 ))
         
@@ -89,8 +93,6 @@ class ProfileMenuViewController: UITableViewController {
             cell.center.x -= self.tableView.bounds.width
             
         })
-        
-        cell.profilePicture?.image = nil
         
         if let profilePicURL = (self.profilesToLoad[indexPath.row]["avatar_remote_url"] as? String) ?? (self.profilesToLoad[indexPath.row]["avatar_url"] as? String) {
 

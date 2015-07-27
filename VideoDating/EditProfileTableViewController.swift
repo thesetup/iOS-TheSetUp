@@ -12,9 +12,6 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
 
     //Section 1 Outlets
     
-    @IBOutlet weak var profilePictureView: RadiusView!
-    @IBOutlet weak var addProfilePicture: UIButton!
-    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -35,19 +32,6 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
     var profilesToLoad: [[String:AnyObject]] = []
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        if RecordedVideo.session().profilePicture != nil {
-            
-            profilePictureView.contentMode = UIViewContentMode.ScaleAspectFit
-            profilePictureView.backgroundColor = UIColor.clearColor()
-            profilePictureView.image = RecordedVideo.session().profilePicture
-            addProfilePicture.titleLabel?.hidden = true
-
-        }
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,6 +132,8 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
     
     @IBAction func addProfilePicture(sender: AnyObject) {
         
+        RailsRequest.session().currentCreatingId = nil
+        
         let videoStoryboard = UIStoryboard(name: "TakeVideoFlow", bundle: nil)
         
         let cameraNavVC = videoStoryboard.instantiateViewControllerWithIdentifier("cameraNavVC") as! UINavigationController
@@ -184,26 +170,11 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
                 RecordedVideo.session().occupation = occupationTextField.text
                 
                 RailsRequest.session().createProfile({ () -> Void in
-                    // The completion of createProfiles gets the ID for the profile I'm current making and assigns it to the RailsRequest Current Creating Id.
+                    // The completion of createProfiles gets the ID for the profile I'm current making and makes it the destination for the profile picture.
                     
-                    if RecordedVideo.session().profilePictureLink != nil {
-                        
-                        println("Current creating ID \(RailsRequest.session().currentCreatingId!)")
-                        println("Profile picture link \(RecordedVideo.session().profilePictureLink!)")
-                        
-                        RailsRequest.session().createAvatar(RailsRequest.session().currentCreatingId! ,avatarEndpoint: RecordedVideo.session().profilePictureLink!, completion: { () -> Void in
-                            
-                            S3Request.session().saveAvatarToS3(RecordedVideo.session().profilePicture!, avatarEndpoint: RecordedVideo.session().profilePictureLink!, completion: { () -> Void in
-                                
-                            })
-                            
-                        })
-                        
-                    }
+                    let launchVC = self.storyboard?.instantiateViewControllerWithIdentifier("launchVC") as! LaunchViewController
                     
-                    let editVideosVC = self.storyboard?.instantiateViewControllerWithIdentifier("editVideosVC") as! EditVideosViewController
-                    
-                    self.navigationController?.pushViewController(editVideosVC, animated: true)
+                    self.navigationController?.pushViewController(launchVC, animated: true)
                     
                 })
 

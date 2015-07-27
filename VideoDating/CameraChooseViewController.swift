@@ -16,7 +16,6 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
     var resizedImage: UIImage?
     var loadingFromId: Int? = RailsRequest.session().currentCreatingId
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,21 +51,15 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
         
         let profilePic = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-//        if loadingFromId == nil {
-//
-//            
-//            
-//        }
-        
-        if let id = RailsRequest.session().currentCreatingId {
+        if loadingFromId != nil {
             
-            let profilePicEndpoint = "profilepic_TakenBy\(id).png"
+            let profilePicEndpoint = "profilepic_TakenBy\(loadingFromId!)_\(timeyNumber).png"
                 
             resizeImage(profilePic, completion: { () -> Void in
                 
-                println(RailsRequest.session().currentCreatingId!)
+                println(self.loadingFromId)
                 
-                RailsRequest.session().createAvatar(RailsRequest.session().currentCreatingId!, avatarEndpoint: profilePicEndpoint, completion: { () -> Void in
+                RailsRequest.session().createAvatar(self.loadingFromId!, avatarEndpoint: profilePicEndpoint, completion: { () -> Void in
                     
                     S3Request.session().saveAvatarToS3(self.resizedImage!, avatarEndpoint: profilePicEndpoint, completion: { () -> Void in
                         
@@ -81,7 +74,7 @@ class CameraChooseViewController: UIViewController, UINavigationControllerDelega
             
         } else {
             
-            let profilePicEndpoint = "profilepic_TakenBy\(RailsRequest.session().userId!).png"
+            let profilePicEndpoint = "profilepic_TakenBy\(RailsRequest.session().userId!)_\(timeyNumber).png"
             
             resizeImage(profilePic, completion: { () -> Void in
                 
