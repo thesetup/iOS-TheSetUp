@@ -12,6 +12,11 @@
 		910745E41B572C99004B927F /* EditVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910745E31B572C99004B927F /* EditVideosViewController.swift */; };
 		910745E61B586739004B927F /* NoProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910745E51B586739004B927F /* NoProfileViewController.swift */; };
 		9146FCE51B5E7A750013D73B /* SearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146FCE41B5E7A750013D73B /* SearchItemCell.swift */; };
+		917280E61B7B80F700656CD1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917280E41B7B80F700656CD1 /* Bolts.framework */; };
+		917280E71B7B80F700656CD1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917280E51B7B80F700656CD1 /* Parse.framework */; };
+		917280EA1B7B81D000656CD1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917280E81B7B81D000656CD1 /* Accounts.framework */; };
+		917280EB1B7B81D000656CD1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917280E91B7B81D000656CD1 /* Social.framework */; };
+		917280ED1B7B884000656CD1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917280EC1B7B884000656CD1 /* HelpViewController.swift */; };
 		9185EB251B4C09E3004A6BD8 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185EB241B4C09E3004A6BD8 /* PlayButton.swift */; };
 		9185EB271B4C0B9D004A6BD8 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185EB261B4C0B9D004A6BD8 /* Math.swift */; };
 		9185EB291B4C1050004A6BD8 /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185EB281B4C1050004A6BD8 /* StopButton.swift */; };
@@ -42,6 +47,16 @@
 		91B1B5AD1B4B5A1600958D38 /* ApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */; };
 		91C5B5DC1B5BE91A0040BCD3 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5B5DB1B5BE91A0040BCD3 /* LaunchViewController.swift */; };
 		91C5B5DE1B5BFCB60040BCD3 /* CameraChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5B5DD1B5BFCB60040BCD3 /* CameraChooseViewController.swift */; };
+		91C7D7861B7B7EC100B50C5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF971B7B7D1C005FB1CF /* libz.dylib */; };
+		91C7D7871B7B7ECD00B50C5D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF991B7B7D23005FB1CF /* libsqlite3.dylib */; };
+		91C7D7881B7B7EF300B50C5D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF9B1B7B7D96005FB1CF /* AudioToolbox.framework */; };
+		91C7D7891B7B7EF300B50C5D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF9C1B7B7D96005FB1CF /* CFNetwork.framework */; };
+		91C7D78A1B7B7EF300B50C5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF9D1B7B7D96005FB1CF /* CoreGraphics.framework */; };
+		91C7D78B1B7B7EF300B50C5D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF9E1B7B7D96005FB1CF /* CoreLocation.framework */; };
+		91C7D78C1B7B7EF300B50C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA31B7B7DA5005FB1CF /* QuartzCore.framework */; };
+		91C7D78D1B7B7EF300B50C5D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA51B7B7DB6005FB1CF /* Security.framework */; };
+		91C7D78E1B7B7EF300B50C5D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA61B7B7DB6005FB1CF /* StoreKit.framework */; };
+		91C7D78F1B7B7EF300B50C5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA71B7B7DB6005FB1CF /* SystemConfiguration.framework */; };
 		91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */; };
 		91F5CBCA1B4D9FA90009A178 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */; };
 		91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */; };
@@ -73,7 +88,22 @@
 		910745DF1B543E18004B927F /* VideoTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTypes.swift; sourceTree = "<group>"; };
 		910745E31B572C99004B927F /* EditVideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVideosViewController.swift; sourceTree = "<group>"; };
 		910745E51B586739004B927F /* NoProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoProfileViewController.swift; sourceTree = "<group>"; };
+		9127AF971B7B7D1C005FB1CF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		9127AF991B7B7D23005FB1CF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9127AF9B1B7B7D96005FB1CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9127AF9C1B7B7D96005FB1CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9127AF9D1B7B7D96005FB1CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9127AF9E1B7B7D96005FB1CF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9127AFA31B7B7DA5005FB1CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9127AFA51B7B7DB6005FB1CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9127AFA61B7B7DB6005FB1CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9127AFA71B7B7DB6005FB1CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9146FCE41B5E7A750013D73B /* SearchItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchItemCell.swift; sourceTree = "<group>"; };
+		917280E41B7B80F700656CD1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		917280E51B7B80F700656CD1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		917280E81B7B81D000656CD1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		917280E91B7B81D000656CD1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		917280EC1B7B884000656CD1 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9185EB241B4C09E3004A6BD8 /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		9185EB261B4C0B9D004A6BD8 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		9185EB281B4C1050004A6BD8 /* StopButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
@@ -130,6 +160,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C7D7881B7B7EF300B50C5D /* AudioToolbox.framework in Frameworks */,
+				91C7D7891B7B7EF300B50C5D /* CFNetwork.framework in Frameworks */,
+				91C7D78A1B7B7EF300B50C5D /* CoreGraphics.framework in Frameworks */,
+				91C7D78B1B7B7EF300B50C5D /* CoreLocation.framework in Frameworks */,
+				91C7D78C1B7B7EF300B50C5D /* QuartzCore.framework in Frameworks */,
+				91C7D78D1B7B7EF300B50C5D /* Security.framework in Frameworks */,
+				91C7D78E1B7B7EF300B50C5D /* StoreKit.framework in Frameworks */,
+				91C7D78F1B7B7EF300B50C5D /* SystemConfiguration.framework in Frameworks */,
+				91C7D7861B7B7EC100B50C5D /* libz.dylib in Frameworks */,
+				91C7D7871B7B7ECD00B50C5D /* libsqlite3.dylib in Frameworks */,
+				917280EA1B7B81D000656CD1 /* Accounts.framework in Frameworks */,
+				917280EB1B7B81D000656CD1 /* Social.framework in Frameworks */,
+				917280E61B7B80F700656CD1 /* Bolts.framework in Frameworks */,
+				917280E71B7B80F700656CD1 /* Parse.framework in Frameworks */,
 				3E969E9F5A6B351E2116DD4E /* Pods_VideoDating.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +191,20 @@
 		4020922607E0599A9375A050 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				917280E81B7B81D000656CD1 /* Accounts.framework */,
+				917280E91B7B81D000656CD1 /* Social.framework */,
+				917280E41B7B80F700656CD1 /* Bolts.framework */,
+				917280E51B7B80F700656CD1 /* Parse.framework */,
+				9127AFA51B7B7DB6005FB1CF /* Security.framework */,
+				9127AFA61B7B7DB6005FB1CF /* StoreKit.framework */,
+				9127AFA71B7B7DB6005FB1CF /* SystemConfiguration.framework */,
+				9127AFA31B7B7DA5005FB1CF /* QuartzCore.framework */,
+				9127AF9B1B7B7D96005FB1CF /* AudioToolbox.framework */,
+				9127AF9C1B7B7D96005FB1CF /* CFNetwork.framework */,
+				9127AF9D1B7B7D96005FB1CF /* CoreGraphics.framework */,
+				9127AF9E1B7B7D96005FB1CF /* CoreLocation.framework */,
+				9127AF991B7B7D23005FB1CF /* libsqlite3.dylib */,
+				9127AF971B7B7D1C005FB1CF /* libz.dylib */,
 				0AFA30C5D0A4ED1F5AAB40B3 /* Pods_VideoDating.framework */,
 			);
 			name = Frameworks;
@@ -258,6 +316,7 @@
 				91B1B5251B45C3DF00958D38 /* RegisterViewController.swift */,
 				91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */,
 				91F5CBD81B4EF3750009A178 /* YourMainMenuViewController.swift */,
+				917280EC1B7B884000656CD1 /* HelpViewController.swift */,
 			);
 			name = LoginFlow;
 			sourceTree = "<group>";
@@ -495,6 +554,7 @@
 				91B1B5261B45C3DF00958D38 /* RegisterViewController.swift in Sources */,
 				91F5CBE31B4F21480009A178 /* SearchResultViewController.swift in Sources */,
 				910745E61B586739004B927F /* NoProfileViewController.swift in Sources */,
+				917280ED1B7B884000656CD1 /* HelpViewController.swift in Sources */,
 				91B1B5511B47226100958D38 /* SaveVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +686,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VideoDating/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -643,6 +707,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VideoDating/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

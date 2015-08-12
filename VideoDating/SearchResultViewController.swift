@@ -244,9 +244,12 @@ class SearchResultViewController: UITableViewController {
 
     @IBAction func sendApplicationButtonPressed(sender: AnyObject) {
     
-//        let messageReplyVC = storyboard?.instantiateViewControllerWithIdentifier("messageReplyVC") as! MessageReplyViewController
-//        
-//        self.navigationController?.pushViewController(messageReplyVC, animated: true)
+        let messageReplyVC = storyboard?.instantiateViewControllerWithIdentifier("messageReplyVC") as! MessageReplyViewController
+        
+        messageReplyVC.sendingToId = profileToLoad
+        messageReplyVC.sendingToName = nameLabel.text
+        
+        self.navigationController?.pushViewController(messageReplyVC, animated: true)
         
     }
     
