@@ -71,7 +71,7 @@ class MessageReplyViewController: UITableViewController {
         }
 
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         
         if RecordedVideo.session().messageVideoURL != nil {
@@ -122,6 +122,20 @@ class MessageReplyViewController: UITableViewController {
             newUser["videoThumbnail"] = parseVideoLink
             newUser["videoURL"] = parseThumbLink
             
+            newUser.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                
+                if success {
+                    
+                    println("Yay! Your data saved.")
+                    
+                } else {
+                    
+                    println("Something went horribly wrong.")
+                    
+                }
+                
+            })
+            
 //            if self.isThereAParseProfile == true {
 //                
 //                //This adds information to an existing class.
@@ -135,11 +149,7 @@ class MessageReplyViewController: UITableViewController {
 //                
 //            }
 //            
-            
-            
-            
-            
-            
+        RecordedVideo.session().resetSingleton()
             
         self.dismissViewControllerAnimated(true, completion: nil)
             
@@ -158,38 +168,26 @@ class MessageReplyViewController: UITableViewController {
         
     }
     
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Potentially incomplete method implementation.
-//        // Return the number of sections.
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete method implementation.
-//        // Return the number of rows in the section.
-//        return 0
-//    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return false
+        
     }
-    */
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+        
+        textField.resignFirstResponder()
+        
+    }
 
 }

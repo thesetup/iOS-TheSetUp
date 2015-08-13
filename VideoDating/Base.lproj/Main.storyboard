@@ -452,7 +452,7 @@
         <scene sceneID="i6q-vx-WmT">
             <objects>
                 <tableViewController storyboardIdentifier="helpVC" id="sIB-DU-35q" customClass="HelpViewController" customModule="VideoDating" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="awG-sy-7S4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="awG-sy-7S4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -603,7 +603,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sdg-YB-6Vl" id="3RM-pd-vVL">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzd-a3-C1X" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzd-a3-C1X" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="584" height="84"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="40"/>
                                                     <state key="normal" title="BACK">
@@ -620,6 +620,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Tzd-a3-C1X" secondAttribute="trailing" constant="8" id="hww-Ya-Oc4"/>
+                                                <constraint firstAttribute="bottom" secondItem="Tzd-a3-C1X" secondAttribute="bottom" constant="8" id="sTi-bI-XJ9"/>
+                                                <constraint firstItem="Tzd-a3-C1X" firstAttribute="top" secondItem="3RM-pd-vVL" secondAttribute="top" constant="8" id="sux-KT-iU1"/>
+                                                <constraint firstItem="Tzd-a3-C1X" firstAttribute="leading" secondItem="3RM-pd-vVL" secondAttribute="leading" constant="8" id="syT-8l-igO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>

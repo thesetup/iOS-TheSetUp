@@ -122,27 +122,29 @@ class MainMenuViewController: UIViewController {
 
     @IBAction func helpButtonPressed(sender: AnyObject) {
         
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            
-            self.logoutButton.center.x -= self.view.bounds.width
-            
-            self.setupTitle.alpha = 1
-            
-            self.mainMenu.center.y -= self.view.bounds.height
-            self.sShape.center.y -= self.view.bounds.height
-            
-            self.viewYourProfile.center.y += self.view.bounds.height
-            self.makeFriendProfiles.center.y += self.view.bounds.height
-            
-            self.helpButton.center.x += self.view.bounds.width
-            
-            }) { (finished) -> Void in
-                
-                let helpVC = self.storyboard?.instantiateViewControllerWithIdentifier("helpVC") as! HelpViewController
-                
-                self.presentViewController(helpVC, animated: true, completion: nil)
-                
-        }
+//        UIView.animateWithDuration(0.5, animations: { () -> Void in
+//            
+//            self.logoutButton.center.x -= self.view.bounds.width
+//            
+//            self.setupTitle.alpha = 1
+//            
+//            self.mainMenu.center.y -= self.view.bounds.height
+//            self.sShape.center.y -= self.view.bounds.height
+//            
+//            self.viewYourProfile.center.y += self.view.bounds.height
+//            self.makeFriendProfiles.center.y += self.view.bounds.height
+//            
+//            self.helpButton.center.x += self.view.bounds.width
+//            
+//            }) { (finished) -> Void in
+//                
+//                
+//                
+//        }
+        
+        let helpVC = self.storyboard?.instantiateViewControllerWithIdentifier("helpVC") as! HelpViewController
+        
+        presentViewController(helpVC, animated: true, completion: nil)
         
     }
     

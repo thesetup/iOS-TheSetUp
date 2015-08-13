@@ -94,6 +94,9 @@
                                                             <color key="value" red="0.12156999860000001" green="0.75293999909999998" blue="0.72548997400000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="viewMessagesPressed:" destination="DnH-w1-rlS" eventType="touchUpInside" id="EGY-fl-c75"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-8b-JdY">
                                                     <rect key="frame" x="8" y="28" width="584" height="40"/>
@@ -442,6 +445,7 @@
                         <outlet property="optional3Outlet" destination="Iu1-UN-wrU" id="U7b-1u-AbD"/>
                         <outlet property="profilePictureView" destination="Irr-Kv-JjQ" id="yJF-Cz-UfL"/>
                         <outlet property="sexAndAgeLabel" destination="xOb-2K-g9a" id="Oi0-X3-CNp"/>
+                        <outlet property="viewMessagesPressed" destination="tSd-mH-ui7" id="p5D-jw-mCh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS8-X7-6ZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1072,13 +1076,13 @@
                         <sections>
                             <tableViewSection id="2jZ-GV-mna">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="343" id="IGD-F6-v5X">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="385" id="IGD-F6-v5X">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGD-F6-v5X" id="K5p-4E-pGg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reply to Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-5A-bLR">
-                                                    <rect key="frame" x="8" y="8" width="584" height="50"/>
+                                                    <rect key="frame" x="8" y="55" width="584" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="al3-hb-4Gw"/>
                                                         <constraint firstAttribute="height" constant="50" id="oJm-ru-3WR"/>
@@ -1093,7 +1097,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a video and/or message." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzt-Mb-vXV">
-                                                    <rect key="frame" x="8" y="66" width="584" height="49"/>
+                                                    <rect key="frame" x="8" y="113" width="584" height="49"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="49" id="Ohg-zj-SAW"/>
                                                     </constraints>
@@ -1102,7 +1106,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTV-wT-gCd" customClass="RadiusView" customModule="VideoDating" customModuleProvider="target">
-                                                    <rect key="frame" x="200" y="123" width="200" height="200"/>
+                                                    <rect key="frame" x="200" y="170" width="200" height="200"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-iw-ame" customClass="CustomButton" customModule="VideoDating" customModuleProvider="target">
                                                             <rect key="frame" x="75" y="75" width="50" height="50"/>
@@ -1143,8 +1147,12 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-uI-DuM" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-uI-DuM" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="15" width="70" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="D81-VE-JAq"/>
+                                                        <constraint firstAttribute="width" constant="70" id="efG-7p-LSu"/>
+                                                    </constraints>
                                                     <state key="normal" title="Back">
                                                         <color key="titleColor" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1154,6 +1162,9 @@
                                                             <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="backButtonPressed:" destination="3Ch-rr-f5P" eventType="touchUpInside" id="Ozf-OB-XgM"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1161,10 +1172,12 @@
                                                 <constraint firstItem="GY5-5A-bLR" firstAttribute="leading" secondItem="K5p-4E-pGg" secondAttribute="leading" constant="8" id="AWX-jD-MXP"/>
                                                 <constraint firstAttribute="centerX" secondItem="eTV-wT-gCd" secondAttribute="centerX" id="Jf9-F6-Wa6"/>
                                                 <constraint firstItem="Fzt-Mb-vXV" firstAttribute="leading" secondItem="K5p-4E-pGg" secondAttribute="leading" constant="8" id="Lgx-We-hg1"/>
-                                                <constraint firstItem="GY5-5A-bLR" firstAttribute="top" secondItem="K5p-4E-pGg" secondAttribute="top" constant="8" id="NYe-0A-iyM"/>
+                                                <constraint firstItem="IvJ-uI-DuM" firstAttribute="leading" secondItem="K5p-4E-pGg" secondAttribute="leading" constant="16" id="Mr1-yi-kjH"/>
+                                                <constraint firstItem="GY5-5A-bLR" firstAttribute="top" secondItem="K5p-4E-pGg" secondAttribute="top" constant="55" id="NYe-0A-iyM"/>
                                                 <constraint firstItem="Fzt-Mb-vXV" firstAttribute="top" secondItem="GY5-5A-bLR" secondAttribute="bottom" constant="8" id="QLP-Z0-jmW"/>
                                                 <constraint firstItem="eTV-wT-gCd" firstAttribute="top" secondItem="Fzt-Mb-vXV" secondAttribute="bottom" constant="8" id="UDo-EY-E35"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fzt-Mb-vXV" secondAttribute="trailing" constant="8" id="dDl-KX-jFu"/>
+                                                <constraint firstItem="IvJ-uI-DuM" firstAttribute="top" secondItem="K5p-4E-pGg" secondAttribute="top" constant="15" id="j8W-ux-0QS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1197,6 +1210,9 @@
                                                     <rect key="frame" x="8" y="0.0" width="584" height="188"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="3Ch-rr-f5P" id="75Z-gT-0CW"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1220,7 +1236,7 @@
                     </tableView>
                     <connections>
                         <outlet property="addVideoButton" destination="8zI-iw-ame" id="eyU-bM-ae7"/>
-                        <outlet property="bottomConstraint" destination="F7m-TP-HOD" id="e3b-Nf-lCN"/>
+                        <outlet property="bottomConstraint" destination="F7m-TP-HOD" id="NHj-Tn-jCZ"/>
                         <outlet property="replyTo" destination="GY5-5A-bLR" id="x0s-hB-BTh"/>
                         <outlet property="submitButton" destination="rcL-I0-nRP" id="wiC-uT-cdL"/>
                         <outlet property="textField" destination="L4e-Ag-UCK" id="qSh-Bs-bEI"/>

@@ -245,6 +245,15 @@ class YourProfileViewController: UITableViewController {
         
     }
     
+    @IBAction func viewMessagesPressed(sender: AnyObject) {
+        
+        let yourMessagesVC = storyboard?.instantiateViewControllerWithIdentifier("yourMessagesVC") as! YourMessagesViewController
+        
+        self.navigationController?.pushViewController(yourMessagesVC, animated: true)
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

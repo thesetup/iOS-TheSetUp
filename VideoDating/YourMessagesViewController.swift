@@ -7,17 +7,104 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class YourMessagesViewController: UITableViewController {
-
+    
+    var myMessages: [[String:AnyObject]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        var query = PFQuery(className: "User\(RailsRequest.session().yourOwnProfile)")
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error != nil {
+                
+                println("Uh oh, there's an error: \(error)")
+                
+            }
+            
+            if objects != nil {
+                
+                if let messages = objects as? [PFObject] {
+                  
+                    for message in messages {
+                        
+                        let profileId = message.objectForKey("sentBy") as! Int
+                        
+                        RailsRequest.session().getSingleProfile(profileId, completion: { (profileInfo) -> Void in
+                            
+                            if let questions = profileInfo["question"] as? [String:AnyObject] {
+                                
+                                let name = questions["name"] as? String
+                                let gender = questions["gender"] as? String
+                                let age = (2015 - (questions["birthyear"] as? Int)!)
+                                let location = questions["location"] as? String
+                                let mobileAvatarURL = profileInfo["avatar_remote_url"] as? String
+                                let desktopAvatarURL = profileInfo["avatar_url"] as? String
+                                
+                                let newMessageItem = [
+                                
+                                    "name": name!,
+                                    "gender": gender!,
+                                    "age": age,
+                                    "location": location!,
+                                    "mobileAvatar": mobileAvatarURL!,
+                                    "desktopAvatar": desktopAvatarURL!,
+                                    
+                                ] as [String:AnyObject]
+                                
+                                self.myMessages.append(newMessageItem)
+                                
+//                                self.sexAndAgeLabel.text = "\(gender!), \(2015 - birthyear!)"
+//                                self.nameLabel.text = questions["name"] as? String
+//                                self.locationLabel.text = questions["location"] as? String
+//                                self.occupationLabel.text = questions["occupation"] as? String
+                                
+                            }
+                            
+//                            if let mobileAvatarURL = profileInfo["avatar_remote_url"] as? String {
+//                                
+//                                if let convertToNSURL = NSURL(string: mobileAvatarURL) {
+//                                    
+//                                    let data = NSData(contentsOfURL: convertToNSURL)
+//                                    let profilePic = UIImage(data: data!)
+//                                    
+//                                    self.profilePicView.image = profilePic
+//                                    
+//                                    
+//                                }
+//                                
+//                            } else if let avatarURL = profileInfo["avatar_url"] as? String {
+//                                
+//                                if let convertToNSURL = NSURL(string: avatarURL) {
+//                                    
+//                                    let data = NSData(contentsOfURL: convertToNSURL)
+//                                    let profilePic = UIImage(data: data!)
+//                                    
+//                                    self.profilePicView.image = profilePic
+//                                    
+//                                }
+//                                
+//                            }
+                            
+                            
+                        })
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+        
+        
         
     }
 
@@ -28,16 +115,16 @@ class YourMessagesViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Potentially incomplete method implementation.
+//        // Return the number of sections.
+//        return myMessages.count
+//    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return myMessages.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
