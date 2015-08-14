@@ -17,7 +17,7 @@ class YourMessagesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var query = PFQuery(className: "User\(RailsRequest.session().yourOwnProfile)")
+        var query = PFQuery(className: "Profile\(RailsRequest.session().yourOwnProfile!)")
         
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
@@ -30,8 +30,13 @@ class YourMessagesViewController: UITableViewController {
             if objects != nil {
                 
                 if let messages = objects as? [PFObject] {
-                  
+                
+                    println("Here are my messages PFObjects.")
+                    println(messages)
+                    
                     for message in messages {
+                        
+                        println("Message \(message)")
                         
                         let profileId = message.objectForKey("sentBy") as! Int
                         
@@ -39,12 +44,37 @@ class YourMessagesViewController: UITableViewController {
                             
                             if let questions = profileInfo["question"] as? [String:AnyObject] {
                                 
+                                let senderId = message["sentBy"] as? String
                                 let name = questions["name"] as? String
                                 let gender = questions["gender"] as? String
                                 let age = (2015 - (questions["birthyear"] as? Int)!)
                                 let location = questions["location"] as? String
+                                var messageTime = ""
+                                
+                                if let rawMessage = message["created_at"] as? String {
+                                    
+                                    for i in rawMessage {
+                                        
+                                        var count = 0
+                                        
+                                        if count < 10 {
+                                            
+                                            messageTime.append(i)
+                                            count++
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                                let textMessage = message["textMessage"] as? String
+                                let videoLink = message["videoThumbnail"] as? String
+                                let videoThumbnail = message["videoURL"] as? String
+                                
                                 let mobileAvatarURL = profileInfo["avatar_remote_url"] as? String
                                 let desktopAvatarURL = profileInfo["avatar_url"] as? String
+                                
                                 
                                 let newMessageItem = [
                                 
@@ -54,42 +84,25 @@ class YourMessagesViewController: UITableViewController {
                                     "location": location!,
                                     "mobileAvatar": mobileAvatarURL!,
                                     "desktopAvatar": desktopAvatarURL!,
+                                    "messageTime": messageTime,
+                                    "messageContents": [
+                                    
+                                        "textMessage": textMessage!,
+                                        "videoLink": videoLink!,
+                                        "videoThumbnail": videoThumbnail!
+                                    
+                                    ]
                                     
                                 ] as [String:AnyObject]
                                 
                                 self.myMessages.append(newMessageItem)
                                 
-//                                self.sexAndAgeLabel.text = "\(gender!), \(2015 - birthyear!)"
-//                                self.nameLabel.text = questions["name"] as? String
-//                                self.locationLabel.text = questions["location"] as? String
-//                                self.occupationLabel.text = questions["occupation"] as? String
+                                println("My Messages!")
+                                println(self.myMessages)
+                                
+                                self.tableView.reloadData()
                                 
                             }
-                            
-//                            if let mobileAvatarURL = profileInfo["avatar_remote_url"] as? String {
-//                                
-//                                if let convertToNSURL = NSURL(string: mobileAvatarURL) {
-//                                    
-//                                    let data = NSData(contentsOfURL: convertToNSURL)
-//                                    let profilePic = UIImage(data: data!)
-//                                    
-//                                    self.profilePicView.image = profilePic
-//                                    
-//                                    
-//                                }
-//                                
-//                            } else if let avatarURL = profileInfo["avatar_url"] as? String {
-//                                
-//                                if let convertToNSURL = NSURL(string: avatarURL) {
-//                                    
-//                                    let data = NSData(contentsOfURL: convertToNSURL)
-//                                    let profilePic = UIImage(data: data!)
-//                                    
-//                                    self.profilePicView.image = profilePic
-//                                    
-//                                }
-//                                
-//                            }
                             
                             
                         })
@@ -104,7 +117,7 @@ class YourMessagesViewController: UITableViewController {
         
         
         
-        
+       
         
     }
 
@@ -128,9 +141,38 @@ class YourMessagesViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("applicationsCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("applicationsCell", forIndexPath: indexPath) as! ApplicationsTableViewCell
         
-        // Configure the cell...
+        if let profilePicURL = (myMessages[indexPath.row]["mobileAvatar"] as? String) ?? (myMessages[indexPath.row]["desktopAvatar"] as? String) {
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                
+                if profilePicURL != "/avatars/original/missing.png" ?? "/avatars/remote/missing.png" ?? "null" {
+                    
+                    let avatarURL = NSURL(string: profilePicURL)
+                    let data = NSData(contentsOfURL: avatarURL!)
+                    let avatarImage = UIImage(data: data!)
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        cell.profilePicView.image = avatarImage
+                        
+                    })
+                    
+                }
+                
+            })
+            
+        }
+        
+        let name = myMessages[indexPath.row]["name"] as! String
+        let time = myMessages[indexPath.row]["messageTime"] as! String
+        let age = myMessages[indexPath.row]["age"] as! Int
+        let location = myMessages[indexPath.row]["location"] as! String
+        
+        
+        cell.profileNameLabel.text = "\(name), \(time)"
+        cell.locationLabel.text = "\(age), \(location)"
         
         return cell
     }

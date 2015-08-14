@@ -77,6 +77,7 @@ class MessageReplyViewController: UITableViewController {
         if RecordedVideo.session().messageVideoURL != nil {
             
             videoThumbnailView.image = RecordedVideo.session().messageVideoThumbnail
+            isThereAVideo = true
             
         }
         
@@ -98,73 +99,90 @@ class MessageReplyViewController: UITableViewController {
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
         
-        
-        let saveAlert = UIAlertController(title: "Save Video", message: "Do you want to save this video?", preferredStyle: .Alert)
-        
-        let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (action: UIAlertAction!) -> Void in
+        if isThereAVideo == true {
             
-            let thumbnail = RecordedVideo.session().messageVideoThumbnail!
-            let thumbnailEndpoint = RecordedVideo.session().messageVideoThumbnailLink!
-            let videoData = RecordedVideo.session().messageVideoURL!
-            let videoEndpoint = RecordedVideo.session().messageVideoLink!
+            let saveAlert = UIAlertController(title: "Save Video", message: "Do you want to save this video?", preferredStyle: .Alert)
             
-            let sentBy = RailsRequest.session().yourOwnProfile
-            let textMessage = self.textField.text
-            let parseVideoLink = S3_URL + videoEndpoint
-            let parseThumbLink = S3_URL + thumbnailEndpoint
-            
-            S3Request.session().saveVideoToS3(thumbnail, thumbnailEndpoint: thumbnailEndpoint, videoData: videoData, videoEndpoint: videoEndpoint)
-            
-            var newUser = PFObject(className: "Profile\(self.sendingToId)")
-            
-            newUser["sentBy"] = sentBy
-            newUser["textMessage"] = textMessage
-            newUser["videoThumbnail"] = parseVideoLink
-            newUser["videoURL"] = parseThumbLink
-            
-            newUser.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+            let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (action: UIAlertAction!) -> Void in
                 
-                if success {
-                    
-                    println("Yay! Your data saved.")
-                    
-                } else {
-                    
-                    println("Something went horribly wrong.")
-                    
-                }
+                let thumbnail = RecordedVideo.session().messageVideoThumbnail!
+                let thumbnailEndpoint = RecordedVideo.session().messageVideoThumbnailLink!
+                let videoData = RecordedVideo.session().messageVideoURL!
+                let videoEndpoint = RecordedVideo.session().messageVideoLink!
                 
-            })
+                let sentBy = RailsRequest.session().yourOwnProfile
+                let textMessage = self.textField.text
+                let parseVideoLink = S3_URL + videoEndpoint
+                let parseThumbLink = S3_URL + thumbnailEndpoint
+                
+                S3Request.session().saveVideoToS3(thumbnail, thumbnailEndpoint: thumbnailEndpoint, videoData: videoData, videoEndpoint: videoEndpoint)
+                
+                var newUser = PFObject(className: "Profile\(self.sendingToId)")
+                
+                newUser["sentBy"] = sentBy
+                newUser["textMessage"] = textMessage
+                newUser["videoThumbnail"] = parseVideoLink
+                newUser["videoURL"] = parseThumbLink
+                
+                newUser.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                    
+                    if success {
+                        
+                        println("Yay! Your data saved.")
+                        
+                    } else {
+                        
+                        println("Something went horribly wrong.")
+                        
+                    }
+                    
+                })
+                
+                //            if self.isThereAParseProfile == true {
+                //
+                //                //This adds information to an existing class.
+                //
+                //            } else {
+                //
+                //                //This creates a new class.
+                //                // New class should have these columns: videoURL, textMessage, sentBy
+                //
+                //
+                //
+                //            }
+                //
+                RecordedVideo.session().resetSingleton()
+                
+                self.navigationController?.popViewControllerAnimated(true)
+                
+            }
             
-//            if self.isThereAParseProfile == true {
-//                
-//                //This adds information to an existing class.
-//                
-//            } else {
-//                
-//                //This creates a new class.
-//                // New class should have these columns: videoURL, textMessage, sentBy
-//                
-//                
-//                
-//            }
-//            
-        RecordedVideo.session().resetSingleton()
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction!) -> Void in
+                
+                saveAlert.dismissViewControllerAnimated(true, completion: nil)
+                
+            }
             
-        self.dismissViewControllerAnimated(true, completion: nil)
+            saveAlert.addAction(confirmAction)
+            saveAlert.addAction(cancelAction)
+            
+            presentViewController(saveAlert, animated: true, completion: nil)
+            
+        } else {
+            
+            let submitAlert = UIAlertController(title: "Error", message: "Please add a video.", preferredStyle: .Alert)
+            
+            let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
+                
+            }
+            
+            submitAlert.addAction(confirmAction)
+            
+            presentViewController(submitAlert, animated: true, completion: nil)
             
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction!) -> Void in
-            
-            saveAlert.dismissViewControllerAnimated(true, completion: nil)
-            
-        }
-        
-        saveAlert.addAction(confirmAction)
-        saveAlert.addAction(cancelAction)
-        
-        presentViewController(saveAlert, animated: true, completion: nil)
+       
         
     }
     

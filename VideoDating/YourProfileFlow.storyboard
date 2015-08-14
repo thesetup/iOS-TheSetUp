@@ -445,7 +445,6 @@
                         <outlet property="optional3Outlet" destination="Iu1-UN-wrU" id="U7b-1u-AbD"/>
                         <outlet property="profilePictureView" destination="Irr-Kv-JjQ" id="yJF-Cz-UfL"/>
                         <outlet property="sexAndAgeLabel" destination="xOb-2K-g9a" id="Oi0-X3-CNp"/>
-                        <outlet property="viewMessagesPressed" destination="tSd-mH-ui7" id="p5D-jw-mCh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS8-X7-6ZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -731,17 +730,17 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-s1-Fzu">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-s1-Fzu">
                                             <rect key="frame" x="76" y="8" width="516" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="fq4-7Q-xrh"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lawrenceville GA, USA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAO-cs-YqZ">
-                                            <rect key="frame" x="76" y="60" width="100" height="42"/>
+                                            <rect key="frame" x="76" y="60" width="516" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="bc6-ty-m6b"/>
                                                 <constraint firstAttribute="width" constant="100" id="sag-xc-7KO"/>
@@ -749,29 +748,23 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age: 39" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZq-6C-A2E">
-                                            <rect key="frame" x="522" y="60" width="70" height="42"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="XQz-oe-jdW"/>
-                                                <constraint firstAttribute="height" constant="42" id="mrf-t6-D4v"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="sag-xc-7KO"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="SAO-cs-YqZ" firstAttribute="top" secondItem="qSL-s1-Fzu" secondAttribute="bottom" constant="8" id="59e-2i-S0Q"/>
+                                        <constraint firstAttribute="trailing" secondItem="SAO-cs-YqZ" secondAttribute="trailing" constant="8" id="H6W-Cn-YZE"/>
                                         <constraint firstAttribute="bottom" secondItem="SAO-cs-YqZ" secondAttribute="bottom" constant="10.5" id="KkE-gx-xba"/>
                                         <constraint firstItem="qSL-s1-Fzu" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="QvF-7O-GvY"/>
                                         <constraint firstAttribute="trailing" secondItem="qSL-s1-Fzu" secondAttribute="trailing" constant="8" id="Wob-M4-if5"/>
                                         <constraint firstItem="qSL-s1-Fzu" firstAttribute="top" secondItem="kgt-Ne-SrC" secondAttribute="top" constant="8" id="cRb-hw-R2R"/>
                                         <constraint firstItem="SAO-cs-YqZ" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="dqn-GP-6K6"/>
-                                        <constraint firstAttribute="bottom" secondItem="uZq-6C-A2E" secondAttribute="bottom" constant="10.5" id="gpa-1w-DuA"/>
                                         <constraint firstItem="SAO-cs-YqZ" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="hQg-v1-6JW"/>
                                         <constraint firstItem="XZG-tn-VSr" firstAttribute="leading" secondItem="kgt-Ne-SrC" secondAttribute="leading" constant="8" id="iEO-dX-bCE"/>
-                                        <constraint firstAttribute="trailing" secondItem="uZq-6C-A2E" secondAttribute="trailing" constant="8" id="oeo-pb-zig"/>
                                         <constraint firstItem="qSL-s1-Fzu" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="som-iR-8vX"/>
                                         <constraint firstAttribute="bottom" secondItem="XZG-tn-VSr" secondAttribute="bottom" constant="25.5" id="vVe-PN-58u"/>
                                         <constraint firstItem="SAO-cs-YqZ" firstAttribute="leading" secondItem="XZG-tn-VSr" secondAttribute="trailing" constant="8" id="vse-2R-zO2"/>
@@ -779,6 +772,7 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="vVe-PN-58u"/>
                                             <exclude reference="QvF-7O-GvY"/>
                                             <exclude reference="59e-2i-S0Q"/>
                                             <exclude reference="dqn-GP-6K6"/>
@@ -787,7 +781,6 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="ageLabel" destination="uZq-6C-A2E" id="dNp-VI-U1I"/>
                                     <outlet property="locationLabel" destination="SAO-cs-YqZ" id="BCa-VW-wtD"/>
                                     <outlet property="profileNameLabel" destination="qSL-s1-Fzu" id="AM1-li-DfE"/>
                                     <outlet property="profilePicView" destination="XZG-tn-VSr" id="bNr-yS-TFQ"/>
@@ -1715,14 +1708,18 @@
                     <connections>
                         <outlet property="interestedInLabel" destination="1lk-bf-iOC" id="bS8-6U-1EO"/>
                         <outlet property="locationLabel" destination="eFI-PO-dH1" id="QsR-3a-7Js"/>
+                        <outlet property="mainVideoButton" destination="t9a-b5-GJr" id="QOk-Mz-DDu"/>
                         <outlet property="mainVideoOutlet" destination="SCo-8y-VzK" id="gEt-GU-cv5"/>
                         <outlet property="nameLabel" destination="pSe-1J-IPk" id="ycH-cx-1jf"/>
                         <outlet property="occupationLabel" destination="qUw-6X-4iw" id="raR-f3-RPM"/>
                         <outlet property="optional1" destination="Pa5-Rb-1mz" id="Cnb-v6-agV"/>
+                        <outlet property="optional1Button" destination="10O-Su-2Ll" id="CQw-cJ-p02"/>
                         <outlet property="optional1Outlet" destination="TpX-C5-cRT" id="yLj-Fg-iqp"/>
                         <outlet property="optional2" destination="wfy-Zo-zBm" id="FnG-qM-h7P"/>
+                        <outlet property="optional2Button" destination="Kgd-9i-6cO" id="Ckw-OK-Xue"/>
                         <outlet property="optional2Outlet" destination="xL7-5t-huw" id="4Ts-Q2-PMM"/>
                         <outlet property="optional3" destination="QUP-Wy-Dp5" id="TDH-84-TYb"/>
+                        <outlet property="optional3Button" destination="5PJ-FG-be0" id="aNe-s2-zud"/>
                         <outlet property="optional3Outlet" destination="bQU-wc-sL5" id="Z5U-lB-Kjx"/>
                         <outlet property="profilePicView" destination="3PZ-jC-9hk" id="H8w-it-oyl"/>
                         <outlet property="sexAndAgeLabel" destination="ii7-pP-C0H" id="1WO-Qk-6di"/>

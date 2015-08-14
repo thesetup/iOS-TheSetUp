@@ -26,6 +26,12 @@ class SearchResultViewController: UITableViewController {
     @IBOutlet weak var optional2Outlet: RadiusView!
     @IBOutlet weak var optional3Outlet: RadiusView!
     
+    @IBOutlet weak var mainVideoButton: UIButton!
+    @IBOutlet weak var optional1Button: UIButton!
+    @IBOutlet weak var optional2Button: UIButton!
+    @IBOutlet weak var optional3Button: UIButton!
+    
+    
     var profileToLoad: Int!
     var videoURLArray: [String] = []
     var videoCaptions: [String] = []
@@ -33,6 +39,11 @@ class SearchResultViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mainVideoButton.hidden = true
+        optional1Button.hidden = true
+        optional2Button.hidden = true
+        optional3Button.hidden = true
+        
         RailsRequest.session().getSingleProfile(profileToLoad, completion: { (profileInfo) -> Void in
             
             
@@ -104,6 +115,8 @@ class SearchResultViewController: UITableViewController {
                         
                         self.mainVideoOutlet.image = thumbnailImage
                         
+                        self.mainVideoButton.hidden = false
+                        
                     }
                     
                 } else { self.videoURLArray.append("None") }
@@ -125,6 +138,8 @@ class SearchResultViewController: UITableViewController {
                         let thumbnailImage = UIImage(data: thumbnailURL!)
                         
                         self.optional1Outlet.image = thumbnailImage
+                        
+                        self.optional1Button.hidden = false
                         
                     }
                     
@@ -148,6 +163,8 @@ class SearchResultViewController: UITableViewController {
                         
                         self.optional2Outlet.image = thumbnailImage
                         
+                        self.optional2Button.hidden = false
+                        
                     }
                     
                     
@@ -170,6 +187,8 @@ class SearchResultViewController: UITableViewController {
                         let thumbnailImage = UIImage(data: thumbnailURL!)
                         
                         self.optional3Outlet.image = thumbnailImage
+                        
+                        self.optional3Button.hidden = false
                         
                     }
                     

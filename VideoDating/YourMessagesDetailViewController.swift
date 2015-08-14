@@ -38,8 +38,6 @@ class YourMessagesDetailViewController: UITableViewController {
         
     }
     
-    
-
     @IBAction func replyButtonPressed(sender: AnyObject) {
         
         let messageReplyVC = storyboard?.instantiateViewControllerWithIdentifier("messageReplyVC") as! MessageReplyViewController
