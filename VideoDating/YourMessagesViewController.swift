@@ -51,6 +51,15 @@ class YourMessagesViewController: UITableViewController {
                                 let location = questions["location"] as? String
                                 let job = questions["occupation"] as? String
                                 let date = message["dateInfo"] as? String
+                                var userID = 0
+                                
+                                if let profileSection = profileInfo["profiles"] as? [String:AnyObject] {
+                                    
+                                    userID = profileSection["id"] as! Int
+                                    
+                                }
+                                
+                                println(userID)
                                 
                                 let textMessage = message["textMessage"] as? String
                                 let videoLink = message["videoThumbnail"] as? String
@@ -70,6 +79,7 @@ class YourMessagesViewController: UITableViewController {
                                     "mobileAvatar": mobileAvatarURL!,
                                     "desktopAvatar": desktopAvatarURL!,
                                     "date": date!,
+                                    "userID": userID,
                                     "messageContents": [
                                     
                                         "textMessage": textMessage!,
@@ -154,10 +164,10 @@ class YourMessagesViewController: UITableViewController {
         let age = myMessages[indexPath.row]["age"] as! Int
         let location = myMessages[indexPath.row]["location"] as! String
         let theDate = myMessages[indexPath.row]["date"] as! String
-        
+        let gender = myMessages[indexPath.row]["gender"] as! String
         
         cell.profileNameLabel.text = "\(name)"
-        cell.locationLabel.text = "\(age), \(location)"
+        cell.locationLabel.text = "\(gender), \(age), \(location)"
         cell.dateLabel.text = "\(theDate)"
         
         return cell
@@ -169,16 +179,21 @@ class YourMessagesViewController: UITableViewController {
         
         let name = myMessages[indexPath.row]["name"] as! String
         let age = myMessages[indexPath.row]["age"] as! Int
+        let gender = myMessages[indexPath.row]["gender"] as! String
         let location = myMessages[indexPath.row]["location"] as! String
         let theDate = myMessages[indexPath.row]["date"] as! String
         let job = myMessages[indexPath.row]["job"] as! String
         let avatar = myMessages[indexPath.row]["mobileAvatar"] as? String ?? myMessages[indexPath.row]["desktopAvatar"] as! String
+        
+        let userID = myMessages[indexPath.row]["userID"] as! Int
         
         detailVC.name = name
         detailVC.age = age
         detailVC.city = location
         detailVC.job = job
         detailVC.avatar = avatar
+        detailVC.gender = gender
+        detailVC.userID = userID
         
         if let messageContents = myMessages[indexPath.row]["messageContents"] as? [String:String] {
             

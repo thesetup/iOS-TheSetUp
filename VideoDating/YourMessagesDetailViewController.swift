@@ -30,6 +30,10 @@ class YourMessagesDetailViewController: UITableViewController {
     var job: String!
     var city: String!
     var messageContents: String!
+    var gender: String!
+    var userID: Int!
+    
+    var messageSenderID: String!
     
     @IBAction func playButtonPressed(sender: AnyObject) {
         
@@ -40,6 +44,9 @@ class YourMessagesDetailViewController: UITableViewController {
     @IBAction func replyButtonPressed(sender: AnyObject) {
         
         let messageReplyVC = storyboard?.instantiateViewControllerWithIdentifier("messageReplyVC") as! MessageReplyViewController
+        
+        messageReplyVC.sendingToId = userID
+        messageReplyVC.sendingToName = name
         
         self.navigationController?.pushViewController(messageReplyVC, animated: true)
         
@@ -57,7 +64,7 @@ class YourMessagesDetailViewController: UITableViewController {
         videoView.image = stringToImage(videoThumbnail)
         
         nameLabel.text = name
-        ageLabel.text = "\(age)"
+        ageLabel.text = "\(gender), \(age)"
         jobLabel.text = job
         cityLabel.text = city
         message.text = messageContents
@@ -103,5 +110,19 @@ class YourMessagesDetailViewController: UITableViewController {
         presentViewController(videoPlayerVC, animated: true, completion: nil)
         
     }
+    
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
+    }
+    
 
 }
+
+
+
+
+
+
+
