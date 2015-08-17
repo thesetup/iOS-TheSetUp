@@ -32,12 +32,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="squareColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
@@ -130,9 +124,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                         <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,9 +230,6 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                         <color key="value" red="0.52769292599999995" green="0.82740337559999999" blue="0.88512073869999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.5" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
@@ -306,9 +294,6 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.5" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="5CN-hY-jqz" eventType="touchUpInside" id="HOg-Zp-p6k"/>
@@ -337,9 +322,6 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -363,12 +345,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="squareColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
@@ -518,12 +494,6 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                         <color key="value" red="0.43780479020000002" green="0.84339778239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.32548999789999999" green="0.69019997119999998" blue="0.9607800245" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
@@ -544,12 +514,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="squareColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>

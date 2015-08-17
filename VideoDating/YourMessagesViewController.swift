@@ -7,17 +7,102 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class YourMessagesViewController: UITableViewController {
-
+    
+    var myMessages: [[String:AnyObject]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        var query = PFQuery(className: "Profile\(RailsRequest.session().yourOwnProfile!)")
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error != nil {
+                
+                println("Uh oh, there's an error: \(error)")
+                
+            }
+            
+            if objects != nil {
+                
+                if let messages = objects as? [PFObject] {
+                
+                    println("Here are my messages PFObjects.")
+                    println(messages)
+                    
+                    for message in messages {
+                        
+                        println("Message \(message)")
+                        
+                        let profileId = message.objectForKey("sentBy") as! Int
+                        
+                        RailsRequest.session().getSingleProfile(profileId, completion: { (profileInfo) -> Void in
+                            
+                            if let questions = profileInfo["question"] as? [String:AnyObject] {
+                                
+                                let senderId = message["sentBy"] as? String
+                                let name = questions["name"] as? String
+                                let gender = questions["gender"] as? String
+                                let age = (2015 - (questions["birthyear"] as? Int)!)
+                                let location = questions["location"] as? String
+                                let job = questions["occupation"] as? String
+                                let date = message["dateInfo"] as? String
+                                
+                                let textMessage = message["textMessage"] as? String
+                                let videoLink = message["videoThumbnail"] as? String
+                                let videoThumbnail = message["videoURL"] as? String
+                                
+                                let mobileAvatarURL = profileInfo["avatar_remote_url"] as? String
+                                let desktopAvatarURL = profileInfo["avatar_url"] as? String
+                                
+                                
+                                let newMessageItem = [
+                                
+                                    "name": name!,
+                                    "gender": gender!,
+                                    "age": age,
+                                    "location": location!,
+                                    "job": job!,
+                                    "mobileAvatar": mobileAvatarURL!,
+                                    "desktopAvatar": desktopAvatarURL!,
+                                    "date": date!,
+                                    "messageContents": [
+                                    
+                                        "textMessage": textMessage!,
+                                        "videoLink": videoLink!,
+                                        "videoThumbnail": videoThumbnail!
+                                    
+                                    ]
+                                    
+                                ] as [String:AnyObject]
+                                
+                                self.myMessages.append(newMessageItem)
+                                
+                                println("My Messages!")
+                                println(self.myMessages)
+                                
+                                self.tableView.reloadData()
+                                
+                            }
+                            
+                            
+                        })
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+        
+       
         
     }
 
@@ -28,70 +113,107 @@ class YourMessagesViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Potentially incomplete method implementation.
+//        // Return the number of sections.
+//        return myMessages.count
+//    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return myMessages.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("applicationsCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("applicationsCell", forIndexPath: indexPath) as! ApplicationsTableViewCell
         
-        // Configure the cell...
+        if let profilePicURL = (myMessages[indexPath.row]["mobileAvatar"] as? String) ?? (myMessages[indexPath.row]["desktopAvatar"] as? String) {
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                
+                if profilePicURL != "/avatars/original/missing.png" ?? "/avatars/remote/missing.png" ?? "null" {
+                    
+                    let avatarURL = NSURL(string: profilePicURL)
+                    let data = NSData(contentsOfURL: avatarURL!)
+                    let avatarImage = UIImage(data: data!)
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        cell.profilePicView.image = avatarImage
+                        
+                    })
+                    
+                }
+                
+            })
+            
+        }
+        
+        let name = myMessages[indexPath.row]["name"] as! String
+        let age = myMessages[indexPath.row]["age"] as! Int
+        let location = myMessages[indexPath.row]["location"] as! String
+        let theDate = myMessages[indexPath.row]["date"] as! String
+        
+        
+        cell.profileNameLabel.text = "\(name)"
+        cell.locationLabel.text = "\(age), \(location)"
+        cell.dateLabel.text = "\(theDate)"
         
         return cell
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let detailVC = storyboard?.instantiateViewControllerWithIdentifier("yourMessagesDetailVC") as! YourMessagesDetailViewController
+        
+        let name = myMessages[indexPath.row]["name"] as! String
+        let age = myMessages[indexPath.row]["age"] as! Int
+        let location = myMessages[indexPath.row]["location"] as! String
+        let theDate = myMessages[indexPath.row]["date"] as! String
+        let job = myMessages[indexPath.row]["job"] as! String
+        let avatar = myMessages[indexPath.row]["mobileAvatar"] as? String ?? myMessages[indexPath.row]["desktopAvatar"] as! String
+        
+        detailVC.name = name
+        detailVC.age = age
+        detailVC.city = location
+        detailVC.job = job
+        detailVC.avatar = avatar
+        
+        if let messageContents = myMessages[indexPath.row]["messageContents"] as? [String:String] {
+            
+            let message = messageContents["textMessage"]
+            let url = messageContents["videoLink"]
+            let thumbnail = messageContents["videoThumbnail"]
+            
+            detailVC.messageContents = message
+            detailVC.videoURL = url
+            detailVC.videoThumbnail = thumbnail
+            
+        }
+        
+        if detailVC.videoURL != nil {
+            
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+        }
+        
+        
+        
     }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
-    }
-    */
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
-
-
 }
+
+
+
+
+
+
+
+

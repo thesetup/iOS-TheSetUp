@@ -16,9 +16,16 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var makeFriendProfiles: OutlineButton!
     @IBOutlet weak var mainMenu: UILabel!
     @IBOutlet weak var sShape: UIImageView!
+    @IBOutlet weak var helpButton: OutlineButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -34,6 +41,8 @@ class MainMenuViewController: UIViewController {
             self.viewYourProfile.center.y += self.view.bounds.height
             self.makeFriendProfiles.center.y += self.view.bounds.height
         
+            self.helpButton.center.x += self.view.bounds.width
+        
         UIView.animateWithDuration(1.0, animations: { () -> Void in
             
             self.logoutButton.center.x += self.view.bounds.width
@@ -42,6 +51,9 @@ class MainMenuViewController: UIViewController {
                         
             self.viewYourProfile.center.y -= self.view.bounds.height
             self.makeFriendProfiles.center.y -= self.view.bounds.height
+            
+            self.helpButton.center.x -= self.view.bounds.width
+
             
         })
         
@@ -62,6 +74,8 @@ class MainMenuViewController: UIViewController {
             
             self.viewYourProfile.center.y += self.view.bounds.height
             self.makeFriendProfiles.center.y += self.view.bounds.height
+            
+            self.helpButton.center.x += self.view.bounds.width
             
         }) { (finished) -> Void in
             
@@ -102,6 +116,8 @@ class MainMenuViewController: UIViewController {
             self.viewYourProfile.center.y += self.view.bounds.height
             self.makeFriendProfiles.center.y += self.view.bounds.height
             
+            self.helpButton.center.x += self.view.bounds.width
+            
         }) { (finished) -> Void in
             
             self.navigationController?.popToRootViewControllerAnimated(false)
@@ -110,4 +126,37 @@ class MainMenuViewController: UIViewController {
         
     }
 
+    @IBAction func helpButtonPressed(sender: AnyObject) {
+        
+//        UIView.animateWithDuration(0.5, animations: { () -> Void in
+//            
+//            self.logoutButton.center.x -= self.view.bounds.width
+//            
+//            self.setupTitle.alpha = 1
+//            
+//            self.mainMenu.center.y -= self.view.bounds.height
+//            self.sShape.center.y -= self.view.bounds.height
+//            
+//            self.viewYourProfile.center.y += self.view.bounds.height
+//            self.makeFriendProfiles.center.y += self.view.bounds.height
+//            
+//            self.helpButton.center.x += self.view.bounds.width
+//            
+//            }) { (finished) -> Void in
+//                
+//                
+//                
+//        }
+        
+        let helpVC = self.storyboard?.instantiateViewControllerWithIdentifier("helpVC") as! HelpViewController
+        
+        presentViewController(helpVC, animated: true, completion: nil)
+        
+    }
+    
 }
+
+
+
+
+

@@ -14,5 +14,6 @@ enum VideoTypes {
     case Optional1
     case Optional2
     case Optional3
+    case Message
     
 }

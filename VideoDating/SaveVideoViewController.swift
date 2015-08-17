@@ -50,6 +50,22 @@ class SaveVideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if videoType != nil {
+            
+            switch videoType! {
+                
+            case .MainVideo, .Message :
+                
+                videoTitle.hidden = true
+                
+            default :
+                
+                break
+                
+            }
+            
+        }
+        
         NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             
             self.view.setNeedsUpdateConstraints()
@@ -167,6 +183,13 @@ class SaveVideoViewController: UIViewController {
                 RecordedVideo.session().optionalVideo3Thumbnail = thumbnailImage
                 RecordedVideo.session().optionalVideo3ThumbnailLink = thumbnailEndpoint
                 RecordedVideo.session().optionalVideo3Label = videoTitle.text
+                
+            case .Message :
+                
+                RecordedVideo.session().messageVideoURL = resizedVideoURL
+                RecordedVideo.session().messageVideoLink = videoEndpoint
+                RecordedVideo.session().messageVideoThumbnail = thumbnailImage
+                RecordedVideo.session().messageVideoThumbnailLink = thumbnailEndpoint
 
             default:
                 

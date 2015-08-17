@@ -51,7 +51,11 @@ class RecordedVideo: NSObject {
     var optionalVideo3Thumbnail: UIImage?
     var optionalVideo3ThumbnailLink: String?
     var optionalVideo3Label: String?
-
+    
+    var messageVideoURL: NSURL?
+    var messageVideoLink: String?
+    var messageVideoThumbnail: UIImage?
+    var messageVideoThumbnailLink: String?
     
     var profileToLoad: [String:AnyObject]?
     
@@ -152,6 +156,11 @@ class RecordedVideo: NSObject {
         optionalVideo3ThumbnailLink = nil
         
         profileToLoad = nil
+        
+        messageVideoLink = nil
+        messageVideoThumbnail = nil
+        messageVideoThumbnailLink = nil
+        messageVideoURL = nil
         
     }
     
