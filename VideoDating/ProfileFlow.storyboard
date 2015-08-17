@@ -254,12 +254,6 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                            <color key="value" red="0.9097024937" green="0.4666579367" blue="0.1085912451" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="squareColor">
-                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="30"/>
                                                         </userDefinedRuntimeAttribute>
@@ -562,12 +556,6 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                            <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                            <color key="value" red="0.12156999860000001" green="0.75293999909999998" blue="0.72548997400000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                             <color key="value" red="0.77224071279999995" green="0.94736787379999998" blue="0.95334201399999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
@@ -663,9 +651,6 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                                     <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                    <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="editProfileButtonPressed:" destination="Ntg-pS-SdO" eventType="touchUpInside" id="OFA-Il-MMO"/>
@@ -690,9 +675,6 @@
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
                                                     <real key="value" value="1"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                    <color key="value" red="0.12156999860000001" green="0.75293999909999998" blue="0.72548997400000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -910,15 +892,6 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                             <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                            <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                            <color key="value" red="0.12156999860000001" green="0.75293999909999998" blue="0.72548997400000004" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
@@ -1224,15 +1197,6 @@
                                         <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                             <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                            <color key="value" red="0.066670000549999997" green="0.48234999179999999" blue="0.59608000520000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                            <color key="value" red="0.12156999860000001" green="0.75293999909999998" blue="0.72548997400000004" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="backButtonPressed:" destination="ank-9C-3TK" eventType="touchUpInside" id="1uU-Il-iTt"/>
@@ -1383,8 +1347,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTo-Pe-ZpS">
-                                                    <rect key="frame" x="205" y="42" width="190" height="190"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTo-Pe-ZpS">
+                                                    <rect key="frame" x="205" y="43" width="190" height="190"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="190" id="MFJ-hZ-A7Q"/>
                                                         <constraint firstAttribute="width" constant="190" id="Zm7-QG-3B7"/>

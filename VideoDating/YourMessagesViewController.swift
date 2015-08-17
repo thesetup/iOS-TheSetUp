@@ -49,24 +49,8 @@ class YourMessagesViewController: UITableViewController {
                                 let gender = questions["gender"] as? String
                                 let age = (2015 - (questions["birthyear"] as? Int)!)
                                 let location = questions["location"] as? String
-                                var messageTime = ""
-                                
-                                if let rawMessage = message["created_at"] as? String {
-                                    
-                                    for i in rawMessage {
-                                        
-                                        var count = 0
-                                        
-                                        if count < 10 {
-                                            
-                                            messageTime.append(i)
-                                            count++
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
+                                let job = questions["occupation"] as? String
+                                let date = message["dateInfo"] as? String
                                 
                                 let textMessage = message["textMessage"] as? String
                                 let videoLink = message["videoThumbnail"] as? String
@@ -82,9 +66,10 @@ class YourMessagesViewController: UITableViewController {
                                     "gender": gender!,
                                     "age": age,
                                     "location": location!,
+                                    "job": job!,
                                     "mobileAvatar": mobileAvatarURL!,
                                     "desktopAvatar": desktopAvatarURL!,
-                                    "messageTime": messageTime,
+                                    "date": date!,
                                     "messageContents": [
                                     
                                         "textMessage": textMessage!,
@@ -166,61 +151,69 @@ class YourMessagesViewController: UITableViewController {
         }
         
         let name = myMessages[indexPath.row]["name"] as! String
-        let time = myMessages[indexPath.row]["messageTime"] as! String
         let age = myMessages[indexPath.row]["age"] as! Int
         let location = myMessages[indexPath.row]["location"] as! String
+        let theDate = myMessages[indexPath.row]["date"] as! String
         
         
-        cell.profileNameLabel.text = "\(name), \(time)"
+        cell.profileNameLabel.text = "\(name)"
         cell.locationLabel.text = "\(age), \(location)"
+        cell.dateLabel.text = "\(theDate)"
         
         return cell
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let detailVC = storyboard?.instantiateViewControllerWithIdentifier("yourMessagesDetailVC") as! YourMessagesDetailViewController
+        
+        let name = myMessages[indexPath.row]["name"] as! String
+        let age = myMessages[indexPath.row]["age"] as! Int
+        let location = myMessages[indexPath.row]["location"] as! String
+        let theDate = myMessages[indexPath.row]["date"] as! String
+        let job = myMessages[indexPath.row]["job"] as! String
+        let avatar = myMessages[indexPath.row]["mobileAvatar"] as? String ?? myMessages[indexPath.row]["desktopAvatar"] as! String
+        
+        detailVC.name = name
+        detailVC.age = age
+        detailVC.city = location
+        detailVC.job = job
+        detailVC.avatar = avatar
+        
+        if let messageContents = myMessages[indexPath.row]["messageContents"] as? [String:String] {
+            
+            let message = messageContents["textMessage"]
+            let url = messageContents["videoLink"]
+            let thumbnail = messageContents["videoThumbnail"]
+            
+            detailVC.messageContents = message
+            detailVC.videoURL = url
+            detailVC.videoThumbnail = thumbnail
+            
+        }
+        
+        if detailVC.videoURL != nil {
+            
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+        }
+        
+        
+        
     }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
-    }
-    */
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
-
-
 }
+
+
+
+
+
+
+
+

@@ -21,6 +21,7 @@ class MessageReplyViewController: UITableViewController {
     
     var videoURL: NSURL?
     var videoStillImage: UIImage?
+    var dateString: String?
     
     var isThereAParseProfile: Bool = false
     var isThereAVideo: Bool = false
@@ -29,6 +30,8 @@ class MessageReplyViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
 //        submitButton.hidden = true
 //        
@@ -79,6 +82,15 @@ class MessageReplyViewController: UITableViewController {
             videoThumbnailView.image = RecordedVideo.session().messageVideoThumbnail
             isThereAVideo = true
             
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            formatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            let date = NSDate()
+            
+            dateString = formatter.stringFromDate(date)
+            
+            println("Date String! \(dateString)")
+            
         }
         
     }
@@ -123,6 +135,7 @@ class MessageReplyViewController: UITableViewController {
                 newUser["textMessage"] = textMessage
                 newUser["videoThumbnail"] = parseVideoLink
                 newUser["videoURL"] = parseThumbLink
+                newUser["dateInfo"] = self.dateString!
                 
                 newUser.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                     

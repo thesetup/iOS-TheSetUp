@@ -13,6 +13,7 @@ class ApplicationsTableViewCell: UITableViewCell {
     @IBOutlet weak var profilePicView: RadiusView!
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var colorCircleView: CircleView!
     
