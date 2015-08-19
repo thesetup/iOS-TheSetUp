@@ -57,6 +57,7 @@
 		91C7D78D1B7B7EF300B50C5D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA51B7B7DB6005FB1CF /* Security.framework */; };
 		91C7D78E1B7B7EF300B50C5D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA61B7B7DB6005FB1CF /* StoreKit.framework */; };
 		91C7D78F1B7B7EF300B50C5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA71B7B7DB6005FB1CF /* SystemConfiguration.framework */; };
+		91EFB6811B84D3CB00AA1983 /* ViewProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EFB6801B84D3CB00AA1983 /* ViewProfileController.swift */; };
 		91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */; };
 		91F5CBCA1B4D9FA90009A178 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */; };
 		91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */; };
@@ -139,6 +140,7 @@
 		91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDetailViewController.swift; sourceTree = "<group>"; };
 		91C5B5DB1B5BE91A0040BCD3 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		91C5B5DD1B5BFCB60040BCD3 /* CameraChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraChooseViewController.swift; sourceTree = "<group>"; };
+		91EFB6801B84D3CB00AA1983 /* ViewProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileController.swift; sourceTree = "<group>"; };
 		91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				91B1B5A61B4B535D00958D38 /* ProfileFlow.storyboard */,
 				91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */,
 				91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */,
+				91EFB6801B84D3CB00AA1983 /* ViewProfileController.swift */,
 				91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */,
 				910745E31B572C99004B927F /* EditVideosViewController.swift */,
 				91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */,
@@ -537,6 +540,7 @@
 				91B1B5391B45D3EE00958D38 /* RailsRequest.swift in Sources */,
 				91B1B5AB1B4B563100958D38 /* ApplicationsTableViewCell.swift in Sources */,
 				91B1B5331B45C6E300958D38 /* VideoCell.swift in Sources */,
+				91EFB6811B84D3CB00AA1983 /* ViewProfileController.swift in Sources */,
 				91F5CBE71B52A2A30009A178 /* OutlineButton.swift in Sources */,
 				91B1B5451B470B1700958D38 /* S3Request.swift in Sources */,
 				9185EB291B4C1050004A6BD8 /* StopButton.swift in Sources */,

@@ -17,9 +17,6 @@ class ProfileMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -61,6 +58,24 @@ class ProfileMenuViewController: UITableViewController {
         presentViewController(launchNavVC, animated: true, completion: nil)
         
     }
+    
+    @IBAction func viewProfileButtonPressed(sender: UIButton) {
+        
+        let tag = sender.tag
+        
+        let profileVC = storyboard?.instantiateViewControllerWithIdentifier("profileVC") as! ViewProfileController
+        
+        profileVC.profileToLoad = sender.tag
+        
+        if profileVC.profileToLoad != nil {
+            
+            self.navigationController?.pushViewController(profileVC, animated: true)
+            
+        }
+        
+    }
+    
+    
     
     @IBAction func backButtonPressed(sender: AnyObject) {
     
@@ -123,6 +138,7 @@ class ProfileMenuViewController: UITableViewController {
             if let profileId = self.profilesToLoad[indexPath.row]["id"] as? Int {
                 
                 cell.editButton.tag = profileId
+                cell.viewProfileButton.tag = profileId
                 
             }
             
