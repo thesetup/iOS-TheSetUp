@@ -138,6 +138,16 @@ class YourMessagesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("applicationsCell", forIndexPath: indexPath) as! ApplicationsTableViewCell
         
+        var timeInterval: NSTimeInterval = (0.5 + (NSTimeInterval(indexPath.row) * 0.1 ))
+        
+        cell.center.x += self.tableView.bounds.width
+        
+        UIView.animateWithDuration(timeInterval, animations: { () -> Void in
+            
+            cell.center.x -= self.tableView.bounds.width
+            
+        })
+        
         if let profilePicURL = (myMessages[indexPath.row]["mobileAvatar"] as? String) ?? (myMessages[indexPath.row]["desktopAvatar"] as? String) {
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in

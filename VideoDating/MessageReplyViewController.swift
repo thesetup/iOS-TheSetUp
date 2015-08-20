@@ -113,7 +113,7 @@ class MessageReplyViewController: UITableViewController {
         
         if isThereAVideo == true {
             
-            let saveAlert = UIAlertController(title: "Save Video", message: "Do you want to save this video?", preferredStyle: .Alert)
+            let saveAlert = UIAlertController(title: "Send Message", message: "Do you want to send this message?", preferredStyle: .Alert)
             
             let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (action: UIAlertAction!) -> Void in
                 

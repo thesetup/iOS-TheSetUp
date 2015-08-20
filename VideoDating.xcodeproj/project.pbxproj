@@ -40,11 +40,8 @@
 		91B1B5541B4722A900958D38 /* TakeVideoFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */; };
 		91B1B5A01B4B4F3E00958D38 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */; };
 		91B1B5A21B4B50CD00958D38 /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */; };
-		91B1B5A41B4B527F00958D38 /* ApplicationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */; };
 		91B1B5A71B4B535D00958D38 /* ProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B5A61B4B535D00958D38 /* ProfileFlow.storyboard */; };
 		91B1B5A91B4B551E00958D38 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5A81B4B551E00958D38 /* CircleView.swift */; };
-		91B1B5AB1B4B563100958D38 /* ApplicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5AA1B4B563100958D38 /* ApplicationsTableViewCell.swift */; };
-		91B1B5AD1B4B5A1600958D38 /* ApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */; };
 		91C5B5DC1B5BE91A0040BCD3 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5B5DB1B5BE91A0040BCD3 /* LaunchViewController.swift */; };
 		91C5B5DE1B5BFCB60040BCD3 /* CameraChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5B5DD1B5BFCB60040BCD3 /* CameraChooseViewController.swift */; };
 		91C7D7861B7B7EC100B50C5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF971B7B7D1C005FB1CF /* libz.dylib */; };
@@ -133,11 +130,8 @@
 		91B1B5531B4722A900958D38 /* TakeVideoFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TakeVideoFlow.storyboard; sourceTree = "<group>"; };
 		91B1B59F1B4B4F3E00958D38 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		91B1B5A11B4B50CD00958D38 /* ProfileMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMenuCell.swift; sourceTree = "<group>"; };
-		91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewController.swift; sourceTree = "<group>"; };
 		91B1B5A61B4B535D00958D38 /* ProfileFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileFlow.storyboard; sourceTree = "<group>"; };
 		91B1B5A81B4B551E00958D38 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		91B1B5AA1B4B563100958D38 /* ApplicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewCell.swift; sourceTree = "<group>"; };
-		91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDetailViewController.swift; sourceTree = "<group>"; };
 		91C5B5DB1B5BE91A0040BCD3 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		91C5B5DD1B5BFCB60040BCD3 /* CameraChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraChooseViewController.swift; sourceTree = "<group>"; };
 		91EFB6801B84D3CB00AA1983 /* ViewProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileController.swift; sourceTree = "<group>"; };
@@ -221,9 +215,6 @@
 				91EFB6801B84D3CB00AA1983 /* ViewProfileController.swift */,
 				91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */,
 				910745E31B572C99004B927F /* EditVideosViewController.swift */,
-				91B1B5A31B4B527F00958D38 /* ApplicationsTableViewController.swift */,
-				91B1B5AA1B4B563100958D38 /* ApplicationsTableViewCell.swift */,
-				91B1B5AC1B4B5A1600958D38 /* ApplicationDetailViewController.swift */,
 				91C5B5DB1B5BE91A0040BCD3 /* LaunchViewController.swift */,
 			);
 			name = FriendProfileFlow;
@@ -521,7 +512,6 @@
 				91C5B5DE1B5BFCB60040BCD3 /* CameraChooseViewController.swift in Sources */,
 				91B1B5A01B4B4F3E00958D38 /* ProfileMenuViewController.swift in Sources */,
 				91F5CBCA1B4D9FA90009A178 /* EditProfileTableViewController.swift in Sources */,
-				91B1B5A41B4B527F00958D38 /* ApplicationsTableViewController.swift in Sources */,
 				91B1B5241B45C3D300958D38 /* LoginViewController.swift in Sources */,
 				91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */,
 				9185EB271B4C0B9D004A6BD8 /* Math.swift in Sources */,
@@ -538,7 +528,6 @@
 				9146FCE51B5E7A750013D73B /* SearchItemCell.swift in Sources */,
 				91F5CBEB1B53E5BF0009A178 /* RecordedVideo.swift in Sources */,
 				91B1B5391B45D3EE00958D38 /* RailsRequest.swift in Sources */,
-				91B1B5AB1B4B563100958D38 /* ApplicationsTableViewCell.swift in Sources */,
 				91B1B5331B45C6E300958D38 /* VideoCell.swift in Sources */,
 				91EFB6811B84D3CB00AA1983 /* ViewProfileController.swift in Sources */,
 				91F5CBE71B52A2A30009A178 /* OutlineButton.swift in Sources */,
@@ -553,7 +542,6 @@
 				91B1B5431B46BE3D00958D38 /* Keys.swift in Sources */,
 				91C5B5DC1B5BE91A0040BCD3 /* LaunchViewController.swift in Sources */,
 				91F5CBDD1B4EF8D60009A178 /* YourMessagesDetailViewController.swift in Sources */,
-				91B1B5AD1B4B5A1600958D38 /* ApplicationDetailViewController.swift in Sources */,
 				91B1B52F1B45C50B00958D38 /* GradientView.swift in Sources */,
 				91B1B5261B45C3DF00958D38 /* RegisterViewController.swift in Sources */,
 				91F5CBE31B4F21480009A178 /* SearchResultViewController.swift in Sources */,

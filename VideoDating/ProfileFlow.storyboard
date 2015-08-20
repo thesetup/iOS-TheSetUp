@@ -1294,8 +1294,8 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Ers-1C-J1s"/>
-                                                    <exclude reference="zgv-hY-Dnb"/>
                                                     <exclude reference="N90-QN-XUj"/>
+                                                    <exclude reference="zgv-hY-Dnb"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
