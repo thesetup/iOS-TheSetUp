@@ -636,15 +636,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdl-0x-DX6">
-                                <rect key="frame" x="16" y="87" width="568" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="uku-aI-MjY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE4-7y-35j" customClass="OutlineButton" customModule="VideoDating" customModuleProvider="target">
                                 <rect key="frame" x="16" y="452" width="568" height="60"/>
                                 <constraints>
@@ -759,6 +750,15 @@
                                     <action selector="helpButtonPressed:" destination="lRj-q5-SPh" eventType="touchUpInside" id="Mdu-fH-M5a"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdl-0x-DX6">
+                                <rect key="frame" x="16" y="62" width="568" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="uku-aI-MjY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -772,7 +772,7 @@
                             <constraint firstAttribute="trailing" secondItem="Cdl-0x-DX6" secondAttribute="trailing" constant="16" id="Iwc-lC-nG4"/>
                             <constraint firstItem="2Gq-iz-vdJ" firstAttribute="leading" secondItem="You-Vc-3D7" secondAttribute="leading" constant="16" id="LuI-gj-hBv"/>
                             <constraint firstAttribute="centerY" secondItem="2kB-Uo-Rxm" secondAttribute="centerY" id="MhK-vD-Npq"/>
-                            <constraint firstItem="Cdl-0x-DX6" firstAttribute="top" secondItem="8mz-NI-uKE" secondAttribute="bottom" constant="67" id="NEG-Bm-JEw"/>
+                            <constraint firstItem="Cdl-0x-DX6" firstAttribute="top" secondItem="8mz-NI-uKE" secondAttribute="bottom" constant="42" id="NEG-Bm-JEw"/>
                             <constraint firstItem="joD-UB-Cat" firstAttribute="top" secondItem="8mz-NI-uKE" secondAttribute="bottom" constant="52" id="aOU-83-M7o"/>
                             <constraint firstAttribute="centerX" secondItem="2kB-Uo-Rxm" secondAttribute="centerX" id="fEu-Sv-WEw"/>
                             <constraint firstItem="Xt3-Ff-PoE" firstAttribute="top" secondItem="WE4-7y-35j" secondAttribute="bottom" constant="8" id="gd4-Wf-jTx"/>

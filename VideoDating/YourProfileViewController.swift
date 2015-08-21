@@ -114,6 +114,7 @@ class YourProfileViewController: UITableViewController {
                     
                     let videoString = optional1["video_url"] as! String
                     self.videoURLArray.append(videoString)
+                    
                     self.optional1.text = (optional1["caption"] as! String) ?? "Optional 2"
                     
                     if let thumbnail = optional1["thumbnail_url"] as? String {

@@ -55,6 +55,7 @@
 		91C7D78E1B7B7EF300B50C5D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA61B7B7DB6005FB1CF /* StoreKit.framework */; };
 		91C7D78F1B7B7EF300B50C5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AFA71B7B7DB6005FB1CF /* SystemConfiguration.framework */; };
 		91EFB6811B84D3CB00AA1983 /* ViewProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EFB6801B84D3CB00AA1983 /* ViewProfileController.swift */; };
+		91EFB6831B87807C00AA1983 /* ApplicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EFB6821B87807C00AA1983 /* ApplicationsTableViewCell.swift */; };
 		91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */; };
 		91F5CBCA1B4D9FA90009A178 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */; };
 		91F5CBD01B4EADB90009A178 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */; };
@@ -135,6 +136,7 @@
 		91C5B5DB1B5BE91A0040BCD3 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		91C5B5DD1B5BFCB60040BCD3 /* CameraChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraChooseViewController.swift; sourceTree = "<group>"; };
 		91EFB6801B84D3CB00AA1983 /* ViewProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileController.swift; sourceTree = "<group>"; };
+		91EFB6821B87807C00AA1983 /* ApplicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewCell.swift; sourceTree = "<group>"; };
 		91F5CBC71B4D9A5D0009A178 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		91F5CBC91B4D9FA90009A178 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		91F5CBCF1B4EADB90009A178 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				9146FCE41B5E7A750013D73B /* SearchItemCell.swift */,
 				91F5CBE21B4F21480009A178 /* SearchResultViewController.swift */,
 				910745E51B586739004B927F /* NoProfileViewController.swift */,
+				91EFB6821B87807C00AA1983 /* ApplicationsTableViewCell.swift */,
 			);
 			name = YourProfileFlow;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				91B1B5311B45C53D00958D38 /* CustomButton.swift in Sources */,
 				91B1B5281B45C3F300958D38 /* VideoCamViewController.swift in Sources */,
 				91F5CBC81B4D9A5D0009A178 /* MainMenuViewController.swift in Sources */,
+				91EFB6831B87807C00AA1983 /* ApplicationsTableViewCell.swift in Sources */,
 				91F5CBDF1B4EFD190009A178 /* MessageReplyViewController.swift in Sources */,
 				91B1B5221B45C3AC00958D38 /* WelcomeViewController.swift in Sources */,
 				910745E41B572C99004B927F /* EditVideosViewController.swift in Sources */,

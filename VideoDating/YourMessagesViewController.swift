@@ -99,7 +99,6 @@ class YourMessagesViewController: UITableViewController {
                                 
                             }
                             
-                            
                         })
 
                     }
@@ -109,10 +108,6 @@ class YourMessagesViewController: UITableViewController {
             }
             
         }
-        
-        
-        
-       
         
     }
 
